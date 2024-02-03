@@ -2,13 +2,13 @@ const e = require('express');
 const knex = require('../knex');
 
 class Event {
-  constructor({ id, user_id, location, date, start, end }) {
+  constructor({ id, user_id, location, date, start_time, end_time }) {
     this.id = id;
     this.userId = user_id;
     this.location = location;
     this.date = date;
-    this.start = start;
-    this.end = end;
+    this.startTime = start_time;
+    this.endTime = end_time;
   }
 
   static async list() {
@@ -25,11 +25,13 @@ class Event {
     return user ? new User(user) : null;
   }
 
-  static async create(userId, location, date, start, end) {
-    const query = 'INSERT INTO events (user_id, location, date, start, end) VALUES (?, ?, ?, ?, ?) RETURNING *;';
-    const args = [userId, location, date, start, end];
+  static async create(userId, location, date, startTime, endTime) {
+    const query = `INSERT INTO events (user_id, location, date, start_time, end_time) VALUES (?, ?, ?, ?, ?) RETURNING *;`;
+    const args = [userId, location, date, startTime, endTime];
     const { rows } = await knex.raw(query, args);
     const event = rows[0];
     return new Event(event);
   }
 }
+
+module.exports = Event;

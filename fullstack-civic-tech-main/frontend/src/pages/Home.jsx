@@ -1,34 +1,41 @@
-// eslint-disable-next-line no-unused-vars
+
 import React from 'react';
-import 'bulma/css/bulma.min.css';
+import './styles.css';
 
-export default function HomePage() {
-  return <div className="card">
-  <div className="card-image">
-    <figure className="image is-4by3">
-      <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image"/>
-    </figure>
-  </div>
-  <div className="card-content">
-    <div className="media">
-      <div className="media-left">
-        <figure className="image is-48x48">
-          <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image"/>
-        </figure>
-      </div>
-      <div className="media-content">
-        <p className="title is-4">John Smith</p>
-        <p className="subtitle is-6">@johnsmith</p>
-      </div>
-    </div>
-
-    <div className="content">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-      <a href="#">#css</a> <a href="#">#responsive</a>
-      <br/>
-      <time dateTime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+const EventCard = ({ title, imageSrc, description }) => (
+  <div className="event-card">
+    <img src={imageSrc} alt={title} className="event-image" />
+    <div className="event-details">
+      <h3>{title}</h3>
+      <p>{description}</p>
     </div>
   </div>
-</div>;
-}
+);
+
+const Hub = () => {
+  return (
+    <div className="hub">
+      <h1>Hub</h1>
+      <div className="event-container">
+        <EventCard
+          title="Event 1"
+          imageSrc="/img/300.png"
+          description="Description of Event 1"
+        />
+        <EventCard
+          title="Event 2"
+          imageSrc="/img/300.png"
+          description="Description of Event 2"
+        />
+        <EventCard
+          title="Event 3"
+          imageSrc="/img/300.png"
+          description="Description of Event 3"
+        />
+      </div>
+    </div>
+  );
+};
+
+export default Hub;
+ 

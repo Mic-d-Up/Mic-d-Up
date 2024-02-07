@@ -26,6 +26,8 @@ export default function App() {
         <Route path='/sign-up' element={<SignUpPage />} />
         <Route path='/users' element={<UsersPage />} />
         <Route path='/users/:id' element={<UserPage />} />
+        <Route path='/events' />
+        <Route path='/events/create' />
         <Route path='*' element={<NotFoundPage />} />
       </Routes>
     </main>

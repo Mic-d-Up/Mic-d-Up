@@ -1,4 +1,4 @@
-
+// eslint-disable-next-line no-unused-vars
 import React from 'react';
 import './styles.css';
 
@@ -12,8 +12,7 @@ const EventCard = ({ title, imageSrc, description }) => (
   </div>
 );
 
-const Hub = () => {
-  return (
+const Hub = () => (
     <div className="hub">
       <h1>Hub</h1>
       <div className="event-container">
@@ -34,8 +33,6 @@ const Hub = () => {
         />
       </div>
     </div>
-  );
-};
+);
 
 export default Hub;
- 

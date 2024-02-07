@@ -2,65 +2,58 @@ const knex = require('../knex');
 const { hashPassword, isValidPassword } = require('../../utils/auth-utils');
 
 class Comment {
-  #passwordHash = null; 
 
-  constructor({ id, username, password_hash }) {
+  constructor({ user_id, event_id, content }) {
     this.id = id;
-    this.username = username;
-    this.#passwordHash = password_hash;
+    this.user_id = user_id;
+    this.event_id = event_id;
+    this.content = content;
   }
 
   static async list() {
-    const query = 'SELECT * FROM users';
+    const query = 'SELECT * FROM comments';
     const { rows } = await knex.raw(query);
-    // use the constructor to hide each user's passwordHash
-    return rows.map((user) => new User(user));
+    return rows.map((comment) => new Comment(comment));
   }
 
   static async find(id) {
-    const query = 'SELECT * FROM users WHERE id = ?';
+    const query = 'SELECT * FROM comments WHERE id = ?';
     const args = [id];
     const { rows } = await knex.raw(query, args);
-    const user = rows[0];
-    return user ? new User(user) : null;
+    const comment = rows[0];
+    return comment ? new Comment(comment) : null;
   }
 
-  static async findByUsername(username) {
-    const query = 'SELECT * FROM users WHERE username = ?';
-    const args = [username];
+  static async findByUserId(userId) {
+    const query = 'SELECT * FROM comments WHERE userId = ?';
+    const args = [userId];
     const { rows } = await knex.raw(query, args);
-    const user = rows[0];
-    return user ? new User(user) : null;
+    const comment = rows[0];
+    return comment ? new Comment(comment) : null;
   }
 
-  static async create(username, password) {
-    const passwordHash = await hashPassword(password);
-
-    const query = `INSERT INTO users (username, password_hash)
-      VALUES (?, ?) RETURNING *`;
-    const args = [username, passwordHash];
+  static async create(user_id, event_id, content) {
+    const query = `INSERT INTO comments (user_id, event_id, content)
+      VALUES (?, ?, ?) RETURNING *`;
+    const args = [user_id, event_id, content];
     const { rows } = await knex.raw(query, args);
-    const user = rows[0];
-    return new User(user);
+    const comment = rows[0];
+    return new Comment(comment);
   }
 
   static async deleteAll() {
-    return knex.raw('TRUNCATE users;');
+    return knex.raw('TRUNCATE comments;');
   }
 
-  update = async (username) => { // dynamic queries are easier if you add more properties
-    const rows = await knex('users')
+  update = async (content) => {
+    const rows = await knex('comments')
       .where({ id: this.id })
-      .update({ username })
+      .update({ content })
       .returning('*');
 
-    const updatedUser = rows[0];
-    return updatedUser ? new User(updatedUser) : null;
+    const updatedContent = rows[0];
+    return updatedContent ? new Comment(updatedContent) : null;
   };
-
-  isValidPassword = async (password) => (
-    isValidPassword(password, this.#passwordHash)
-  );
 }
 
-module.exports = User;
+module.exports = Comment;

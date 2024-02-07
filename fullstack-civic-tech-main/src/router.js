@@ -10,8 +10,10 @@ Router.use(addModelsToRequest);
 Router.get('/users', userController.list);
 Router.post('/users', userController.create);
 Router.get('/users/:id', userController.show);
+
 Router.get('/events', eventController.list);
-Router.get('/events/create', eventController.create)
+Router.post('/events/create', eventController.create)
+
 Router.post('/login', userController.login);
 Router.delete('/logout', userController.logout);
 Router.get('/me', userController.showMe);

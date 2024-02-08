@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
-import './styles.css';
+import './HubHome.css';
 import EventCard from '../components/EventCard';
 
 const Hub = () => (

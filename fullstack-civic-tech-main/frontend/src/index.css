@@ -8,8 +8,15 @@ input, label {
 }
 
 input {
-  margin-bottom: 1rem;
+  margin-bottom:
 }
+
+main {
+  display: flex;
+  height: 100vh;
+flex-direction: row;
+}
+
 
 header {
   display: flex;

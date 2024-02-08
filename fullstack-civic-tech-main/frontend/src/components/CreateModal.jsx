@@ -1,8 +1,12 @@
-export default function CreateModal() {
+export default function CreateModal({ onClose }) {
   const handleSubmit = async (event) => {
     event.preventDefault();
-
   }
+
+  const handleCancel = () => {
+    onClose();
+  };
+
   return <>
     <div id="create-modal" className="modal">
       <div className="modal-background"></div>
@@ -59,7 +63,7 @@ export default function CreateModal() {
                 <button className="button is-link">Submit</button>
               </div>
               <div className="control">
-                <button className="button is-link is-light" type="button" onClick={() => setShowModal(false)}>Cancel</button>
+                <button className="button is-link is-light" type="button" onClick={handleCancel}>Cancel</button>
               </div>
             </div>
           </form>

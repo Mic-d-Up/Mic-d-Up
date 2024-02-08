@@ -1,11 +1,15 @@
 export default function CreateModal() {
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+  }
   return <>
     <div id="create-modal" className="modal">
       <div className="modal-background"></div>
 
       <div className="modal-content">
         <div className="box">
-          <form>
+          <form onSubmit={handleSubmit}>
             <h3>What's going on?</h3>
             <p>Tell us about the event</p>
             <div className="field">
@@ -55,14 +59,12 @@ export default function CreateModal() {
                 <button className="button is-link">Submit</button>
               </div>
               <div className="control">
-                <button className="button is-link is-light">Cancel</button>
+                <button className="button is-link is-light" type="button" onClick={() => setShowModal(false)}>Cancel</button>
               </div>
             </div>
           </form>
         </div>
       </div>
-
-      <button className="modal-close is-large" aria-label="close"></button>
     </div>
   </>
 }

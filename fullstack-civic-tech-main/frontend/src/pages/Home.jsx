@@ -1,16 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
 import './styles.css';
-
-const EventCard = ({ title, imageSrc, description }) => (
-  <div className="event-card">
-    <img src={imageSrc} alt={title} className="event-image" />
-    <div className="event-details">
-      <h3>{title}</h3>
-      <p>{description}</p>
-    </div>
-  </div>
-);
+import EventCard from '../components/EventCard';
 
 const Hub = () => (
     <div className="hub">

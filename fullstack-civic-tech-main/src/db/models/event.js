@@ -2,16 +2,16 @@ const e = require('express');
 const knex = require('../knex');
 
 class Event {
-  // constructor({ id, name, username, location, date, start_time, end_time, ticket_link }) {
-  //   this.id = id;
-  //   this.name = name;
-  //   this.username = username;
-  //   this.location = location;
-  //   this.date = date;
-  //   this.start_time = start_time;
-  //   this.end_time = end_time;
-  //   this.ticket_link = ticket_link;
-  // }
+  constructor({ id, name, user_id, location, date, start_time, end_time, ticket_link }) {
+    this.id = id;
+    this.name = name;
+    this.user_id = user_id;
+    this.location = location;
+    this.date = date;
+    this.start_time = start_time;
+    this.end_time = end_time;
+    this.ticket_link = ticket_link;
+  }
 
   static async list() {
     const query = 'SELECT * FROM events;';
@@ -27,9 +27,9 @@ class Event {
     return event ? new Event(event) : null;
   }
 
-  static async create(name, username, location, date, start_time, end_time, ticket_link) {
-    const query = 'INSERT INTO events (name, "username", location, date, start_time, end_time, ticket_link) VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING *;';
-    const args = [name, username, location, date, start_time, end_time, ticket_link];
+  static async create(name, user_id, location, date, start_time, end_time, ticket_link) {
+    const query = 'INSERT INTO events (name, "user_id", location, date, start_time, end_time, ticket_link) VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING *;';
+    const args = [name, user_id, location, date, start_time, end_time, ticket_link];
     const { rows } = await knex.raw(query, args);
     const event = rows[0];
     return new Event(event);

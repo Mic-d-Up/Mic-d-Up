@@ -4,8 +4,8 @@
  */
 exports.up = (knex) => knex.schema.createTable('events', (table) => {
   table.increments();
-  table.integer('username').notNullable();
-  table.foreign('username').references('username').inTable('users');
+  table.integer('user_id').notNullable().unsigned();
+  table.foreign('user_id').references('id').inTable('users').onDelete('CASCADE');
   table.text('name').notNullable();
   table.text('location').notNullable();
   table.date('date').notNullable();

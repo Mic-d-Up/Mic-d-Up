@@ -6,11 +6,11 @@ export default function SiteHeadingAndNav() {
   const { currentUser } = useContext(CurrentUserContext);
 
   return <header>
-    <a id='logo' href='/'>React/Express Auth</a>
+    <a id='logo' href='/'>Mic'd Up</a>
     <nav>
       <ul>
         <li><NavLink to='/'>Home</NavLink></li>
-        <li><NavLink to='/users' end={true}>Users</NavLink></li>
+        <li><NavLink to='/users' end={true}>Members</NavLink></li>
         {
           currentUser
             ? <li><NavLink to={`/users/${currentUser.id}`}>{currentUser.username}</NavLink></li>

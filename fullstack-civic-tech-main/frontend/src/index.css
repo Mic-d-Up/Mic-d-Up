@@ -7,14 +7,13 @@ input, label {
   display: block;
 }
 
-input {
+/* input {
   margin-bottom:
-}
+} */
+
 
 main {
-  display: flex;
   height: 100vh;
-flex-direction: row;
 }
 
 

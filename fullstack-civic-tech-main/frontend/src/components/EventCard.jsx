@@ -1,34 +1,60 @@
-/* eslint-disable no-unused-vars */
-// eslint-disable-next-line max-len
-export default function EventCard({ user_id, location, name, date, start_time, end_time, ticket_link }) {
+/* eslint-disable no-shadow */
+// eslint-disable-next-line no-unused-vars
+import React, { useState } from 'react';
+
+const EventCard = ({ location, date, startTime, endTime, ticketLink }) => {
+  const [comment, setComment] = useState('');
+  const [comments, setComments] = useState([]);
+
+  const handleCommentChange = (event) => {
+    setComment(event.target.value);
+  };
+
+  const handleCommentSubmit = (event) => {
+    event.preventDefault();
+    if (comment.trim() !== '') {
+      setComments([...comments, comment]);
+      setComment('');
+    }
+  };
+
   return (
-    <><>
-      <div className="card">
-        <div className="card-content">
-          <div className="content">
-            <h4 className="name">Event Name</h4>
-            <h4 className="location">Location</h4>
-            <p>Start Time:</p>
-            <p>End Time:</p>
-            <p>Ticket Link</p>
-          </div>
+    <div className="card">
+      <div className="card-content">
+        <p className="title">{location}</p>
+        <p>Date: {date}</p>
+        <p>Time: {startTime} - {endTime}</p>
+        <a href={ticketLink} target="_blank" rel="noopener noreferrer">Get Tickets</a>
+      </div>
+      <footer className="card-footer">
+        <div className="card-footer-item">
+          <form onSubmit={handleCommentSubmit}>
+            <div className="field has-addons">
+              <div className="control">
+                <input
+                  className="input"
+                  type="text"
+                  placeholder="Add a comment..."
+                  value={comment}
+                  onChange={handleCommentChange}
+                />
+              </div>
+              <div className="control">
+                <button type="submit" className="button is-primary">Comment</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </footer>
+      <div className="card-content">
+        <div className="content">
+          {comments.map((comment, index) => (
+            <p key={index}>{comment}</p>
+          ))}
         </div>
       </div>
-    </>
-    <>
-    <div className="media-content">
-        <p className="title is-4">John Smith</p>
-        <p className="subtitle is-6">@johnsmith</p>
-      </div>
-
-    <div className="content">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-      <a href="#">#css</a> <a href="#">#responsive</a>
-      <br/>
-      <time dateTime="2016-1-1">11:09 PM - 1 Jan 2016</time>
     </div>
-    </></>
-
   );
-}
+};
+
+export default EventCard;

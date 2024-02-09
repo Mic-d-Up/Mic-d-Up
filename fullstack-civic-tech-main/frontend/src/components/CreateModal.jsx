@@ -26,7 +26,7 @@ export default function CreateModal({ onClose }) {
             <div className="field">
               <label className="label">Date</label>
               <div className="control">
-                <input className="input" type="date" placeholder="Date" value="bulma" />
+                <input className="input" type="date" placeholder="Date" />
               </div>
             </div>
 

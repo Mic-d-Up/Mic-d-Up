@@ -1,29 +1,13 @@
-// eslint-disable-next-line no-unused-vars
-import React from 'react';
-import './HubHome.css';
-import EventCard from '../components/EventCard';
+import CreateModal from "../components/CreateModal";
+import { useState } from "react";
 
-const Hub = () => (
-    <div className="hub">
-      <h1>Hub</h1>
-      <div className="event-container">
-        <EventCard
-          title="Event 1"
-          imageSrc="/img/300.png"
-          description="Description of Event 1"
-        />
-        <EventCard
-          title="Event 2"
-          imageSrc="/img/300.png"
-          description="Description of Event 2"
-        />
-        <EventCard
-          title="Event 3"
-          imageSrc="/img/300.png"
-          description="Description of Event 3"
-        />
-      </div>
-    </div>
-);
+export default function HomePage() {
+  const [showModal, setShowModal] = useState(false);
 
-export default Hub;
+  return <>
+    <h1>The Hub</h1>
+    <p>Check out events from our community!</p>
+    <button type="button" onClick={() => setShowModal(!showModal)}>New Event</button>
+    {showModal && <CreateModal setShowModal={setShowModal} onClose={() => setShowModal(false)} />}
+  </>;
+}

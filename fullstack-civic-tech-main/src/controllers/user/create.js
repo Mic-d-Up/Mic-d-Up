@@ -2,11 +2,11 @@ const createUser = async (req, res) => {
   const {
     session,
     db: { User },
-    body: { username, password }, // this req.body property is put here by the client
+    body: { username, password, profile_pic, artist_type }, // this req.body property is put here by the client
   } = req;
 
   // TODO: check if username is taken, what should you return?
-  const user = await User.create(username, password);
+  const user = await User.create(username, password, profile_pic, artist_type);
   session.userId = user.id;
 
   res.send(user);

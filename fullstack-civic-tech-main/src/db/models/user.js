@@ -2,20 +2,19 @@ const knex = require('../knex');
 const { hashPassword, isValidPassword } = require('../../utils/auth-utils');
 
 class User {
-  #passwordHash = null; // a private property
+  #passwordHash = null;
 
-  // Why have a constructor here? We need a way to take the raw data returned from
-  // the database and hide the passwordHash before sending it back to the controller
-  constructor({ id, username, password_hash }) {
+  constructor({ id, username, password_hash, profile_pic, artist_type }) {
     this.id = id;
     this.username = username;
     this.#passwordHash = password_hash;
+    this.profile_pic = profile_pic;
+    this.artist_type = artist_type;
   }
 
   static async list() {
     const query = 'SELECT * FROM users';
     const { rows } = await knex.raw(query);
-    // use the constructor to hide each user's passwordHash
     return rows.map((user) => new User(user));
   }
 
@@ -35,12 +34,12 @@ class User {
     return user ? new User(user) : null;
   }
 
-  static async create(username, password) {
+  static async create(username, password, profile_pic, artist_type) {
     const passwordHash = await hashPassword(password);
 
-    const query = `INSERT INTO users (username, password_hash)
-      VALUES (?, ?) RETURNING *`;
-    const args = [username, passwordHash];
+    const query = `INSERT INTO users (username, password_hash, profile_pic, artist_type)
+      VALUES (?, ?, ?, ?) RETURNING *`;
+    const args = [username, passwordHash, profile_pic, artist_type];
     const { rows } = await knex.raw(query, args);
     const user = rows[0];
     return new User(user);
@@ -50,7 +49,7 @@ class User {
     return knex.raw('TRUNCATE users;');
   }
 
-  update = async (username) => { // dynamic queries are easier if you add more properties
+  update = async (username) => {
     const rows = await knex('users')
       .where({ id: this.id })
       .update({ username })

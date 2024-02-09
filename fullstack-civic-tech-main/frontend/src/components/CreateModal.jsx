@@ -1,6 +1,13 @@
+import { createEvent } from "../adapters/event-adapter";
+
 export default function CreateModal({ onClose }) {
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const formInput = Object.fromEntries(formData);
+    const event = await createEvent(formInput);
+    console.log(formData, formInput, event);
+    e.target.reset();
   }
 
   const handleCancel = () => {
@@ -19,42 +26,42 @@ export default function CreateModal({ onClose }) {
             <div className="field">
               <label className="label">Name</label>
               <div className="control">
-                <input className="input" type="text" placeholder="Name" />
+                <input className="input" type="text" placeholder="Name" name="name" />
               </div>
             </div>
 
             <div className="field">
               <label className="label">Date</label>
               <div className="control">
-                <input className="input" type="date" placeholder="Date" />
+                <input className="input" type="date" placeholder="Date" name="date" />
               </div>
             </div>
 
             <div className="field">
               <label className="label">Start Time</label>
               <div className="control">
-                <input className="input" type="time" placeholder="start time input" />
+                <input className="input" type="time" placeholder="start time input" name="start_time" />
               </div>
             </div>
 
             <div className="field">
               <label className="label">End Time</label>
               <div className="control">
-                <input className="input" type="time" placeholder="end time input" />
+                <input className="input" type="time" placeholder="end time input" name="end_time" />
               </div>
             </div>
 
             <div className="field">
               <label className="label">Location</label>
               <div className="control">
-                <textarea className="textarea" placeholder="Textarea"></textarea>
+                <textarea className="textarea" placeholder="Textarea" name="location" ></textarea>
               </div>
             </div>
 
             <div className="field">
               <label className="label">Tickets</label>
               <div className="control">
-                <input className="input" type="text" />
+                <input className="input" type="text" name="ticket_link" />
               </div>
             </div>
 

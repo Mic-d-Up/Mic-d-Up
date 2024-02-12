@@ -2,8 +2,8 @@ import { fetchHandler, getPostOptions } from "../utils";
 
 const baseUrl = '/api/events';
 
-export const createEvent = async ({ user_id, location, date, start_time, end_time }) => {
-  fetchHandler(baseUrl, getPostOptions({ user_id, location, date, start_time, end_time }));
+export const createEvent = async ({ name, user_id, location, date, start_time, end_time, ticket_link }) => {
+  fetchHandler(baseUrl, getPostOptions({ name, user_id, location, date, start_time, end_time, ticket_link }));
 };
 
 export const getAllEvents = async () => {

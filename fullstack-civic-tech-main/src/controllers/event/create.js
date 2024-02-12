@@ -2,12 +2,11 @@ const createEvent = async (req, res) => {
   const {
     session,
     db: { Event },
-    body: { user_id, location, date, start_time, end_time },
+    body: { name, user_id, location, date, start_time, end_time, ticket_link },
   } = req;
 
-  const event = await Event.create(user_id, location, date, start_time, end_time);
-  session.userId = user_id;
-
+  const event = await Event.create(name, user_id, location, date, start_time, end_time, ticket_link);
+  console.log(req.body);
   res.send(event);
 };
 

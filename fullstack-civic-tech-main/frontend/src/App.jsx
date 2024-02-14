@@ -1,6 +1,6 @@
 import { useContext, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { LandingPage } from './components';
+import { LandingPage } from './components/index';
 import Home from './pages/Home';
 import SignUpPage from './pages/SignUp';
 import LoginPage from './pages/Login';

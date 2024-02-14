@@ -1,0 +1,59 @@
+
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.left-side {
+  flex: 1;
+  padding: 20px;
+}
+
+.middle-section {
+  flex: 1;
+  padding: 20px;
+}
+
+.right-side {
+  flex: 1;
+  padding: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input[type="text"],
+input[type="password"],
+button {
+  margin-bottom: 10px;
+}
+
+
+
+/* .container {
+  display: flex;
+}
+
+.left-side, .middle-section, .right-side {
+  flex: 1;
+  padding: 20px;
+}
+
+.left-side img {
+  max-width: 100%;
+  height: auto;
+}
+
+.right-side form {
+  display: flex;
+  flex-direction: column;
+}
+
+.right-side input, .right-side button {
+  margin-bottom: 10px;
+} */

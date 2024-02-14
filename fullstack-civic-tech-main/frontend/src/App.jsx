@@ -1,5 +1,6 @@
 import { useContext, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { LandingPage } from './components';
 import Home from './pages/Home';
 import SignUpPage from './pages/SignUp';
 import LoginPage from './pages/Login';
@@ -9,7 +10,7 @@ import UserContext from './contexts/current-user-context';
 import { checkForLoggedInUser } from './adapters/auth-adapter';
 import UsersPage from './pages/Users';
 import UserPage from './pages/User';
-import Footer from './components/Footer'; 
+import Footer from './components/Footer';
 
 export default function App() {
   const { setCurrentUser } = useContext(UserContext);
@@ -19,6 +20,7 @@ export default function App() {
 
   return <>
     <SiteHeadingAndNav />
+    <LandingPage/>
     <main>
       <Routes>
         <Route path='/' element={<Home />} />

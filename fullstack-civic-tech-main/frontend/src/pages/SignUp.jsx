@@ -37,12 +37,14 @@ export default function SignUpPage() {
   };
 
   const handleChange = (event) => {
+    // eslint-disable-next-line no-shadow
     const { name, value } = event.target;
     if (name === 'username') setUsername(value);
     if (name === 'name') setName(value);
     if (name === 'password') setPassword(value);
     if (name === 'confirmPassword') setConfirmPassword(value);
-    if (name === 'artist_type') setTypeOfArtist(value);
+    // if (name === 'artist_type') setTypeOfArtist(value);
+    setTypeOfArtist(event.target.value);
   };
 
   const handleProfilePhotoChange = (event) => {

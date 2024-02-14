@@ -11,7 +11,6 @@ import { checkForLoggedInUser } from './adapters/auth-adapter';
 import UsersPage from './pages/Users';
 import UserPage from './pages/User';
 import Footer from './components/Footer';
-import landing from './components/LandingPage';
 
 export default function App() {
   const { setCurrentUser } = useContext(UserContext);

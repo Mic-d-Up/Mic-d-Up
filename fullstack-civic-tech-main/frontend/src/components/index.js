@@ -1,3 +1,4 @@
 import LandingPage from './LandingPage';
 
-export {LandingPage}
+// eslint-disable-next-line import/prefer-default-export
+export { LandingPage };

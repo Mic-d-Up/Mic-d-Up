@@ -42,7 +42,7 @@ export default function SignUpPage() {
     if (name === 'name') setName(value);
     if (name === 'password') setPassword(value);
     if (name === 'confirmPassword') setConfirmPassword(value);
-    if (name === 'artist_type') setTypeOfArtist(value);
+    if (name === 'typeOfArtist') setTypeOfArtist(event.target.value);
   };
 
   const handleProfilePhotoChange = (event) => {

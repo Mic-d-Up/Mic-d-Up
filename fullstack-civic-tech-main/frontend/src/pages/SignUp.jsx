@@ -7,29 +7,30 @@ export default function SignUpPage() {
   const navigate = useNavigate();
   const { currentUser, setCurrentUser } = useContext(CurrentUserContext);
   const [errorText, setErrorText] = useState('');
-  const [formData, setFormData] = useState({ username: '', password: '', confirmPassword: '', name: '', profile_pic: '', artist_type: '' });
-  // const [username, setUsername] = useState('');
-  // const [name, setName] = useState('');
-  // const [artist_type, setTypeOfArtist] = useState('');
-  // const [password, setPassword] = useState('');
-  // const [confirmPassword, setConfirmPassword] = useState('');
-  // const [profile_pic, setProfilePhoto] = useState(null);
+  // const [formData, setFormData] = useState({ username: '', password: '', confirmPassword: '', name: '', profile_pic: '', artist_type: '' });
+  const [username, setUsername] = useState('');
+  const [name, setName] = useState('');
+  const [artist_type, setTypeOfArtist] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [profile_pic, setProfilePhoto] = useState(null);
 
   if (currentUser) return <Navigate to="/" />;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrorText('');
-    formData = new FormData(e.target);
-    const formInput = Object.fromEntries(formData);
-    const [user, error] = await createUser(formInput);
-    console.log(formInput, user);
+    // formData = new FormData(e.target);
+    // const formInput = Object.fromEntries(formData);
+    // const [user, error] = await createUser(formInput);
+    // console.log(formInput, user);
     if (!username || !password) return setErrorText('Missing username or password');
     if (password !== confirmPassword) return setErrorText('Passwords do not match');
 
     // Perform additional validation if needed
 
-    // const [user, error] = await createUser({ username, password, name, artist_type, profile_pic });
+    const [user, error] = await createUser({ username, password, name, artist_type, profile_pic });
+    console.log(user);
     if (error) return setErrorText(error.message);
     setCurrentUser(user);
     navigate('/');
@@ -37,11 +38,11 @@ export default function SignUpPage() {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    if (name === 'username') setFormData(value);
-    if (name === 'name') setFormData(value);
-    if (name === 'password') setFormData(value);
-    if (name === 'confirmPassword') setFormData(value);
-    if (name === 'artist_type') setFormData(value);
+    if (name === 'username') setUsername(value);
+    if (name === 'name') setName(value);
+    if (name === 'password') setPassword(value);
+    if (name === 'confirmPassword') setConfirmPassword(value);
+    if (name === 'artist_type') setTypeOfArtist(value);
   };
 
   const handleProfilePhotoChange = (event) => {
@@ -61,7 +62,7 @@ export default function SignUpPage() {
           id="username"
           name="username"
           onChange={handleChange}
-          value={formData.username}
+          value={username}
         />
 
         <label htmlFor="name">Name</label>
@@ -70,11 +71,11 @@ export default function SignUpPage() {
           id="name"
           name="name"
           onChange={handleChange}
-          value={formData.name}
+          value={name}
         />
 
         <label htmlFor="typeOfArtist">Type of Artist</label>
-        <select id="typeOfArtist" name="typeOfArtist" onChange={handleChange} value={formData.artist_type}>
+        <select id="typeOfArtist" name="typeOfArtist" onChange={handleChange} value={artist_type}>
           <option value="">Select...</option>
           <option value="Listener">Listener</option>
           <option value="Singer">Singer</option>
@@ -94,7 +95,7 @@ export default function SignUpPage() {
           id="password"
           name="password"
           onChange={handleChange}
-          value={formData.password}
+          value={password}
         />
 
         <label htmlFor="confirmPassword">Confirm Password</label>
@@ -104,7 +105,7 @@ export default function SignUpPage() {
           id="confirmPassword"
           name="confirmPassword"
           onChange={handleChange}
-          value={formData.confirmPassword}
+          value={confirmPassword}
         />
 
         <label htmlFor="profilePhoto">Profile Photo</label>

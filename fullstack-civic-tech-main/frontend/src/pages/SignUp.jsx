@@ -7,10 +7,9 @@ export default function SignUpPage() {
   const navigate = useNavigate();
   const { currentUser, setCurrentUser } = useContext(CurrentUserContext);
   const [errorText, setErrorText] = useState('');
-  // const [formData, setFormData] = useState({ username: '', password: '', confirmPassword: '', name: '', profile_pic: '', artist_type: '' });
   const [username, setUsername] = useState('');
   const [name, setName] = useState('');
-  const [artist_type, setTypeOfArtist] = useState('');
+  const [typeOfArtist, setTypeOfArtist] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [profile_pic, setProfilePhoto] = useState(null);
@@ -20,16 +19,12 @@ export default function SignUpPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrorText('');
-    // formData = new FormData(e.target);
-    // const formInput = Object.fromEntries(formData);
-    // const [user, error] = await createUser(formInput);
-    // console.log(formInput, user);
     if (!username || !password) return setErrorText('Missing username or password');
     if (password !== confirmPassword) return setErrorText('Passwords do not match');
 
     // Perform additional validation if needed
 
-    const [user, error] = await createUser({ username, password, name, artist_type, profile_pic });
+    const [user, error] = await createUser({ username, password, name, typeOfArtist, profile_pic });
     console.log(user);
     if (error) return setErrorText(error.message);
     setCurrentUser(user);
@@ -42,7 +37,7 @@ export default function SignUpPage() {
     if (name === 'name') setName(value);
     if (name === 'password') setPassword(value);
     if (name === 'confirmPassword') setConfirmPassword(value);
-    if (name === 'artist_type') setTypeOfArtist(value);
+    if (name === 'typeOfArtist') setTypeOfArtist(value);
   };
 
   const handleProfilePhotoChange = (event) => {
@@ -75,7 +70,7 @@ export default function SignUpPage() {
         />
 
         <label htmlFor="typeOfArtist">Type of Artist</label>
-        <select id="typeOfArtist" name="typeOfArtist" onChange={handleChange} value={artist_type}>
+        <select id="typeOfArtist" name="typeOfArtist" onChange={handleChange} value={typeOfArtist}>
           <option value="">Select...</option>
           <option value="Listener">Listener</option>
           <option value="Singer">Singer</option>

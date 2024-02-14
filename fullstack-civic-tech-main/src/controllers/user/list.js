@@ -1,6 +1,6 @@
 const listUsers = async (req, res) => {
   const { 
-    db: { User } // this req.db.User property is put here by the addModelsToRequest middleware
+    db: { User }
   } = req; 
 
   const users = await User.list();

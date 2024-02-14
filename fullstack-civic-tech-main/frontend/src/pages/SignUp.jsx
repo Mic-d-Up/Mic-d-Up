@@ -17,24 +17,56 @@ export default function SignUpPage() {
 
   if (currentUser) return <Navigate to="/" />;
 
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   setErrorText('');
+  //   // formData = new FormData(e.target);
+  //   // const formInput = Object.fromEntries(formData);
+  //   // const [user, error] = await createUser(formInput);
+  //   // console.log(formInput, user);
+  //   if (!username || !password) return setErrorText('Missing username or password');
+  //   if (password !== confirmPassword) return setErrorText('Passwords do not match');
+
+  //   // Perform additional validation if needed
+
+  //   const [user, error] = await createUser({ username, password, name, artist_type, profile_pic });
+  //   console.log(user);
+  //   if (error) return setErrorText(error.message);
+  //   setCurrentUser(user);
+  //   navigate('/');
+  // };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrorText('');
-    // formData = new FormData(e.target);
-    // const formInput = Object.fromEntries(formData);
-    // const [user, error] = await createUser(formInput);
-    // console.log(formInput, user);
+  
+    // Extract form data using FormData
+    const formData = new FormData(e.target);
+    const formInput = Object.fromEntries(formData);
+  
+    // Extract individual form fields
+    const { username, password, confirmPassword, name, artist_type, profile_pic } = formInput;
+  
+    // Check for missing fields or password mismatch
     if (!username || !password) return setErrorText('Missing username or password');
     if (password !== confirmPassword) return setErrorText('Passwords do not match');
-
+  
     // Perform additional validation if needed
-
+  
+    // Call createUser function with form input
     const [user, error] = await createUser({ username, password, name, artist_type, profile_pic });
-    console.log(user);
+    
+    // Log form input and user
+    console.log(formInput, user);
+  
+    // Handle errors
     if (error) return setErrorText(error.message);
+  
+    // Set current user and navigate
     setCurrentUser(user);
     navigate('/');
   };
+  
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -87,6 +119,37 @@ export default function SignUpPage() {
           <option value="Promoter">Promoter</option>
           <option value="Other">Other</option>
         </select>
+{/* 
+<div className="dropdown is-active">
+  <div className="dropdown-trigger">
+    <button className="button" aria-haspopup="true" aria-controls="dropdown-menu">
+      <span>Dropdown button</span>
+      <span className="icon is-small">
+        <i className="fas fa-angle-down" aria-hidden="true"></i>
+      </span>
+    </button>
+  </div>
+  <div className="dropdown-menu" id="dropdown-menu" role="menu">
+    <div className="dropdown-content">
+      <a href="#" class="dropdown-item">
+        Dropdown item
+      </a>
+      <a className="dropdown-item">
+        Other dropdown item
+      </a>
+      <a href="#" class="dropdown-item is-active">
+        Active dropdown item
+      </a>
+      <a href="#" class="dropdown-item">
+        Other dropdown item
+      </a>
+      <hr className="dropdown-divider"/>
+      <a href="#" class="dropdown-item">
+        With a divider
+      </a>
+    </div>
+  </div>
+</div> */}
 
         <label htmlFor="password">Password</label>
         <input

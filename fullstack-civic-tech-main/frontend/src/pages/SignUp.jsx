@@ -7,37 +7,41 @@ export default function SignUpPage() {
   const navigate = useNavigate();
   const { currentUser, setCurrentUser } = useContext(CurrentUserContext);
   const [errorText, setErrorText] = useState('');
-  const [username, setUsername] = useState('');
-  const [name, setName] = useState('');
-  const [typeOfArtist, setTypeOfArtist] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
-  const [profilePhoto, setProfilePhoto] = useState(null);
+  const [formData, setFormData] = useState({ username: '', password: '', confirmPassword: '', name: '', profile_pic: '', artist_type: '' });
+  // const [username, setUsername] = useState('');
+  // const [name, setName] = useState('');
+  // const [artist_type, setTypeOfArtist] = useState('');
+  // const [password, setPassword] = useState('');
+  // const [confirmPassword, setConfirmPassword] = useState('');
+  // const [profile_pic, setProfilePhoto] = useState(null);
 
   if (currentUser) return <Navigate to="/" />;
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     setErrorText('');
+    formData = new FormData(e.target);
+    const formInput = Object.fromEntries(formData);
+    const [user, error] = await createUser(formInput);
+    console.log(formInput, user);
     if (!username || !password) return setErrorText('Missing username or password');
     if (password !== confirmPassword) return setErrorText('Passwords do not match');
 
     // Perform additional validation if needed
 
-    const [user, error] = await createUser({ username, password, name, typeOfArtist, profilePhoto });
+    // const [user, error] = await createUser({ username, password, name, artist_type, profile_pic });
     if (error) return setErrorText(error.message);
-
     setCurrentUser(user);
     navigate('/');
   };
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    if (name === 'username') setUsername(value);
-    if (name === 'name') setName(value);
-    if (name === 'password') setPassword(value);
-    if (name === 'confirmPassword') setConfirmPassword(value);
-    if (name === 'typeOfArtist') setTypeOfArtist(value);
+    if (name === 'username') setFormData(value);
+    if (name === 'name') setFormData(value);
+    if (name === 'password') setFormData(value);
+    if (name === 'confirmPassword') setFormData(value);
+    if (name === 'artist_type') setFormData(value);
   };
 
   const handleProfilePhotoChange = (event) => {
@@ -57,7 +61,7 @@ export default function SignUpPage() {
           id="username"
           name="username"
           onChange={handleChange}
-          value={username}
+          value={formData.username}
         />
 
         <label htmlFor="name">Name</label>
@@ -66,11 +70,11 @@ export default function SignUpPage() {
           id="name"
           name="name"
           onChange={handleChange}
-          value={name}
+          value={formData.name}
         />
 
         <label htmlFor="typeOfArtist">Type of Artist</label>
-        <select id="typeOfArtist" name="typeOfArtist" onChange={handleChange} value={typeOfArtist}>
+        <select id="typeOfArtist" name="typeOfArtist" onChange={handleChange} value={formData.artist_type}>
           <option value="">Select...</option>
           <option value="Listener">Listener</option>
           <option value="Singer">Singer</option>
@@ -90,7 +94,7 @@ export default function SignUpPage() {
           id="password"
           name="password"
           onChange={handleChange}
-          value={password}
+          value={formData.password}
         />
 
         <label htmlFor="confirmPassword">Confirm Password</label>
@@ -100,7 +104,7 @@ export default function SignUpPage() {
           id="confirmPassword"
           name="confirmPassword"
           onChange={handleChange}
-          value={confirmPassword}
+          value={formData.confirmPassword}
         />
 
         <label htmlFor="profilePhoto">Profile Photo</label>

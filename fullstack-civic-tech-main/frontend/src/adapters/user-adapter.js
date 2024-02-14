@@ -1,9 +1,10 @@
 import { fetchHandler, getPostOptions, getPatchOptions } from "../utils";
+import { useContext } from "react";
 
 const baseUrl = '/api/users';
 
-export const createUser = async ({ username, password, profile_pic, artist_type }) => (
-  fetchHandler(baseUrl, getPostOptions({ username, password, profile_pic, artist_type }))
+export const createUser = async ({ username, password, name, profile_pic, artist_type }) => (
+  fetchHandler(baseUrl, getPostOptions({ username, password, name, profile_pic, artist_type }))
 );
 
 export const getAllUsers = async () => {

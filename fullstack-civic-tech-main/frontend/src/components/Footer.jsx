@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 export default function Footer() {
   return (
     <footer className="footer">
@@ -9,5 +10,5 @@ export default function Footer() {
       </p>
     </div>
   </footer>
-  )
+  );
 }

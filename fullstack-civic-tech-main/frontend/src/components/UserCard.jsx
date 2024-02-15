@@ -1,4 +1,4 @@
- export default function UserCard({ username, profile_pic, artist_type }) {
+ export default function UserCard({ username, profile_pic, artist_type, name }) {
 
     return (
         <>
@@ -13,6 +13,7 @@
       <div className="media-content">
         <p className="title is-4">{username}</p>
         <p className="subtitle is-6">{artist_type}</p>
+        <p className="subtitle is-6">{name}</p>
       </div>
     </div>
   </div>

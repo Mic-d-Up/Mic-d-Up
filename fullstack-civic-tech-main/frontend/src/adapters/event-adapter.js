@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import { fetchHandler, getPostOptions } from "../utils";
 
 const baseUrl = '/api/events';
@@ -9,6 +10,6 @@ export const createEvent = async ({ name, user_id, location, date, start_time, e
 export const getAllEvents = async () => {
   const [events] = await fetchHandler(baseUrl);
   return events || [];
-}
+};
 
 export const getEvent = async (id) => fetchHandler(`${baseUrl}/${id}`);

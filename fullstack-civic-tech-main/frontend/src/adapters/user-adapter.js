@@ -1,5 +1,5 @@
+// import { useContext } from "react";
 import { fetchHandler, getPostOptions, getPatchOptions } from "../utils";
-import { useContext } from "react";
 
 const baseUrl = '/api/users';
 

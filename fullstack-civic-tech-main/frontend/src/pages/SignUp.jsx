@@ -7,6 +7,7 @@ export default function SignUpPage() {
   const navigate = useNavigate();
   const { currentUser, setCurrentUser } = useContext(CurrentUserContext);
   const [errorText, setErrorText] = useState('');
+  // eslint-disable-next-line max-len
   // const [formData, setFormData] = useState({ username: '', password: '', confirmPassword: '', name: '', profile_pic: '', artist_type: '' });
   const [username, setUsername] = useState('');
   const [name, setName] = useState('');
@@ -43,8 +44,7 @@ export default function SignUpPage() {
     if (name === 'name') setName(value);
     if (name === 'password') setPassword(value);
     if (name === 'confirmPassword') setConfirmPassword(value);
-    // if (name === 'artist_type') setTypeOfArtist(value);
-    setTypeOfArtist(event.target.value);
+    if (name === 'typeOfArtist') setTypeOfArtist(event.target.value);
   };
 
   const handleProfilePhotoChange = (event) => {

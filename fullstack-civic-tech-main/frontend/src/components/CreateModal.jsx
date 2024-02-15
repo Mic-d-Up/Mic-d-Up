@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { createEvent } from "../adapters/event-adapter";
 
 export default function CreateModal({ onClose }) {
@@ -8,7 +9,7 @@ export default function CreateModal({ onClose }) {
     const event = await createEvent(formInput);
     console.log(formData, formInput, event);
     e.target.reset();
-  }
+  };
 
   const handleCancel = () => {
     onClose();
@@ -77,5 +78,5 @@ export default function CreateModal({ onClose }) {
         </div>
       </div>
     </div>
-  </>
+  </>;
 }

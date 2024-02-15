@@ -21,9 +21,6 @@ export default function SignUpPage() {
     setErrorText('');
     if (!username || !password) return setErrorText('Missing username or password');
     if (password !== confirmPassword) return setErrorText('Passwords do not match');
-
-    // Perform additional validation if needed
-
     const [user, error] = await createUser({ username, password, name, typeOfArtist, profile_pic });
     console.log(user);
     if (error) return setErrorText(error.message);
@@ -44,6 +41,7 @@ export default function SignUpPage() {
     const file = event.target.files[0];
     setProfilePhoto(file);
   };
+  console.log('hello');
 
   return (
     <>

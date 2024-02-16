@@ -1,12 +1,12 @@
 const createUser = async (req, res) => {
   const {
-    session, // this req.session property is put here by the handleCookieSessions middleware
-    db: { User }, // this req.db.User property is put here by the addModelsToRequest middleware
-    body: { username, password }, // this req.body property is put here by the client
+    session,
+    db: { User },
+    body: { username, password, name, profile_pic, artist_type }, // this req.body property is put here by the client
   } = req;
 
   // TODO: check if username is taken, what should you return?
-  const user = await User.create(username, password);
+  const user = await User.create(username, password, name, profile_pic, artist_type);
   session.userId = user.id;
 
   res.send(user);

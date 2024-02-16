@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "kickstart": "cd frontend && npm i && cd .. && npm i && npm run migrate && npm run seed && npm run dev",
-    "build": "npm i && && npm run migrate:rollback && npm run migrate && npm run seed",
+    "build": "npm i && npm run migrate:rollback && npm run migrate && npm run seed",
     "start": "node src/index.js",
     "dev": "nodemon ./src/index.js",
     "console": "node -r ./src/db/models/console.js",
@@ -23,6 +23,7 @@
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.0",
+    "bulma": "^0.9.4",
     "connect-session-knex": "^3.0.1",
     "cookie-parser": "^1.4.6",
     "cookie-session": "^2.0.0",

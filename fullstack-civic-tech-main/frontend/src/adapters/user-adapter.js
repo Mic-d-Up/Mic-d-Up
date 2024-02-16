@@ -2,8 +2,8 @@ import { fetchHandler, getPostOptions, getPatchOptions, deleteOptions } from "..
 
 const baseUrl = '/api/users';
 
-export const createUser = async ({ username, password }) => (
-  fetchHandler(baseUrl, getPostOptions({ username, password }))
+export const createUser = async ({ username, password, name, profile_pic, typeOfArtist }) => (
+  fetchHandler(baseUrl, getPostOptions({ username, password, name, profile_pic, typeOfArtist }))
 );
 
 export const deleteUser = async (userId) => {

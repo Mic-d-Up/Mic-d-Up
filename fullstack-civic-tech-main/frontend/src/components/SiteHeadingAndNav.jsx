@@ -9,8 +9,8 @@ export default function SiteHeadingAndNav() {
     <a id='logo' href='/'>Mic'd Up</a>
     <nav>
       <ul>
-        <li><NavLink to='/'>Home</NavLink></li>
-        <li><NavLink to='/users' end={true}>Members</NavLink></li>
+        <li><NavLink to='/home'>Home</NavLink></li>
+        <li><NavLink to='/users' end={true}>Users</NavLink></li>
         {
           currentUser
             ? <li><NavLink to={`/users/${currentUser.id}`}>{currentUser.username}</NavLink></li>

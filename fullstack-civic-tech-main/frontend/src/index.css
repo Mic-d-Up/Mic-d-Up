@@ -7,9 +7,15 @@ input, label {
   display: block;
 }
 
-input {
-  margin-bottom: 1rem;
+/* input {
+  margin-bottom:
+} */
+
+
+main {
+  height: 100vh;
 }
+
 
 header {
   display: flex;

@@ -2,7 +2,7 @@ const express = require('express');
 const userController = require('./controllers/user/index');
 const eventController = require('./controllers/event')
 const addModelsToRequest = require('./middleware/add-models-to-request');
-const checkAuthentication = require('./middleware/check-authentication');
+const checkAuthentication = require('./middleware/check-authentication'); // mvp neccessary 1
 
 const Router = express.Router();
 Router.use(addModelsToRequest);
@@ -12,7 +12,7 @@ Router.post('/users', userController.create);
 Router.get('/users/:id', userController.show);
 
 Router.get('/', eventController.list);
-Router.post('/', eventController.create)
+Router.post('/', eventController.create);
 
 Router.post('/login', userController.login);
 Router.delete('/logout', userController.logout);

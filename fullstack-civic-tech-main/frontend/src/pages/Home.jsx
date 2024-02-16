@@ -1,8 +1,9 @@
-import CreateModal from "../components/CreateModal";
-import { useState } from "react";
-import { useContext } from "react";
+/* eslint-disable no-unused-vars */
+import { useState, useContext } from "react";
 import CurrentUserContext from "../contexts/current-user-context";
 import { useNavigate } from "react-router-dom";
+import CreateModal from "../components/CreateModal";
+import EventCard from '../components/EventCard';
 
 export default function HomePage() {
   const [showModal, setShowModal] = useState(false);
@@ -19,4 +20,4 @@ export default function HomePage() {
     }
     {showModal && <CreateModal setShowModal={setShowModal} onClose={() => setShowModal(false)} />}
   </>;
-}
+};

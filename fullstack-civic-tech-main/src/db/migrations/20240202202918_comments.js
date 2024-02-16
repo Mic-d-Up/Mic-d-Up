@@ -7,7 +7,7 @@ exports.up = (knex) => knex.schema.createTable('comments', (table) => {
   table.integer("user_id").notNullable();
   table.foreign("user_id").references("id").inTable("users");
   table.integer("event_id").notNullable();
-  table.foreign("event_id").references("id").inTable("posts");
+  table.foreign("event_id").references("id").inTable("events");
   table.text("content").notNullable();
 });
 

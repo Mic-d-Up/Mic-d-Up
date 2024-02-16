@@ -16,6 +16,7 @@ Router.post('/', eventController.create);
 
 Router.post('/login', userController.login);
 Router.delete('/logout', userController.logout);
+Router.delete('/users/:id', userController.deleteUser);
 Router.get('/me', userController.showMe);
 
 Router.patch('/users/:id', checkAuthentication, userController.update);

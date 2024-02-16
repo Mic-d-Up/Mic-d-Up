@@ -48,8 +48,13 @@ class User {
     return new User(user); 
   }
 
-  static async deleteAll() {
-    return knex.raw('TRUNCATE users;');
+  static async delete(id) {
+    //find out how to insert multiple queries to avoid using .onDelete('CASCADE')
+    const query = `DELETE FROM users WHERE id = ?;`
+    const args = [id];
+    const { rows } = await knex.raw(query, args);
+    const user = rows[0];
+    return user ? new User(user) : null;
   }
 
   update = async (username) => {

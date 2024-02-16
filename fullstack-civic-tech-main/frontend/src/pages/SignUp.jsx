@@ -12,21 +12,18 @@ export default function SignUpPage() {
   const [typeOfArtist, setTypeOfArtist] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [profilePhoto, setProfilePhoto] = useState(null);
+  const [profile_pic, setProfilePhoto] = useState(null);
 
   if (currentUser) return <Navigate to="/" />;
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     setErrorText('');
     if (!username || !password) return setErrorText('Missing username or password');
     if (password !== confirmPassword) return setErrorText('Passwords do not match');
-
-    // Perform additional validation if needed
-
-    const [user, error] = await createUser({ username, password, name, typeOfArtist, profilePhoto });
+    const [user, error] = await createUser({ username, password, name, typeOfArtist, profile_pic });
+    console.log(user);
     if (error) return setErrorText(error.message);
-
     setCurrentUser(user);
     navigate('/');
   };
@@ -44,6 +41,7 @@ export default function SignUpPage() {
     const file = event.target.files[0];
     setProfilePhoto(file);
   };
+  console.log('hello');
 
   return (
     <>

@@ -1,6 +1,8 @@
 const knex = require('../knex');
 const { hashPassword, isValidPassword } = require('../../utils/auth-utils');
 
+console.log(process.env)
+
 class User {
   #passwordHash = null;
 
@@ -35,19 +37,23 @@ class User {
     return user ? new User(user) : null;
   }
 
-  static async create(username, password, name, profile_pic, artist_type) {
+  static async create(username, password, name, profile_pic, typeOfArtist) {
     const passwordHash = await hashPassword(password);
 
     const query = `INSERT INTO users (username, password_hash, name, profile_pic, artist_type)
       VALUES (?, ?, ?, ?, ?) RETURNING *`;
-    const args = [username, passwordHash, name, profile_pic, artist_type];
+    const args = [username, passwordHash, name, profile_pic, typeOfArtist];
     const { rows } = await knex.raw(query, args);
-    const user = rows[0];
-    return new User(user);
+    const user = rows[0]; 
+    return new User(user); 
   }
 
-  static async deleteAll() {
-    return knex.raw('TRUNCATE users;');
+  static async delete(id) {
+    const query = `DELETE FROM users WHERE id = ?;`
+    const args = [id];
+    const { rows } = await knex.raw(query, args);
+    const user = rows[0];
+    return user ? new User(user) : null;
   }
 
   update = async (username) => {

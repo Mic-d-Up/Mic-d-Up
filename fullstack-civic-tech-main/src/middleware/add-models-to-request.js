@@ -5,7 +5,7 @@ const Comment = require('../db/models/comment');
 const addModelsToRequest = (req, res, next) => {
   req.db = {
     User,
-    Event
+    Event,
     Comment,
   };
   next();

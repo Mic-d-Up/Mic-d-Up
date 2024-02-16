@@ -49,7 +49,6 @@ class User {
   }
 
   static async delete(id) {
-    //find out how to insert multiple queries to avoid using .onDelete('CASCADE')
     const query = `DELETE FROM users WHERE id = ?;`
     const args = [id];
     const { rows } = await knex.raw(query, args);

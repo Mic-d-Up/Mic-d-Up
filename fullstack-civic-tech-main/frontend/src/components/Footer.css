@@ -1,0 +1,21 @@
+.footer {
+    width: 100%;
+    min-height: 60px; /* or any average height you prefer for the footer */
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    position: absolute;
+    bottom: 0;
+  }
+  
+  .purple-link {
+    color: purple;
+    text-decoration: none;
+  }
+  
+  .purple-link:hover {
+    text-decoration: underline;
+  }
+  

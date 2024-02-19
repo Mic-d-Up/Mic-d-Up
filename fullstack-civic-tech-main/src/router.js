@@ -1,9 +1,9 @@
 const express = require('express');
 const userController = require('./controllers/user/index');
-const eventController = require('./controllers/event')
+const eventController = require('./controllers/event');
 const addModelsToRequest = require('./middleware/add-models-to-request');
-const checkAuthentication = require('./middleware/check-authentication'); // mvp neccessary 1
-
+const checkAuthentication = require('./middleware/check-authentication');
+const commentController = require('./controllers/comment/index');
 const Router = express.Router();
 Router.use(addModelsToRequest);
 
@@ -14,8 +14,12 @@ Router.get('/users/:id', userController.show);
 Router.get('/', eventController.list);
 Router.post('/', eventController.create);
 
+Router.get('/events/:id/comments', commentController.list);
+Router.post('/events/:id/comments', commentController.create);
+
 Router.post('/login', userController.login);
 Router.delete('/logout', userController.logout);
+Router.delete('/users/:id', userController.deleteUser);
 Router.get('/me', userController.showMe);
 
 Router.patch('/users/:id', checkAuthentication, userController.update);

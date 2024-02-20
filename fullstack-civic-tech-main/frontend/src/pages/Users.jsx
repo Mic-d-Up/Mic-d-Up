@@ -9,7 +9,7 @@ export default function UsersPage() {
   useEffect(() => {
     getAllUsers().then(setUsers);
   }, []);
-
+console.log('hello')
   return <>
     <h1>Users</h1>
     {/* <ul>

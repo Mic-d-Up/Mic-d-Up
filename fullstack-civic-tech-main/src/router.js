@@ -11,8 +11,8 @@ Router.get('/users', userController.list);
 Router.post('/users', userController.create);
 Router.get('/users/:id', userController.show);
 
-Router.get('/', eventController.list);
-Router.post('/', eventController.create);
+Router.get('/home', eventController.list);
+Router.post('/home', eventController.create);
 
 Router.get('/events/:id/comments', commentController.list);
 Router.post('/events/:id/comments', commentController.create);

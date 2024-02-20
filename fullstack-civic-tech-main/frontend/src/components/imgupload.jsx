@@ -1,5 +1,6 @@
 import React from 'react';
 import * as LR from '@uploadcare/blocks';
+
 const UploadcareComponent = () => {
   LR.registerBlocks(LR);
   return (

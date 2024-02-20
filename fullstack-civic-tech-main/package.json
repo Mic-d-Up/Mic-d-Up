@@ -22,6 +22,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@uploadcare/upload-client": "^6.14.0",
     "bcrypt": "^5.1.0",
     "bulma": "^0.9.4",
     "connect-session-knex": "^3.0.1",

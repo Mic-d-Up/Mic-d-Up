@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { useNavigate, Navigate, Link } from "react-router-dom";
 import CurrentUserContext from "../contexts/current-user-context";
 import { createUser } from "../adapters/user-adapter";
+import { base } from '@uploadcare/upload-client'
 
 export default function SignUpPage() {
   const navigate = useNavigate();
@@ -20,10 +21,21 @@ export default function SignUpPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
     setErrorText('');
     if (!username || !password) return setErrorText('Missing username or password');
     if (password !== confirmPassword) return setErrorText('Passwords do not match');
-    const [user, error] = await createUser({ username, password, name, typeOfArtist, profile_pic });
+      
+    const { file } = await base(
+      profile_pic,
+      {
+        publicKey: '5fe7348726376d2e9e7d',
+        store: 'auto',
+      }
+    )
+      const url =  `https://ucarecdn.com/${file}/`
+
+    const [user, error] = await createUser({ username, password, name, typeOfArtist, profile_pic:url });
     console.log(user);
     if (error) return setErrorText(error.message);
     setCurrentUser(user);
@@ -44,7 +56,6 @@ export default function SignUpPage() {
     const file = event.target.files[0];
     setProfilePhoto(file);
   };
-  console.log('hello');
 
   return (
     <>
@@ -114,8 +125,8 @@ export default function SignUpPage() {
         />
 
         <button type="submit">Sign Up Now!</button>
+        {errorText && <p className='alreadyTaken'>{errorText}</p>}
       </form>
-      {errorText && <p>{errorText}</p>}
       <p>Already have an account with us? <Link to="/login">Log in!</Link></p>
     </>
   );

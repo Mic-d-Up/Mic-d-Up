@@ -7,7 +7,7 @@ exports.up = (knex) => knex.schema.createTable('users', (table) => {
     table.string('username').notNullable().unique();
     table.string('password_hash').notNullable();
     table.string('name').notNullable();
-    table.string('profile_pic');
+    table.binary('profile_pic');
     table.string('artist_type').notNullable();
     table.timestamps(true, true);
   });

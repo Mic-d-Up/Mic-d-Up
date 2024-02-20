@@ -2,7 +2,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
 
-const EventCard = ({ location, date, startTime, endTime, ticketLink }) => {
+const EventCard = ({ name, location, date, startTime, endTime, ticketLink }) => {
   const [comment, setComment] = useState('');
   const [comments, setComments] = useState([]);
 

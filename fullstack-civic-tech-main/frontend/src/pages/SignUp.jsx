@@ -8,6 +8,8 @@ export default function SignUpPage() {
   const navigate = useNavigate();
   const { currentUser, setCurrentUser } = useContext(CurrentUserContext);
   const [errorText, setErrorText] = useState('');
+  // eslint-disable-next-line max-len
+  // const [formData, setFormData] = useState({ username: '', password: '', confirmPassword: '', name: '', profile_pic: '', artist_type: '' });
   const [username, setUsername] = useState('');
   const [name, setName] = useState('');
   const [typeOfArtist, setTypeOfArtist] = useState('');
@@ -41,6 +43,7 @@ export default function SignUpPage() {
   };
 
   const handleChange = (event) => {
+    // eslint-disable-next-line no-shadow
     const { name, value } = event.target;
     if (name === 'username') setUsername(value);
     if (name === 'name') setName(value);

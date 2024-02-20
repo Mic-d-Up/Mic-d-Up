@@ -12,22 +12,12 @@ export default function UsersPage() {
 console.log('hello')
   return <>
     <h1>Users</h1>
-    {/* <ul>
-      {
-        users.map((user) => <li key={user.id}><UserLink user={user} /></li>)
-      }
-    </ul> */}
     <ul>
     {users.map((user) => (
           <li key={user.id}>
-            <UserCard
-              username={user.username}
-              profile_pic={user.profile_pic}
-              artist_type={user.artist_type}
-            />
+            <UserCard user={user} />
           </li>
         ))}
     </ul>
-    {/* <UserCard/> */}
   </>;
 }

@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { createEvent } from "../adapters/event-adapter";
 import { useContext } from "react";
 import CurrentUserContext from "../contexts/current-user-context";
@@ -12,7 +13,7 @@ export default function CreateModal({ onClose }) {
     const event = await createEvent(formInput, currentUser);
     console.log(formInput, event, currentUser);
     e.target.reset();
-  }
+  };
 
   const handleCancel = () => {
     onClose();
@@ -81,5 +82,5 @@ export default function CreateModal({ onClose }) {
         </div>
       </div>
     </div>
-  </>
+  </>;
 }

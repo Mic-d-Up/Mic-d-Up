@@ -6,7 +6,7 @@
   <div className="card-content">
     <div className="media">
       <div className="media-left">
-        <figure className="profile-pic">
+        <figure className="image is-48x48">
           <img src={profile_pic} alt="Placeholder image"/>
         </figure>
       </div>

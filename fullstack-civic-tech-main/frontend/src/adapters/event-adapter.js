@@ -1,10 +1,10 @@
 /* eslint-disable max-len */
 import { fetchHandler, getPostOptions } from "../utils";
 
-const baseUrl = '/api/events';
+const baseUrl = '/api/';
 
-export const createEvent = async ({ name, user_id, location, date, start_time, end_time, ticket_link }) => {
-  fetchHandler(baseUrl, getPostOptions({ name, user_id, location, date, start_time, end_time, ticket_link }));
+export const createEvent = async ({ name, location, date, start_time, end_time, ticket_link }, user_id,) => {
+  fetchHandler(baseUrl, getPostOptions({ name, location, date, start_time, end_time, ticket_link }, user_id,));
 };
 
 export const getAllEvents = async () => {

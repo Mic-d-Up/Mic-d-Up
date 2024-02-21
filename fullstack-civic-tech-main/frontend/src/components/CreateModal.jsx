@@ -1,13 +1,17 @@
 /* eslint-disable react/no-unescaped-entities */
 import { createEvent } from "../adapters/event-adapter";
+import { useContext } from "react";
+import CurrentUserContext from "../contexts/current-user-context";
 
 export default function CreateModal({ onClose }) {
+  const { currentUser } = useContext(CurrentUserContext);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const formInput = Object.fromEntries(formData);
-    const event = await createEvent(formInput);
-    console.log(formData, formInput, event);
+    const event = await createEvent(formInput, currentUser);
+    console.log(formInput, event, currentUser);
     e.target.reset();
   };
 

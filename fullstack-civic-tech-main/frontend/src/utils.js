@@ -6,6 +6,7 @@ const basicFetchOptions = {
 export const deleteOptions = {
   method: 'DELETE',
   credentials: 'include',
+  headers: { 'Content-Type': 'application/json' },
 };
 
 export const getPostOptions = (body) => ({
@@ -30,6 +31,8 @@ export const fetchHandler = async (url, options = {}) => {
 
     const isJson = (headers.get('content-type') || '').includes('application/json');
     const responseData = await (isJson ? response.json() : response.text());
+
+    if(responseData.error) throw new Error(responseData.error)
 
     return [responseData, null];
   } catch (error) {

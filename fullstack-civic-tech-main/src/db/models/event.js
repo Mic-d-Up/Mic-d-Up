@@ -1,4 +1,4 @@
-const e = require('express');
+// const e = require('express');
 const knex = require('../knex');
 
 class Event {

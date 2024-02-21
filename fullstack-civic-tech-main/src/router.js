@@ -1,6 +1,6 @@
 const express = require('express');
 const userController = require('./controllers/user/index');
-const eventController = require('./controllers/event')
+const eventController = require('./controllers/event');
 const addModelsToRequest = require('./middleware/add-models-to-request');
 const checkAuthentication = require('./middleware/check-authentication'); // mvp neccessary 1
 

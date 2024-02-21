@@ -11,9 +11,9 @@
         </figure>
       </div>
       <div className="media-content">
-        <p className="title is-4">{name}</p>
-        <p className="subtitle is-6">{artist_type}</p>
-        <p className="subtitle is-6">{username}</p>
+        <p className="display-name">{name}</p>
+        <p className="artist-type">{artist_type}</p>
+        <p className="username">{username}</p>
       </div>
     </div>
   </div>

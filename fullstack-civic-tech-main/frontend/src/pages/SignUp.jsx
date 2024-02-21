@@ -26,16 +26,16 @@ export default function SignUpPage() {
     if (!username || !password) return setErrorText('Missing username or password');
     if (password !== confirmPassword) return setErrorText('Passwords do not match');
   
-    let profile_pic_url = null; // Initialize profile picture URL
+    let profile_pic_url = "../../public/img/default-profile-picture.png"
   
-    // Check if a profile picture is uploaded
     if (profile_pic) {
       const { file } = await base(profile_pic, {
         publicKey: '5fe7348726376d2e9e7d',
         store: 'auto',
       });
       profile_pic_url = `https://ucarecdn.com/${file}/`;
-    }
+    } 
+    console.log(profile_pic_url)
   
     const [user, error] = await createUser({ username, password, name, typeOfArtist, profile_pic: profile_pic_url });
     console.log(user);

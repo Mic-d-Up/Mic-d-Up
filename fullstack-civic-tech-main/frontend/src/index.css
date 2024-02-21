@@ -45,6 +45,12 @@ nav a {
   color: #FFF;
 }
 
+img {
+  object-fit: contain;
+  width: 48px;
+  height: 48px;
+}
+
 form {
   padding: 1rem;
   border: 1px solid #CCC;

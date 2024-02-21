@@ -5,6 +5,7 @@ import CurrentUserContext from "../contexts/current-user-context";
 
 export default function CreateModal({ onClose }) {
   const { currentUser } = useContext(CurrentUserContext);
+  const user_id = currentUser.id;
   const [name, setName] = useState('');
   const [location, setLocation] = useState('');
   const [date, setDate] = useState('');
@@ -14,12 +15,8 @@ export default function CreateModal({ onClose }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // if (error) return se
-    const formData = new FormData(e.target);
-    const formInput = Object.fromEntries(formData);
-    const [event, error] = await createEvent({ name, location, date, start_time, end_time, ticket_link })
-    // const event = await createEvent(formInput);
-    console.log(formInput, event, currentUser);
+    const [event, error] = await createEvent({ user_id, name, location, date, start_time, end_time, ticket_link })
+    console.log(event);
     e.target.reset();
   };
 
@@ -39,42 +36,42 @@ export default function CreateModal({ onClose }) {
             <div className="field">
               <label className="label">Name</label>
               <div className="control">
-                <input className="input" type="text" placeholder="Name" name="name" />
+                <input className="input" type="text" placeholder="Name" name="name" onChange={e => setName(e.target.value)} />
               </div>
             </div>
 
             <div className="field">
               <label className="label">Date</label>
               <div className="control">
-                <input className="input" type="date" placeholder="Date" name="date" />
+                <input className="input" type="date" placeholder="Date" name="date" onChange={e => setDate(e.target.value)} />
               </div>
             </div>
 
             <div className="field">
               <label className="label">Start Time</label>
               <div className="control">
-                <input className="input" type="time" placeholder="start time input" name="start_time" />
+                <input className="input" type="time" placeholder="start time input" name="start_time" onChange={e => setStartTime(e.target.value)} />
               </div>
             </div>
 
             <div className="field">
               <label className="label">End Time</label>
               <div className="control">
-                <input className="input" type="time" placeholder="end time input" name="end_time" />
+                <input className="input" type="time" placeholder="end time input" name="end_time" onChange={e => setEndTime(e.target.value)} />
               </div>
             </div>
 
             <div className="field">
               <label className="label">Location</label>
               <div className="control">
-                <textarea className="textarea" placeholder="Textarea" name="location" ></textarea>
+                <textarea className="textarea" placeholder="Textarea" name="location" onChange={e => setLocation(e.target.value)} ></textarea>
               </div>
             </div>
 
             <div className="field">
               <label className="label">Tickets</label>
               <div className="control">
-                <input className="input" type="text" name="ticket_link" />
+                <input className="input" type="text" name="ticket_link" onChange={e => setTicketLink(e.target.value)} />
               </div>
             </div>
 

@@ -47,8 +47,7 @@ export default function UserPage() {
   return <>
     <h1>{profileUsername}</h1>
     { !!isCurrentUserProfile && <button onClick={handleLogout}>Log Out</button> }
-    <button onClick={deleteAccount}> Delete Account</button>
-    <p>If the user had any data, here it would be</p>
+    { !!isCurrentUserProfile && <button onClick={deleteAccount}>Delete Account</button> }
     <p>Fake Bio or something</p>
     {
       !!isCurrentUserProfile

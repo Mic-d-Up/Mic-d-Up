@@ -28,10 +28,12 @@ class Event {
   };
 
   static async create(name, user_id, location, date, start_time, end_time, ticket_link) {
+    console.log(name, user_id, location, date, start_time, end_time, ticket_link)
     const query = 'INSERT INTO events (name, "user_id", location, date, start_time, end_time, ticket_link) VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING *;';
     const args = [name, user_id, location, date, start_time, end_time, ticket_link];
     const { rows } = await knex.raw(query, args);
     const event = rows[0];
+    console.log('eventModel', event);
     return new Event(event);
   };
 };

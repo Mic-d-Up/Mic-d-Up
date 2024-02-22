@@ -1,26 +1,26 @@
- export default function UserCard({ username, name, profile_pic, artist_type }) {
+import { Link } from "react-router-dom";
+ 
+export default function UserCard({ user }) {
 
-    return (
-        <>
-    <div className="card">
-  <div className="card-content">
-    <div className="media">
-      <div className="media-left">
-        <figure className="image is-48x48">
-          <img src={profile_pic ? profile_pic :  "../../public/img/default-profile-picture.png"} 
+  return (
+    <Link to={`/users/${user.id}`}>
+      <div className="card">
+        <div className="card-content">
+          <div className="media">
+            <div className="media-left">
+              <figure className="image is-48x48">
+                <img src={profile_pic ? profile_pic :  "../../public/img/default-profile-picture.png"} 
           alt="Placeholder image"/>
-        </figure>
-        {console.log(profile_pic)}
+              </figure>
+            </div>
+            <div className="media-content">
+              <p className="title is-4">{user.username}</p>
+              <p className="subtitle is-6">{user.artist_type}</p>
+              <p className="subtitle is-6">{user.name}</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div className="media-content">
-        <p className="display-name">{name}</p>
-        <p className="artist-type">{artist_type}</p>
-        <p className="username">{username}</p>
-      </div>
-    </div>
-  </div>
-</div>
-</>
-);
+    </Link>
+  );
 };
-

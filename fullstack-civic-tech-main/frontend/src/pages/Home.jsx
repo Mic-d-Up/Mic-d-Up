@@ -9,9 +9,16 @@ import EventCard from '../components/EventCard';
 export default function HomePage() {
   const [showModal, setShowModal] = useState(false);
   const [events, setEvents] = useState([]);
+
+  const getEveryEvent = async () => {
+    const eventsObj = await getAllEvents()
+    console.log(eventsObj)
+    setEvents(eventsObj)
+  }
   useEffect(() => {
-    getAllEvents().then(setEvents);
+    getEveryEvent()
   }, []);
+
   const { currentUser } = useContext(CurrentUserContext);
   const navigate = useNavigate();
 
@@ -24,9 +31,9 @@ export default function HomePage() {
       : <button type="button" onClick={() => setShowModal(!showModal)}>New Event</button> 
     }
     {events.map(event => {
-      <li key={event.id}>
+      return ( <li key={event.id}>
         <EventCard event={event} />
-      </li>
+      </li> )
     })}
     {showModal && <CreateModal setShowModal={setShowModal} onClose={() => setShowModal(false)} />}
   </>;

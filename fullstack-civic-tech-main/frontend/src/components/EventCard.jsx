@@ -2,7 +2,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
 
-const EventCard = ({ name, location, date, startTime, endTime, ticketLink }) => {
+const EventCard = ({ event }) => {
   const [comment, setComment] = useState('');
   const [comments, setComments] = useState([]);
 
@@ -21,10 +21,11 @@ const EventCard = ({ name, location, date, startTime, endTime, ticketLink }) => 
   return (
     <div className="card">
       <div className="card-content">
-        <p className="title">{location}</p>
-        <p>Date: {date}</p>
-        <p>Time: {startTime} - {endTime}</p>
-        <a href={ticketLink} target="_blank" rel="noopener noreferrer">Get Tickets</a>
+        <p className="title">{event.name}</p>
+        <p>{event.location}</p>
+        <p>Date: {event.date}</p>
+        <p>Time: {event.startTime} - {event.endTime}</p>
+        <a href={event.ticketLink} target="_blank" rel="noopener noreferrer">Get Tickets</a>
       </div>
       <footer className="card-footer">
         <div className="card-footer-item">

@@ -48,6 +48,15 @@ class Event {
     return Event_User;
   }
 
+  static async getAllJoinedEvents(user_id) {
+    const query = 'Select *  FROM "Event_Users" WHERE user_id = ?';
+    const args = [user_id];
+    const { rows } = await knex.raw(query, args);
+    const Event_User = rows;
+    console.log('Event_User', Event_User);
+    return Event_User;
+  }
+
   static async leaveEvent(user_id, event_id) {
     const query = 'DELETE FROM "Event_Users" WHERE user_id = ? AND event_id = ? RETURNING event_id;';
     const args = [user_id, event_id];

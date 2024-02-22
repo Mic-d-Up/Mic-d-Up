@@ -5,21 +5,23 @@ import CurrentUserContext from "../contexts/current-user-context";
 export default function SiteHeadingAndNav() {
   const { currentUser } = useContext(CurrentUserContext);
 
-  return <header>
-    <a id='logo' href='/'>React/Express Auth</a>
-    <nav>
-      <ul>
-        <li><NavLink to='/home'>Home</NavLink></li>
-        <li><NavLink to='/users' end={true}>Users</NavLink></li>
-        {
-          currentUser
-            ? <li><NavLink to={`/users/${currentUser.id}`}>{currentUser.username}</NavLink></li>
-            : <>
-              <li><NavLink to='/login'>Login</NavLink></li>
-              <li><NavLink to='/sign-up'>Sign Up</NavLink></li>
-            </>
-        }
-      </ul>
-    </nav>
-  </header>;
+  return (
+    <header>
+      <a id='logo' href='/'>Mic'd Up</a>
+      <nav>
+        <ul>
+          <li><div className="nav-link"><NavLink to='/home' activeClassName='active'>Home</NavLink></div></li>
+          <li><div className="nav-link"><NavLink to='/users' end={true} activeClassName='active'>Members</NavLink></div></li>
+          {
+            currentUser
+              ? <li><div className="nav-link"><NavLink to={`/users/${currentUser.id}`}>{currentUser.username}</NavLink></div></li>
+              : <>
+                <li><div className="nav-link"><NavLink to='/login' activeClassName='active'>Login</NavLink></div></li>
+                <li><div className="nav-link"><NavLink to='/sign-up' activeClassName='active'>Sign Up</NavLink></div></li>
+              </>
+          }
+        </ul>
+      </nav>
+    </header>
+  );
 }

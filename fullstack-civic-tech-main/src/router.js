@@ -4,6 +4,7 @@ const eventController = require('./controllers/event');
 const addModelsToRequest = require('./middleware/add-models-to-request');
 const checkAuthentication = require('./middleware/check-authentication');
 const commentController = require('./controllers/comment/index');
+
 const Router = express.Router();
 Router.use(addModelsToRequest);
 
@@ -16,6 +17,8 @@ Router.post('/users/:id/events', eventController.create);
 
 Router.get('/events/:id/comments', commentController.list);
 Router.post('/events/:id/users/:id/comments', commentController.create);
+Router.post('/Event_Users', eventController.joinAnEvent);
+Router.delete('/Event_Users', eventController.leaveAnEvent);
 
 Router.post('/login', userController.login);
 Router.delete('/logout', userController.logout);

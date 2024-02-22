@@ -1,17 +1,17 @@
 /* eslint-disable no-shadow */
 // eslint-disable-next-line no-unused-vars
-import React, { useState, useContext, useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { userJoinEvent, userLeaveEvent } from '../adapters/event-adapter';
 import CurrentUserContext from "../contexts/current-user-context";
 import "./button.css" 
 import { createComment, getAllComments } from '../adapters/comment-adapter';
-import CurrentUserContext from "../contexts/current-user-context";
+
 
 const EventCard = (props) => {
   const {event, joinedEvents, loadJoinEvents} = props
   const [userInput, setUserInput] = useState('');
   const [comments, setComments] = useState([]);
-  const { currentUser } = useContext(CurrentUserContext);  const { currentUser } = useContext(CurrentUserContext);
+  const { currentUser } = useContext(CurrentUserContext);
   const user_id = currentUser.id;
   const event_id = event.id;
   const handleCommentChange = (e) => {

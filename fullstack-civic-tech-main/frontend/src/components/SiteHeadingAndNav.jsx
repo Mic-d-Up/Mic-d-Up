@@ -12,15 +12,10 @@ export default function SiteHeadingAndNav() {
         <ul>
           <li><div className="nav-link"><NavLink to='/home' activeClassName='active'>Home</NavLink></div></li>
           <li><div className="nav-link"><NavLink to='/users' end={true} activeClassName='active'>Members</NavLink></div></li>
-          {
-            currentUser
-              ? <li><div className="nav-link"><NavLink to={`/users/${currentUser.id}`}>{currentUser.username}</NavLink></div></li>
-              : <>
-                <li><div className="nav-link"><NavLink to='/sign-up' activeClassName='active'>Sign Up</NavLink></div></li>
-              </>
-          }
+          {currentUser && <li><div className="nav-link"><NavLink to={`/users/${currentUser.id}`}>{currentUser.username}</NavLink></div></li>}
         </ul>
       </nav>
     </header>
   );
 }
+

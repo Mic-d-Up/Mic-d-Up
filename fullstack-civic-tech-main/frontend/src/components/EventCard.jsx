@@ -1,20 +1,28 @@
 /* eslint-disable no-shadow */
 // eslint-disable-next-line no-unused-vars
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { createComment, getAllComments } from '../adapters/comment-adapter';
+import CurrentUserContext from "../contexts/current-user-context";
 
 const EventCard = ({ event }) => {
-  const [comment, setComment] = useState('');
+  const [userInput, setUserInput] = useState('');
   const [comments, setComments] = useState([]);
-
-  const handleCommentChange = (event) => {
-    setComment(event.target.value);
+  const { currentUser } = useContext(CurrentUserContext);
+  const user_id = currentUser.id;
+  const event_id = event.id;
+  const handleCommentChange = (e) => {
+    setUserInput(e.target.value);
   };
 
-  const handleCommentSubmit = (event) => {
-    event.preventDefault();
-    if (comment.trim() !== '') {
-      setComments([...comments, comment]);
-      setComment('');
+  const handleCommentSubmit = async (e) => {
+    e.preventDefault();
+    if (userInput.trim() !== '') {
+      setComments([...comments, userInput]);
+      console.log(userInput)
+      const content = userInput;
+      const [comment, error] = await createComment( { user_id, event_id, content });
+      console.log(comment, error)
+      setUserInput('');
     }
   };
 
@@ -36,7 +44,7 @@ const EventCard = ({ event }) => {
                   className="input"
                   type="text"
                   placeholder="Add a comment..."
-                  // value={comment}
+                  value={userInput}
                   onChange={handleCommentChange}
                 />
               </div>

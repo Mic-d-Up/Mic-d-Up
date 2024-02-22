@@ -16,7 +16,7 @@ Router.get('/events', eventController.list);
 Router.post('/users/:id/events', eventController.create);
 
 Router.get('/events/:id/comments', commentController.list);
-Router.post('/events/:id/users/:id/comments', commentController.create);
+Router.post('/users/:id/events/:id/comments', commentController.create);
 Router.post('/Event_Users', eventController.joinAnEvent);
 Router.delete('/Event_Users', eventController.leaveAnEvent);
 

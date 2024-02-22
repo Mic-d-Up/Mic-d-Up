@@ -19,6 +19,8 @@ export default function HomePage() {
     getEveryEvent()
   }, []);
 
+
+
   const { currentUser } = useContext(CurrentUserContext);
   const navigate = useNavigate();
 
@@ -35,6 +37,6 @@ export default function HomePage() {
         <EventCard event={event} />
       </li> )
     })}
-    {showModal && <CreateModal setShowModal={setShowModal} onClose={() => setShowModal(false)} />}
+    {showModal && <CreateModal getEveryEvent= {getEveryEvent} setShowModal={setShowModal} onClose={() => setShowModal(false)} />}
   </>;
 };

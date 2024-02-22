@@ -36,7 +36,7 @@ const EventCard = ({ event }) => {
                   className="input"
                   type="text"
                   placeholder="Add a comment..."
-                  value={comment}
+                  // value={comment}
                   onChange={handleCommentChange}
                 />
               </div>

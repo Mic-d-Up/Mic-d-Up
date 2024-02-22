@@ -3,7 +3,7 @@ const { hashPassword, isValidPassword } = require('../../utils/auth-utils');
 
 class Comment {
 
-  constructor({ user_id, event_id, content }) {
+  constructor({ id, user_id, event_id, content }) {
     this.id = id;
     this.user_id = user_id;
     this.event_id = event_id;
@@ -33,7 +33,8 @@ class Comment {
   }
 
   static async create(user_id, event_id, content) {
-    const query = `INSERT INTO comments (user_id, event_id, content)
+    console.log(user_id, event_id, content);
+    const query = `INSERT INTO comments ("user_id", "event_id", content)
       VALUES (?, ?, ?) RETURNING *`;
     const args = [user_id, event_id, content];
     const { rows } = await knex.raw(query, args);

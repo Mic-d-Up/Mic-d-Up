@@ -5,7 +5,6 @@ const createEvent = async (req, res) => {
     body: { name,  user_id, location, date, start_time, end_time, ticket_link },
     params: { }
   } = req;
-    console.log(name, user_id, location, date, start_time, end_time, ticket_link)
   const event = await Event.create(name, user_id, location, date, start_time, end_time, ticket_link);
   res.send(event);
 };

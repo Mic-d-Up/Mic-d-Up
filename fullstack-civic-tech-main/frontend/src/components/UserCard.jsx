@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+ 
 export default function UserCard({ user }) {
 
   return (
@@ -9,7 +9,8 @@ export default function UserCard({ user }) {
           <div className="media">
             <div className="media-left">
               <figure className="image is-48x48">
-                <img src={user.profile_pic} alt="Placeholder image" />
+                <img src={profile_pic ? profile_pic :  "../../public/img/default-profile-picture.png"} 
+          alt="Placeholder image"/>
               </figure>
             </div>
             <div className="media-content">

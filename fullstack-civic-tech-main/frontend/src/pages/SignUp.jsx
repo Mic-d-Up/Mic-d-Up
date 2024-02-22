@@ -21,21 +21,23 @@ export default function SignUpPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+  
     setErrorText('');
     if (!username || !password) return setErrorText('Missing username or password');
     if (password !== confirmPassword) return setErrorText('Passwords do not match');
-      
-    const { file } = await base(
-      profile_pic,
-      {
+  
+    let profile_pic_url = "../../public/img/default-profile-picture.png"
+  
+    if (profile_pic) {
+      const { file } = await base(profile_pic, {
         publicKey: '5fe7348726376d2e9e7d',
         store: 'auto',
-      }
-    )
-      const url =  `https://ucarecdn.com/${file}/`
-
-    const [user, error] = await createUser({ username, password, name, typeOfArtist, profile_pic:url });
+      });
+      profile_pic_url = `https://ucarecdn.com/${file}/`;
+    } 
+    console.log(profile_pic_url)
+  
+    const [user, error] = await createUser({ username, password, name, typeOfArtist, profile_pic: profile_pic_url });
     console.log(user);
     if (error) return setErrorText(error.message);
     setCurrentUser(user);

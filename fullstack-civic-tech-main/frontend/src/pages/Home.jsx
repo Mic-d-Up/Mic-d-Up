@@ -22,6 +22,7 @@ export default function HomePage() {
     getEveryEvent();
   }, []);
 
+  const { currentUser } = useContext(CurrentUserContext);
   const navigate = useNavigate();
 
   const loadJoinEvents = async () => {

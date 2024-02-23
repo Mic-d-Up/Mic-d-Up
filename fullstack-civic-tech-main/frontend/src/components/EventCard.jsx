@@ -18,10 +18,8 @@ const EventCard = ({ event }) => {
     e.preventDefault();
     if (userInput.trim() !== '') {
       setComments([...comments, userInput]);
-      console.log(userInput)
       const content = userInput;
       const [comment, error] = await createComment( { user_id, event_id, content });
-      console.log(comment, error)
       setUserInput('');
     }
   };

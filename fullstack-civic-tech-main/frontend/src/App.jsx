@@ -24,11 +24,11 @@ export default function App() {
       <Routes>
         <Route path='/'element={<LandingPage/>} />
         <Route path='/home' element={<Home />} />
-        <Route path='/login' element={<LoginPage />} />
-        <Route path='/sign-up' element={<SignUpPage />} />
+        <Route path='/login' element={<LandingPage />} />
+        <Route path='/sign-up' element={<LandingPage />} />
         <Route path='/users' element={<UsersPage />} />
         <Route path='/users/:id' element={<UserPage />} />
-        {/* <Route path='/home/events' element={<Home />} /> */}
+        <Route path='/home/events' element={<Home />} />
         <Route path='*' element={<NotFoundPage />} />
       </Routes>
     </main>

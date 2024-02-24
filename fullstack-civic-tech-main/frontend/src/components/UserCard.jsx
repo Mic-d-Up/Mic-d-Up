@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
- 
+import DefaultImageUrl from "../img/default-profile-picture.png" 
+
 export default function UserCard({ user }) {
 
   return (
@@ -9,7 +10,7 @@ export default function UserCard({ user }) {
           <div className="media">
             <div className="media-left">
               <figure className="image is-48x48">
-                <img src={user.profile_pic ? user.profile_pic :  "../../public/img/default-profile-picture.png"} 
+                <img src={user.profile_pic ? user.profile_pic :  DefaultImageUrl} 
           alt="Placeholder image"/>
               </figure>
             </div>

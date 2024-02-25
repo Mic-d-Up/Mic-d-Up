@@ -26,7 +26,7 @@ export default function SignUpPage() {
     if (!username || !password) return setErrorText('Missing username or password');
     if (password !== confirmPassword) return setErrorText('Passwords do not match');
   
-    let profile_pic_url = "../../public/img/default-profile-picture.png"
+    let profile_pic_url = null
   
     if (profile_pic) {
       const { file } = await base(profile_pic, {

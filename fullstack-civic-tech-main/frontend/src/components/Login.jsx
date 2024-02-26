@@ -29,7 +29,7 @@ export default function LoginForm() {
       <label htmlFor="password">Password</label>
       <input type="password" autoComplete="current-password" id="password" name="password" />
 
-      <button>Log in!</button>
+      <button>Log in</button>
     </form>
     { !!errorText && <p>{errorText}</p> }
   </>;

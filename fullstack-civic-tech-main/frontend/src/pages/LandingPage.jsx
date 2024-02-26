@@ -22,8 +22,8 @@ const [isLogin, setIsLogin] = React.useState(true);
 
           <div className="RightSide">
             {/* <LoginForm/> */}
-            
-            {isLogin ? <LoginForm/> : <SignUpForm />}
+            {!isLogin ? <LoginForm/> : <SignUpForm />}
+            <p>Already have an account with us?</p>
             <button onClick={() => setIsLogin(prevIsSignUp => !prevIsSignUp)}>{isLogin ? 'Login':'SignUp'}</button>
           </div>
         </div>

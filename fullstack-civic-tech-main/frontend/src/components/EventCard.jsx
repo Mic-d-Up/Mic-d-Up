@@ -8,14 +8,14 @@ const EventCard = ({ event }) => {
   const [userInput, setUserInput] = useState('');
   const [comments, setComments] = useState([]);
   const { currentUser } = useContext(CurrentUserContext);
-  const user_id = currentUser.id;
   const event_id = event.id;
   const handleCommentChange = (e) => {
     setUserInput(e.target.value);
   };
-
+  
   const handleCommentSubmit = async (e) => {
     e.preventDefault();
+    const user_id = currentUser.id;
     if (userInput.trim() !== '') {
       setComments([...comments, userInput]);
       const content = userInput;

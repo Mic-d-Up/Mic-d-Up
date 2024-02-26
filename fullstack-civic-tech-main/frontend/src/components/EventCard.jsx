@@ -12,20 +12,18 @@ const EventCard = (props) => {
   const [userInput, setUserInput] = useState('');
   const [comments, setComments] = useState([]);
   const { currentUser } = useContext(CurrentUserContext);
-  const user_id = currentUser.id;
   const event_id = event.id;
   const handleCommentChange = (e) => {
     setUserInput(e.target.value);
   };
-
+  
   const handleCommentSubmit = async (e) => {
     e.preventDefault();
+    const user_id = currentUser.id;
     if (userInput.trim() !== '') {
       setComments([...comments, userInput]);
-      console.log(userInput)
       const content = userInput;
       const [comment, error] = await createComment( { user_id, event_id, content });
-      console.log(comment, error)
       setUserInput('');
     }
   };

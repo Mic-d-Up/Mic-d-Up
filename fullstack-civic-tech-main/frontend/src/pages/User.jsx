@@ -39,19 +39,43 @@ export default function UserPage() {
   if (!userProfile && !errorText) return null;
   if (errorText) return <p>{errorText}</p>;
 
-  // What parts of state would change if we altered our currentUser context?
-  // Ideally, this would update if we mutated it
-  // But we also have to consider that we may NOT be on the current users page
   const profileUsername = isCurrentUserProfile ? currentUser.username : userProfile.username;
 
-  return <>
-    <h1>{profileUsername}</h1>
+  return (
+    <div className="container is-flex is-justify-content-center" style={{width: "100vw"}}>
+      <div className="box">
+        <h1 className="title has-text-centered">{profileUsername}</h1>
+        {isCurrentUserProfile && (
+          <div className="buttons is-centered">
+            <button
+              className="button is-danger"
+              onClick={handleLogout}
+            >
+              Log Out
+            </button>
+            <button
+              className="button is-danger"
+              onClick={deleteAccount}
+            >
+              Delete Account
+            </button>
+          </div>
+        )}
+        <p className="has-text-centered">Fake Bio or something</p>
+        {isCurrentUserProfile && (
+          <UpdateUsernameForm
+            currentUser={currentUser}
+            setCurrentUser={setCurrentUser}
+          />
+        )}
+      </div>
+    </div>)
+    {/* <h1>{profileUsername}</h1>
     { !!isCurrentUserProfile && <button onClick={handleLogout}>Log Out</button> }
     { !!isCurrentUserProfile && <button onClick={deleteAccount}>Delete Account</button> }
     <p>Fake Bio or something</p>
     {
       !!isCurrentUserProfile
         && <UpdateUsernameForm currentUser={currentUser} setCurrentUser={setCurrentUser}/>
-    }
-  </>;
+    } */}
 }

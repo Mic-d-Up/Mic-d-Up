@@ -3,8 +3,18 @@ body {
   margin: 0;
 }
 
-input, label {
+.input, .label {
   display: block;
+  color: white;
+  background-color: transparent;
+  border-color: hsl(266, 64%, 28%);
+  border-width: .15em;
+  width: 70vw;
+  border-radius: 1em;
+}
+
+.input::placeholder {
+  color: white;
 }
 
 /* input {
@@ -52,12 +62,12 @@ img {
   height: 48px;
 }
 
-form {
+/* form {
   padding: 1rem;
   border: 1px solid #CCC;
   width: 15rem;
   margin: 1rem auto;
-}
+} */
 
 /* automatically added by NavLink component */
 .active {

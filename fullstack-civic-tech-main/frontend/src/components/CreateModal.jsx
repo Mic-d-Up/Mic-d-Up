@@ -17,7 +17,6 @@ export default function CreateModal(props) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const [event, error] = await createEvent({ user_id, name, location, date, start_time, end_time, ticket_link })
-    console.log(event);
     e.target.reset();
     setTimeout(async () => {
       await getEveryEvent()

@@ -41,11 +41,16 @@ export default function UserPage() {
 
   const profileUsername = isCurrentUserProfile ? currentUser.username : userProfile.username;
   const profileArtistType = isCurrentUserProfile ? currentUser.artist_type : userProfile.artist_type;
-  const profileName =isCurrentUserProfile ? currentUser.name : userProfile.name;
-  console.log(profileArtistType,profileName,profileUsername);;
+  const profileName = isCurrentUserProfile ? currentUser.name : userProfile.name;
+  const profilePic = isCurrentUserProfile ? currentUser.profile_pic : userProfile.profile_pic;
+  console.log(profilePic);
   return (
     <div className="container is-flex is-justify-content-center" style={{width: "100vw"}}>
       <div className="box">
+        <figure className="image is-48x48">
+                <img src={profilePic} 
+          alt="Profile picture"/>
+        </figure>
         <h1 className="has-text-centered is-size-2">{profileName}</h1>
         <h2 className="has-text-centered is-size-4">@{profileUsername}</h2>
         <h2 className="has-text-centered is-size-5">{profileArtistType}</h2>

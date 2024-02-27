@@ -19,13 +19,9 @@ export default function landing() {
       </div>
 
       <div className="RightSide">
-          <form>
-          <input type="text" placeholder="Username" />
-          <input type="password" placeholder="Password" />
-          <button type="submit">Log In</button>
-          <button type="submit">Sign Up</button>
-        </form>
-      </div>
+            {!isLogin ? <LoginForm/> : <SignUpForm />}
+            <button onClick={() => setIsLogin(prevIsSignUp => !prevIsSignUp)}>{isLogin ? 'Login':'SignUp'}</button>
+          </div>
     </div>
     </>
   );

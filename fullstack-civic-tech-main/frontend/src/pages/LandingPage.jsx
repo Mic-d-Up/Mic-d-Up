@@ -12,7 +12,7 @@ const [isLogin, setIsLogin] = React.useState(true);
     <>
         <div className="container">
           <div className="LeftSide">
-          <img src= "./MIA_at_concert/" />
+          <img src= "https://github.com/Mic-d-Up/Mic-d-Up-Civic-Tech/blob/mayaluisa-forms-and-footer/fullstack-civic-tech-main/frontend/src/img/Amanda_Gorman_in_purple.jpg?raw=true" class="image is-rounded is-128x128" />
           </div>
           <div className="MiddleSection">
           <h1>Welcome to our Website</h1>

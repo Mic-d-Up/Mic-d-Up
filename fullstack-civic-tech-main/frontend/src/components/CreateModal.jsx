@@ -13,7 +13,6 @@ export default function CreateModal(props) {
   const [start_time, setStartTime] = useState('');
   const [end_time, setEndTime] = useState('');
   const [ticket_link, setTicketLink] = useState(null);
-  console.log("Initiliazed?!")
 
   const handleSubmit = async (e) => {
     e.preventDefault();

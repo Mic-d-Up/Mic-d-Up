@@ -26,7 +26,7 @@ export default function SignUpForm() {
     if (!username || !password) return setErrorText('Missing username or password');
     if (password !== confirmPassword) return setErrorText('Passwords do not match');
   
-    let profile_pic_url = null
+    let profile_pic_url = "../../public/img/default-profile-picture.png"
   
     if (profile_pic) {
       const { file } = await base(profile_pic, {
@@ -131,7 +131,7 @@ export default function SignUpForm() {
         <button type="submit">Sign Up Now!</button>
         {errorText && <p className='alreadyTaken'>{errorText}</p>}
       </form>
-      {/* <p>Already have an account with us? <Link to="/login">Log in!</Link></p> */}
+      <p>Already have an account with us? </p>
     </>
   );
 }

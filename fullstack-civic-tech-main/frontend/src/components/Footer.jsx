@@ -1,14 +1,19 @@
-/* eslint-disable react/no-unescaped-entities */
-export default function Footer() {
+// Footer.js
+
+import React from 'react';
+// import './footer.css'; // Import CSS file
+
+function Footer() {
   return (
-    <footer className="footer">
-      <div className="content has-text-centered">
-        <p>
-        <strong>Mic'd Up</strong> by <a href="https://github.com/Mic-d-Up">Fearsome Four</a>. The source code is licensed.
-        <a href="https://github.com/Mic-d-Up/Mic-d-Up-Civic-Tech/tree/main/fullstack-civic-tech-main">Repository</a>. The website content
-      is licensed <a href="http://marcylabschool.org">Marcy Lab School</a>.
-      </p>
-    </div>
-  </footer>
+    <footer className="footer is-fullwidth">
+      <div className="content is-justify-content-space-around is-fullwidth">
+        <strong>2024 Mic'd Up</strong> <a href="https://github.com/Mic-d-Up/Mic-d-Up-Civic-Tech/tree/main/fullstack-civic-tech-main">GitHub</a>
+        <a href="/Home">Home</a>
+        <a href="/Profile">User_profile_page</a>
+        <a href="/SignUp">Create Account</a>
+      </div>
+    </footer>
   );
 }
+
+export default Footer;

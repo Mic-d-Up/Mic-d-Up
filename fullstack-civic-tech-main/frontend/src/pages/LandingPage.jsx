@@ -12,13 +12,13 @@ const [isLogin, setIsLogin] = React.useState(true);
     <>
         <div className="container">
           <div className="LeftSide">
-            <img src="static-picture.jpg" alt="Static Picture" />
+          <img src= "./MIA_at_concert/" />
           </div>
 
           <div className="MiddleSection">
-            <h1>Mission statement</h1>
-            <h4>Blurb about our aim/goals with the site</h4>
-          </div>
+          <h1>Welcome to our Website</h1>
+        <p>At Mic’d Up, our mission is to revolutionize the artistic landscape by providing a unique platform dedicated to community building and exposure. Unlike traditional platforms, Mic’d Up focuses on the seamless attendance of events, fostering meaningful connections among artists, amplifying artistic voices, and shaping a world where every creative mind finds its stage. Elevate your music experience with our app, where creativity meets connectivity!</p>
+      </div>
 
           <div className="RightSide">
             {!isLogin ? <LoginForm/> : <SignUpForm />}

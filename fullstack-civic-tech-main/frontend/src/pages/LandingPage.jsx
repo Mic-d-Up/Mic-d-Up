@@ -9,6 +9,7 @@ export default function landing() {
       <div className="LeftSide">
       <img src= "https://github.com/Mic-d-Up/Mic-d-Up-Civic-Tech/blob/mayaluisa-forms-and-footer/fullstack-civic-tech-main/frontend/src/img/Amanda_Gorman_in_purple.jpg?raw=true" class="image is-rounded is-128x128" />
       </div>
+      
       <div className="MiddleSection">
         <h1>Welcome to our Website</h1>
         <p>At Mic’d Up, our mission is to revolutionize the artistic landscape by providing a unique platform dedicated to community building and exposure. Unlike traditional platforms, Mic’d Up focuses on the seamless attendance of events, fostering meaningful connections among artists, amplifying artistic voices, and shaping a world where every creative mind finds its stage. Elevate your music experience with our app, where creativity meets connectivity!</p>

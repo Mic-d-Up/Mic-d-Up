@@ -31,6 +31,7 @@ export default function LoginForm() {
 
       <button>Log in</button>
     </form>
+    <p>Don't have an account with us? </p>
     { !!errorText && <p>{errorText}</p> }
   </>;
 }

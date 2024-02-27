@@ -131,7 +131,7 @@ export default function SignUpForm() {
         <button type="submit">Sign Up Now!</button>
         {errorText && <p className='alreadyTaken'>{errorText}</p>}
       </form>
-      <p>Already have an account with us? <Link to="/login">Log in!</Link></p>
+      {/* <p>Already have an account with us? <Link to="/login">Log in!</Link></p> */}
     </>
   );
 }

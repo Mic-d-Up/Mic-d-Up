@@ -11,6 +11,7 @@ body {
   border-width: .15em;
   width: 70vw;
   border-radius: 1em;
+  color-scheme: dark;
 }
 
 .input::placeholder {

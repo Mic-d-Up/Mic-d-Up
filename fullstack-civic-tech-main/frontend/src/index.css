@@ -12,9 +12,9 @@ input, label {
 } */
 
 
-main {
+/* main {
   height: 100vh;
-}
+} */
 
 
 header {
@@ -63,4 +63,30 @@ form {
   color: #EEBC32;
   font-weight: bold;
   font-style: italic;
+}
+
+
+.card {
+  /* width: 1000px; Adjust width as per your preference */
+  margin-bottom: 20px; /* Add some margin between the cards */
+  width: 30px;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column; /* Arrange cards vertically */
+  align-items: center; /* Align cards in the center horizontally */
+  list-style-type: none;
+  
+}
+
+.cards-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; /* Align cards in the center horizontally */
+}
+
+.cardli {
+  margin: 10px; /* Adjust margin between cards */
+  width: calc(33.33% - 20px);
 }

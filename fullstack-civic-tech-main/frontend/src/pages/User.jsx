@@ -40,11 +40,16 @@ export default function UserPage() {
   if (errorText) return <p>{errorText}</p>;
 
   const profileUsername = isCurrentUserProfile ? currentUser.username : userProfile.username;
-
+  const profileArtistType = isCurrentUserProfile ? currentUser.artist_type : userProfile.artist_type;
+  const profileName =isCurrentUserProfile ? currentUser.name : userProfile.name;
+  console.log(profileArtistType,profileName,profileUsername);;
   return (
     <div className="container is-flex is-justify-content-center" style={{width: "100vw"}}>
       <div className="box">
-        <h1 className="title has-text-centered">{profileUsername}</h1>
+        <h1 className="has-text-centered is-size-2">{profileName}</h1>
+        <h2 className="has-text-centered is-size-4">@{profileUsername}</h2>
+        <h2 className="has-text-centered is-size-5">{profileArtistType}</h2>
+        <br />
         {isCurrentUserProfile && (
           <div className="buttons is-centered">
             <button
@@ -61,7 +66,6 @@ export default function UserPage() {
             </button>
           </div>
         )}
-        <p className="has-text-centered">Fake Bio or something</p>
         {isCurrentUserProfile && (
           <UpdateUsernameForm
             currentUser={currentUser}

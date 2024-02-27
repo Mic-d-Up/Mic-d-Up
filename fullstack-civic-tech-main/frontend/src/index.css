@@ -1,6 +1,7 @@
 body {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   margin: 0;
+  background-color: #AB82FF;
 }
 
 input, label {
@@ -22,7 +23,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem 1rem;
-  background: #000;
+  background: #240046;
 }
 
 #logo {
@@ -41,14 +42,18 @@ nav ul {
 }
 
 nav a {
-  display: block;
-  color: #FFF;
+  padding: 0.5rem 1rem;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px; 
 }
 
 img {
   object-fit: contain;
-  width: 48px;
-  height: 48px;
+  width: 50%;
+  height: 50%;
+  border-radius: 46%;
 }
 
 form {
@@ -58,35 +63,54 @@ form {
   margin: 1rem auto;
 }
 
-/* automatically added by NavLink component */
 .active {
   color: #EEBC32;
   font-weight: bold;
   font-style: italic;
 }
 
-
 .card {
-  /* width: 1000px; Adjust width as per your preference */
-  margin-bottom: 20px; /* Add some margin between the cards */
-  width: 30px;
+  margin-bottom: 20px; 
+  width: fit-content;
 }
 
 .card-container {
   display: flex;
-  flex-direction: column; /* Arrange cards vertically */
-  align-items: center; /* Align cards in the center horizontally */
+  flex-direction: column; 
+  align-items: center ; 
   list-style-type: none;
-  
+  height: 90%;
+  justify-content: center;
+  width: 100%;
+  padding: auto;
+  margin: auto;
 }
 
 .cards-wrapper {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start; /* Align cards in the center horizontally */
+  justify-content: space-between; 
+  width: 70%;
 }
 
 .cardli {
-  margin: 10px; /* Adjust margin between cards */
+  margin-bottom: 20px; 
   width: calc(33.33% - 20px);
+  border-radius: 10%;
+  border-width: 3px;
+  border: #000;
+  border-style: solid;
+  display: flex;
+  align-items: center;
+  text-align: center;  
+  background-color: antiquewhite;
+}
+
+ul {
+  padding: 0%;
+}
+
+figure {
+  display: flex;
+  justify-content: center;
 }

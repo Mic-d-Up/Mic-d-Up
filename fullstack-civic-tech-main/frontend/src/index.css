@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   margin: 0;
@@ -7,69 +11,12 @@ input, label {
   display: block;
 }
 
-input {
-  margin-bottom:
-}
-
-
 main {
   height: 100vh;
-  width:max-content;
-}
-
-.carousel-container {
- display: flex center;
-}
-
-.event-card {
-  display: flex;
-  background-color: purple;
-  width: 18rem;
-  margin-bottom: 20px;
-}
-
-.event-card .card-content {
-  margin-top: 10px;
-}
-
-.event-card .card-content .content p {
-  margin-bottom: 5px;
-}
-
-
-.custom-carousel {
-  display: flex;
-  gap:50rem;
-}
-
-.carousel-control {
-  margin-top: 50px;
-  background-color: #000;
-}
-
-.carousel-container .carousel-control-prev,
-.carousel-container .carousel-control-next {
-  display: center;
-  max-width: 10%;
-  max-height: 50%;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-.carousel-container {
- max-width: auto;
-}
-
-.cs {
-  /* Makes the div take up only as much width as its content */
-  margin-left: auto; /* Automatically calculates left margin */
-  margin-right: auto;
-  width: 80vw;
-  /* justify-content: center;
-  justify-items: center
-  ; */
 }
 
 header {
-  display: flex; 
+  display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem 1rem;
@@ -96,69 +43,36 @@ nav a {
   color: #FFF;
 }
 
-img {
-  object-fit: contain;
-  width: 48px;
-  height: 48px;
-}
+.card {
+  background-color:rgb(249 250 251);
 
+}
 form {
   padding: 1rem;
-  border: 1px solid #CCC;
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
   width: 15rem;
   margin: 1rem auto;
 }
 
-/* automatically added by NavLink component */
 .active {
   color: #EEBC32;
   font-weight: bold;
   font-style: italic;
 }
 
-<<<<<<< HEAD
-.custom-carousel .carousel-inner {
-  display: flex;
-  flex-wrap: nowrap;
-}
-
-.custom-carousel .carousel-item {
-  flex: 0 0 auto;
-}
-
-.custom-carousel .row {
-  gap: 15px; /* Adjust as needed */
-}
-
-/* Adjust spacing between cards for smaller screens */
-@media (max-width: 767px) {
-  .custom-carousel .row {
-    gap: 10px; /* Adjust as needed */
-  }
-}
-
-/* Adjust spacing between cards for extra small screens */
-@media (max-width: 575px) {
-  .custom-carousel .row {
-    gap: 5px; /* Adjust as needed */
-  }
-}
-=======
-
-/* footer.css */
-
 .footer {
   width: 100%;
   padding: 20px;
-  /* display: flex;
-  justify-content: space-around;  */
-  /* color: white; Example text color */
-  /*background-color: #ffffff; * / /* Example background color */
+  background-color: #3C096C;
+}
+
+a, strong {
+  color: aliceblue;
 }
 
 .footer .content {
   display: flex;
-  justify-content: space-around; /* Align content at the ends */
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -168,16 +82,47 @@ form {
 }
 
 .footer .footer-links a {
-  color: black; /* Link color */
-  text-decoration: none; /* Remove underline */
-  margin-left: 90px; /*Adjust spacing between links*/
+  color: black;
+  text-decoration: none;
+  margin-left: 90px;
 }
 
 .footer .footer-links a:hover {
-  text-decoration: underline; /* Add underline on hover */
+  text-decoration: underline;
 }
-/* width: auto;
-padding: 10px;
-display: flex;
-justify-content: space-evenly */
->>>>>>> 882779332f3826a81642bf27d801b476b0bd0062
+
+/* Slider Custom Styles */
+.slider-scrollbar::-webkit-scrollbar {
+  height: 8px;
+}
+
+.slider-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.slider-scrollbar::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+.slider-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.scroll-smooth {
+  scroll-behavior: smooth;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-animation {
+  animation: slideIn 0.5s ease-out forwards;
+}

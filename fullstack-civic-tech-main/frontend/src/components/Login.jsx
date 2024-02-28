@@ -22,7 +22,6 @@ export default function LoginForm() {
 
   return <>
     <form onSubmit={handleSubmit} aria-labelledby="login-heading">
-      <h2 id='login-heading'>Log back in!</h2>
       <label htmlFor="username">Username</label>
       <input type="text" autoComplete="username" id="username" name="username" />
 

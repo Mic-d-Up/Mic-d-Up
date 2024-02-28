@@ -73,10 +73,10 @@ p {
   height:100%;
 }
 
-/* button {
-  margin: 0px 60px;
+button {
+  margin: 0px 200px;
   color: #222222; 
-/* } */
+}
 
 .formSwapButton {
   margin: 0px 93px;
@@ -87,8 +87,17 @@ p {
   padding: 10px 10px;
 }
 
+.registerOutForm {
+  padding: 10px 23px;
+}
+
 form {
   border-radius: 20px;
+}
+
+.registerInForm {
+  margin: 15px 50px;
+  color: #222222; 
 }
 
 /* .imgContainer {

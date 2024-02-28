@@ -127,10 +127,10 @@ export default function SignUpForm() {
           onChange={handleProfilePhotoChange}
         />
 
-        <button type="submit" >Register</button>
+        <button className="registerInForm" type="submit" >Register</button>
         {errorText && <p className='alreadyTaken'>{errorText}</p>}
       </form>
-      <p className="question">Already have an account with us? </p>
+      <p className="registerOutForm">Have an account with us? </p>
     </>
   );
 }

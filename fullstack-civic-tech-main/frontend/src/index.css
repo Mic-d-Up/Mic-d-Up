@@ -72,10 +72,12 @@ form {
 .footer {
   width: 100%;
   padding: 20px;
-  /* display: flex;
-  justify-content: space-around;  */
-  /* color: white; Example text color */
-  /*background-color: #ffffff; * / /* Example background color */
+  background-color: #3C096C;
+
+}
+
+a, strong {
+  color: aliceblue;;
 }
 
 .footer .content {

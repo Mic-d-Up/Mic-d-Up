@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   margin: 0;
@@ -6,28 +10,11 @@ body {
 
 .input, .label {
   display: block;
-  color: white;
-  background-color: transparent;
-  border-color: hsl(266, 64%, 28%);
-  border-width: .15em;
-  width: 70vw;
-  border-radius: 1em;
-  color-scheme: dark;
 }
 
-.input::placeholder {
-  color: white;
-}
-
-/* input {
-  margin-bottom:
-} */
-
-
-/* main {
+main {
   height: 100vh;
-} */
-
+}
 
 header {
   display: flex;
@@ -53,24 +40,17 @@ nav ul {
 }
 
 nav a {
-  padding: 0.5rem 1rem;
-  background-color: black;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px; 
+  display: block;
+  color: #FFF;
 }
 
-/* 
-img {
-  object-fit: contain;
-  width: 50%;
-  height: 40%;
-  border-radius: 50%;
-}
+.card {
+  background-color:rgb(249 250 251);
 
-/* form {
+}
+form {
   padding: 1rem;
-  border: 1px solid #CCC;
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
   width: 15rem;
   margin: 1rem auto;
 } */
@@ -81,60 +61,11 @@ img {
   font-style: italic;
 }
 
-.card {
-  margin-bottom: 20px; 
-  width: fit-content;
-}
-
-.card-container {
-  display: flex;
-  flex-direction: column; 
-  align-items: center ; 
-  list-style-type: none;
-  height: 90%;
-  justify-content: center;
-  width: 100%;
-  padding: auto;
-  margin: auto;
-}
-
-.cards-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between; 
-  width: 70%;
-}
-
-.cardli {
-  margin-bottom: 20px; 
-  width: calc(33.33% - 20px);
-  border-radius: 10%;
-  border-width: 3px;
-  border: #000;
-  border-style: solid;
-  display: flex;
-  align-items: center;
-  text-align: center;  
-  background-color: antiquewhite;
-}
-
-ul {
-  padding: 0%;
-}
-
-figure {
-  display: flex;
-  justify-content: center;
-}
-
-/* footer.css */
-
 .footer {
   position: static;
   width: 100%;
   padding: 20px;
   background-color: #3C096C;
-
 }
 
 a, strong {
@@ -143,7 +74,7 @@ a, strong {
 
 .footer .content, a:hover {
   display: flex;
-  justify-content: space-around; /* Align content at the ends */
+  justify-content: space-around;
   align-items: center;
   color: yellow;
 
@@ -156,15 +87,47 @@ a, strong {
 }
 
 .footer .footer-links a {
-  color: black; /* Link color */
-  text-decoration: none; /* Remove underline */
-  margin-left: 90px; /*Adjust spacing between links*/
+  color: black;
+  text-decoration: none;
+  margin-left: 90px;
 }
 
 .footer .footer-links a:hover {
-  text-decoration: underline; /* Add underline on hover */
+  text-decoration: underline;
 }
-/* width: auto;
-padding: 10px;
-display: flex;
-justify-content: space-evenly */ */
+
+/* Slider Custom Styles */
+.slider-scrollbar::-webkit-scrollbar {
+  height: 8px;
+}
+
+.slider-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.slider-scrollbar::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+.slider-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.scroll-smooth {
+  scroll-behavior: smooth;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-animation {
+  animation: slideIn 0.5s ease-out forwards;
+}

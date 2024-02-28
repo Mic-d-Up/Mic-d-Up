@@ -71,6 +71,7 @@ form {
 /* footer.css */
 
 .footer {
+  position: static;
   width: 100%;
   padding: 20px;
   background-color: #3C096C;
@@ -78,15 +79,24 @@ form {
 }
 
 a, strong {
-  color: aliceblue;;
+  color: aliceblue;
 }
 
-.footer .content {
+.footer .content, a:hover {
   display: flex;
   justify-content: space-around; /* Align content at the ends */
   align-items: center;
+  color: yellow;
+
 }
 
+
+
+
+
+
+
+/* 
 .footer .footer-links {
   display: flex;
   justify-content: space-around
@@ -104,4 +114,4 @@ a, strong {
 /* width: auto;
 padding: 10px;
 display: flex;
-justify-content: space-evenly */
+justify-content: space-evenly */ */

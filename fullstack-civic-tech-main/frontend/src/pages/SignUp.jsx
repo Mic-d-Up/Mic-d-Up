@@ -4,7 +4,7 @@ import CurrentUserContext from "../contexts/current-user-context";
 import { createUser } from "../adapters/user-adapter";
 import { base } from '@uploadcare/upload-client'
 
-export default function SignUpPage() {
+export default function SignUpForm() {
   const navigate = useNavigate();
   const { currentUser, setCurrentUser } = useContext(CurrentUserContext);
   const [errorText, setErrorText] = useState('');
@@ -65,7 +65,7 @@ export default function SignUpPage() {
       <form onSubmit={handleSubmit} aria-labelledby="create-heading">
         <h2 id="create-heading">Create New User</h2>
         <label htmlFor="username">Username</label>
-        <input
+        <input className="input"
           autoComplete="off"
           type="text"
           id="username"
@@ -75,7 +75,7 @@ export default function SignUpPage() {
         />
 
         <label htmlFor="name">Name</label>
-        <input
+        <input className="input"
           type="text"
           id="name"
           name="name"
@@ -84,6 +84,7 @@ export default function SignUpPage() {
         />
 
         <label htmlFor="typeOfArtist">Type of Artist</label>
+        <div className="select">
         <select id="typeOfArtist" name="typeOfArtist" onChange={handleChange} value={typeOfArtist}>
           <option value="">Select...</option>
           <option value="Listener">Listener</option>
@@ -96,9 +97,10 @@ export default function SignUpPage() {
           <option value="Promoter">Promoter</option>
           <option value="Other">Other</option>
         </select>
+        </div>
 
         <label htmlFor="password">Password</label>
-        <input
+        <input className="input"
           autoComplete="off"
           type="password"
           id="password"
@@ -108,7 +110,7 @@ export default function SignUpPage() {
         />
 
         <label htmlFor="confirmPassword">Confirm Password</label>
-        <input
+        <input className="input"
           autoComplete="off"
           type="password"
           id="confirmPassword"
@@ -118,18 +120,18 @@ export default function SignUpPage() {
         />
 
         <label htmlFor="profilePhoto">Profile Photo</label>
-        <input
+        <input className="input"
           type="file"
           id="profilePhoto"
           name="profilePhoto"
           accept="image/*"
           onChange={handleProfilePhotoChange}
         />
-
-        <button type="submit">Sign Up Now!</button>
+  
+        <button type="submit">Sign Up Now</button>
         {errorText && <p className='alreadyTaken'>{errorText}</p>}
       </form>
-      <p>Already have an account with us? <Link to="/login">Log in!</Link></p>
+      {/* <p>Already have an account with us? <Link to="/login">Log in!</Link></p> */}
     </>
   );
 }

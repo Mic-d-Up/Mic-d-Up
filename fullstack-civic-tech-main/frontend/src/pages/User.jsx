@@ -39,19 +39,52 @@ export default function UserPage() {
   if (!userProfile && !errorText) return null;
   if (errorText) return <p>{errorText}</p>;
 
-  // What parts of state would change if we altered our currentUser context?
-  // Ideally, this would update if we mutated it
-  // But we also have to consider that we may NOT be on the current users page
   const profileUsername = isCurrentUserProfile ? currentUser.username : userProfile.username;
-
-  return <>
-    <h1>{profileUsername}</h1>
+  const profileArtistType = isCurrentUserProfile ? currentUser.artist_type : userProfile.artist_type;
+  const profileName = isCurrentUserProfile ? currentUser.name : userProfile.name;
+  const profilePic = isCurrentUserProfile ? currentUser.profile_pic : userProfile.profile_pic;
+  console.log(profilePic);
+  return (
+    <div className="container is-flex is-justify-content-center" style={{width: "100vw"}}>
+      <div className="box">
+        <figure className="image is-48x48">
+                <img src={profilePic} 
+          alt="Profile picture"/>
+        </figure>
+        <h1 className="has-text-centered is-size-2">{profileName}</h1>
+        <h2 className="has-text-centered is-size-4">@{profileUsername}</h2>
+        <h2 className="has-text-centered is-size-5">{profileArtistType}</h2>
+        <br />
+        {isCurrentUserProfile && (
+          <div className="buttons is-centered">
+            <button
+              className="button is-danger"
+              onClick={handleLogout}
+            >
+              Log Out
+            </button>
+            <button
+              className="button is-danger"
+              onClick={deleteAccount}
+            >
+              Delete Account
+            </button>
+          </div>
+        )}
+        {isCurrentUserProfile && (
+          <UpdateUsernameForm
+            currentUser={currentUser}
+            setCurrentUser={setCurrentUser}
+          />
+        )}
+      </div>
+    </div>)
+    {/* <h1>{profileUsername}</h1>
     { !!isCurrentUserProfile && <button onClick={handleLogout}>Log Out</button> }
     { !!isCurrentUserProfile && <button onClick={deleteAccount}>Delete Account</button> }
     <p>Fake Bio or something</p>
     {
       !!isCurrentUserProfile
         && <UpdateUsernameForm currentUser={currentUser} setCurrentUser={setCurrentUser}/>
-    }
-  </>;
+    } */}
 }

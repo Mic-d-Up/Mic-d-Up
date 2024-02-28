@@ -4,8 +4,19 @@ body {
   background-color: #AB82FF;
 }
 
-input, label {
+.input, .label {
   display: block;
+  color: white;
+  background-color: transparent;
+  border-color: hsl(266, 64%, 28%);
+  border-width: .15em;
+  width: 70vw;
+  border-radius: 1em;
+  color-scheme: dark;
+}
+
+.input::placeholder {
+  color: white;
 }
 
 /* input {
@@ -49,6 +60,7 @@ nav a {
   border-radius: 5px; 
 }
 
+/* 
 img {
   object-fit: contain;
   width: 50%;
@@ -56,15 +68,15 @@ img {
   border-radius: 50%;
 }
 
-form {
+/* form {
   padding: 1rem;
   border: 1px solid #CCC;
   width: 15rem;
   margin: 1rem auto;
-}
+} */
 
 .active {
-  color: #EEBC32;
+  color: yellow;
   font-weight: bold;
   font-style: italic;
 }
@@ -114,3 +126,45 @@ figure {
   display: flex;
   justify-content: center;
 }
+
+/* footer.css */
+
+.footer {
+  position: static;
+  width: 100%;
+  padding: 20px;
+  background-color: #3C096C;
+
+}
+
+a, strong {
+  color: aliceblue;
+}
+
+.footer .content, a:hover {
+  display: flex;
+  justify-content: space-around; /* Align content at the ends */
+  align-items: center;
+  color: yellow;
+
+}
+
+/* 
+.footer .footer-links {
+  display: flex;
+  justify-content: space-around
+}
+
+.footer .footer-links a {
+  color: black; /* Link color */
+  text-decoration: none; /* Remove underline */
+  margin-left: 90px; /*Adjust spacing between links*/
+}
+
+.footer .footer-links a:hover {
+  text-decoration: underline; /* Add underline on hover */
+}
+/* width: auto;
+padding: 10px;
+display: flex;
+justify-content: space-evenly */ */

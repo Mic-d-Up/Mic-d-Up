@@ -10,14 +10,16 @@ import EventCard from '../components/EventCard';
 
 export default function HomePage() {
   const { currentUser } = useContext(CurrentUserContext);
+  console.log(currentUser);
   const [showModal, setShowModal] = useState(false);
   const [events, setEvents] = useState([]);
   const [joinedEvents, setJoinedEvents] = useState({});
+
   const getEveryEvent = async () => {
     const eventsObj = await getAllEvents();
-    console.log(eventsObj);
     setEvents(eventsObj);
   };
+
   useEffect(() => {
     getEveryEvent();
   }, []);
@@ -26,10 +28,8 @@ export default function HomePage() {
   const navigate = useNavigate();
 
   const loadJoinEvents = async () => {
-    console.log("guh");
     if (currentUser) {
       const attendedEvents = await fetchAllJoinedEvents(currentUser.id);
-      console.log(attendedEvents);
       const obj = {};
       attendedEvents.map((event) => {
         console.log("should be event");
@@ -38,29 +38,28 @@ export default function HomePage() {
       });
       setJoinedEvents(obj);
     }
-
-
   };
 
   useEffect(() => {
     loadJoinEvents();
   }, [currentUser]);
 
-
+  // const switchModalState = () => {
+  //   setShowModal(showModal => showModal = !showModal);
+  //   console.log(showModal);
+  // }  
 
   return <>
     <h1>The Hub</h1>
     <p>Check out events from our community!</p>
-    <button onClick={loadJoinEvents}>Test</button>
     {
       !currentUser
         ? <button type="button" onClick={() => navigate('/login')}>New Event</button>
         : <button type="button" onClick={() => setShowModal(!showModal)}>New Event</button>
     }
+    {showModal && <CreateModal getEveryEvent={getEveryEvent} setShowModal={setShowModal} onClose={() => setShowModal(false)} />}
     {events.map((event) => (<li key={event.id}>
         <EventCard event={event} loadJoinEvents={loadJoinEvents} joinedEvents={joinedEvents} />
       </li>))}
-    {console.log(joinedEvents)}
-    {showModal && <CreateModal getEveryEvent= {getEveryEvent} setShowModal={setShowModal} onClose={() => setShowModal(false)} />}
   </>;
 }

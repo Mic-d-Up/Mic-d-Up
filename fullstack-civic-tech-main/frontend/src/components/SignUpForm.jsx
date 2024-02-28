@@ -2,7 +2,8 @@ import { useContext, useState } from "react";
 import { useNavigate, Navigate, Link } from "react-router-dom";
 import CurrentUserContext from "../contexts/current-user-context";
 import { createUser } from "../adapters/user-adapter";
-import { base } from '@uploadcare/upload-client'
+import { base } from '@uploadcare/upload-client';
+import '../pages/Landing.css';
 
 export default function SignUpForm() {
   const navigate = useNavigate();
@@ -61,9 +62,7 @@ export default function SignUpForm() {
 
   return (
     <>
-      <h1>Sign Up</h1>
       <form onSubmit={handleSubmit} aria-labelledby="create-heading">
-        <h2 id="create-heading">Create New User</h2>
         <label htmlFor="username">Username</label>
         <input className="input"
           autoComplete="off"
@@ -128,10 +127,10 @@ export default function SignUpForm() {
           onChange={handleProfilePhotoChange}
         />
 
-        <button type="submit">Sign Up Now!</button>
+        <button className="registerInForm" type="submit" >Register</button>
         {errorText && <p className='alreadyTaken'>{errorText}</p>}
       </form>
-      <p>Already have an account with us? </p>
+      <p className="registerOutForm">Have an account with us? </p>
     </>
   );
 }

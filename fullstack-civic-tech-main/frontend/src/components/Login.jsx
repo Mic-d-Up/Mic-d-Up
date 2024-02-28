@@ -22,7 +22,6 @@ export default function LoginForm() {
 
   return <>
     <form onSubmit={handleSubmit} aria-labelledby="login-heading">
-      <h2 id='login-heading'>Log back in!</h2>
       <label htmlFor="username">Username</label>
       <input type="text" autoComplete="username" id="username" name="username" />
 
@@ -31,7 +30,7 @@ export default function LoginForm() {
 
       <button>Log in</button>
     </form>
-    <p>Don't have an account with us? </p>
+    <p className="question">Don't have an account with us? </p>
     { !!errorText && <p>{errorText}</p> }
   </>;
 }

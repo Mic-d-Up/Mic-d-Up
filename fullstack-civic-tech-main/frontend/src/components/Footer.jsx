@@ -7,10 +7,11 @@ function Footer() {
   return (
     <footer className="footer is-fullwidth">
       <div className="content is-justify-content-space-around is-fullwidth">
-        <strong>2024 Mic'd Up</strong> <a href="https://github.com/Mic-d-Up/Mic-d-Up-Civic-Tech/tree/main/fullstack-civic-tech-main">GitHub</a>
+        <strong>2024 Mic'd Up</strong> 
         <a href="/Home">Home</a>
-        <a href="/Profile">User_profile_page</a>
-        <a href="/SignUp">Create Account</a>
+        <a href="/Profile">Profile</a>
+        <a href="/Users">Users</a>
+        <a href="https://github.com/Mic-d-Up/Mic-d-Up-Civic-Tech/tree/main/fullstack-civic-tech-main">GitHub</a>
       </div>
     </footer>
   );

@@ -127,8 +127,8 @@ export default function SignUpForm() {
           accept="image/*"
           onChange={handleProfilePhotoChange}
         />
-
-        <button type="submit">Sign Up Now!</button>
+  
+        <button type="submit">Sign Up Now</button>
         {errorText && <p className='alreadyTaken'>{errorText}</p>}
       </form>
       {/* <p>Already have an account with us? <Link to="/login">Log in!</Link></p> */}

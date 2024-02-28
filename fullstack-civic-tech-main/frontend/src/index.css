@@ -1,6 +1,7 @@
 body {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  margin: 0;
+  margin: auto;
+  height:fit-content;
 }
 
 .input, .label {
@@ -25,7 +26,6 @@ body {
 
 main {
   height: 100vh;
-  width:max-content;
 }
 
 
@@ -57,11 +57,13 @@ nav a {
   color: #FFF;
 }
 
+/* 
+Specify IMG TAG (so that it doesn't mess up other images)
 img {
   object-fit: contain;
   width: 48px;
   height: 48px;
-}
+} */
 
 /* form {
   padding: 1rem;
@@ -72,7 +74,7 @@ img {
 
 /* automatically added by NavLink component */
 .active {
-  color: #EEBC32;
+  color: yellow;
   font-weight: bold;
   font-style: italic;
 }
@@ -81,20 +83,32 @@ img {
 /* footer.css */
 
 .footer {
+  position: static;
   width: 100%;
   padding: 20px;
-  /* display: flex;
-  justify-content: space-around;  */
-  /* color: white; Example text color */
-  /*background-color: #ffffff; * / /* Example background color */
+  background-color: #3C096C;
+
 }
 
-.footer .content {
+a, strong {
+  color: aliceblue;
+}
+
+.footer .content, a:hover {
   display: flex;
   justify-content: space-around; /* Align content at the ends */
   align-items: center;
+  color: yellow;
+
 }
 
+
+
+
+
+
+
+/* 
 .footer .footer-links {
   display: flex;
   justify-content: space-around
@@ -112,4 +126,4 @@ img {
 /* width: auto;
 padding: 10px;
 display: flex;
-justify-content: space-evenly */
+justify-content: space-evenly */ */

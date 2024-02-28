@@ -4,7 +4,6 @@ main {
   justify-content: center; /* Horizontally center content */
   align-items: center; /* Vertically center content */
   height: 100vh; /* Use full height of viewport */
-  width: 100%;
 }
 
 .container {
@@ -20,7 +19,6 @@ main {
   /* padding: 20px; Add padding for spacing */
 }
 
-
 .LeftSide {
   border: 10px solid rgb(132, 27, 193);
   height: 30em;
@@ -34,6 +32,11 @@ main {
   font-size: large;
   color: aliceblue;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.landingTitle {
+  color: rgb(24, 201, 133);
+  font-size: xx-large;
 }
 
 .RightSide {
@@ -65,10 +68,9 @@ p {
 }
 
 
-landingImg {
+.landingImg {
   background-color: black;
-  height: 30em;
-  width: 30em;
+  height: 100%;
 }
 
 formSwapButton {

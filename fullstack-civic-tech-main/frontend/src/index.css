@@ -14,7 +14,6 @@ input, label {
 
 main {
   height: 100vh;
-  width:max-content;
 }
 
 
@@ -46,11 +45,13 @@ nav a {
   color: #FFF;
 }
 
+/* 
+Specify IMG TAG (so that it doesn't mess up other images)
 img {
   object-fit: contain;
   width: 48px;
   height: 48px;
-}
+} */
 
 form {
   padding: 1rem;

@@ -12,8 +12,6 @@ export default defineConfig({
       '/api': {
         target: 'http://0.0.0.0:8888',
         changeOrigin: true,
-        secure: false,
-        ws: true,
       },
     },
   },

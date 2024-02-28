@@ -73,15 +73,19 @@ p {
   height:100%;
 }
 
-button {
+/* button {
   margin: 0px 60px;
+  color: #222222; 
+/* } */
+
+.formSwapButton {
+  margin: 0px 93px;
   color: #222222;
 }
 
-/* .formSwapButton {
-  margin: 0px 60px;
-  color: #222222;
-} */
+.question {
+  padding: 10px 10px;
+}
 
 form {
   border-radius: 20px;

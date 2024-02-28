@@ -3,6 +3,7 @@ import { useNavigate, Navigate, Link } from "react-router-dom";
 import CurrentUserContext from "../contexts/current-user-context";
 import { createUser } from "../adapters/user-adapter";
 import { base } from '@uploadcare/upload-client';
+import '../pages/Landing.css';
 
 export default function SignUpForm() {
   const navigate = useNavigate();
@@ -129,7 +130,7 @@ export default function SignUpForm() {
         <button type="submit" >Register</button>
         {errorText && <p className='alreadyTaken'>{errorText}</p>}
       </form>
-      <p>Already have an account with us? </p>
+      <p className="question">Already have an account with us? </p>
     </>
   );
 }

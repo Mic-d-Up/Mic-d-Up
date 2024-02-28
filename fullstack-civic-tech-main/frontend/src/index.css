@@ -1,6 +1,7 @@
 body {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  margin: 0;
+  margin: auto;
+  height:fit-content;
 }
 
 input, label {
@@ -62,7 +63,7 @@ form {
 
 /* automatically added by NavLink component */
 .active {
-  color: #EEBC32;
+  color: yellow;
   font-weight: bold;
   font-style: italic;
 }

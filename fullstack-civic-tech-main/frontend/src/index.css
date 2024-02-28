@@ -7,18 +7,68 @@ input, label {
   display: block;
 }
 
-/* input {
+input {
   margin-bottom:
-} */
+}
 
 
 main {
   height: 100vh;
 }
 
+.carousel-container {
+ display: flex center;
+}
+
+.event-card {
+  display: flex;
+  background-color: purple;
+  width: 18rem;
+  margin-bottom: 20px;
+}
+
+.event-card .card-content {
+  margin-top: 10px;
+}
+
+.event-card .card-content .content p {
+  margin-bottom: 5px;
+}
+
+
+.custom-carousel {
+  display: flex;
+  gap:50rem;
+}
+
+.carousel-control {
+  margin-top: 50px;
+  background-color: #000;
+}
+
+.carousel-container .carousel-control-prev,
+.carousel-container .carousel-control-next {
+  display: center;
+  max-width: 10%;
+  max-height: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.carousel-container {
+ max-width: auto;
+}
+
+.cs {
+  /* Makes the div take up only as much width as its content */
+  margin-left: auto; /* Automatically calculates left margin */
+  margin-right: auto;
+  width: 80vw;
+  /* justify-content: center;
+  justify-items: center
+  ; */
+}
 
 header {
-  display: flex;
+  display: flex; 
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem 1rem;
@@ -63,4 +113,31 @@ form {
   color: #EEBC32;
   font-weight: bold;
   font-style: italic;
+}
+
+.custom-carousel .carousel-inner {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.custom-carousel .carousel-item {
+  flex: 0 0 auto;
+}
+
+.custom-carousel .row {
+  gap: 15px; /* Adjust as needed */
+}
+
+/* Adjust spacing between cards for smaller screens */
+@media (max-width: 767px) {
+  .custom-carousel .row {
+    gap: 10px; /* Adjust as needed */
+  }
+}
+
+/* Adjust spacing between cards for extra small screens */
+@media (max-width: 575px) {
+  .custom-carousel .row {
+    gap: 5px; /* Adjust as needed */
+  }
 }

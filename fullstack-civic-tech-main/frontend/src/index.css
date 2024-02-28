@@ -52,8 +52,8 @@ nav a {
 img {
   object-fit: contain;
   width: 50%;
-  height: 50%;
-  border-radius: 46%;
+  height: 40%;
+  border-radius: 50%;
 }
 
 form {

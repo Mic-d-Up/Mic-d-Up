@@ -1,7 +1,7 @@
 body {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  margin: auto;
-  height:fit-content;
+  margin: 0;
+  background-color: #AB82FF;
 }
 
 .input, .label {
@@ -24,9 +24,9 @@ body {
 } */
 
 
-main {
+/* main {
   height: 100vh;
-}
+} */
 
 
 header {
@@ -34,7 +34,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem 1rem;
-  background: #000;
+  background: #240046;
 }
 
 #logo {
@@ -53,17 +53,20 @@ nav ul {
 }
 
 nav a {
-  display: block;
-  color: #FFF;
+  padding: 0.5rem 1rem;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px; 
 }
 
 /* 
-Specify IMG TAG (so that it doesn't mess up other images)
 img {
   object-fit: contain;
-  width: 48px;
-  height: 48px;
-} */
+  width: 50%;
+  height: 40%;
+  border-radius: 50%;
+}
 
 /* form {
   padding: 1rem;
@@ -72,13 +75,57 @@ img {
   margin: 1rem auto;
 } */
 
-/* automatically added by NavLink component */
 .active {
   color: yellow;
   font-weight: bold;
   font-style: italic;
 }
 
+.card {
+  margin-bottom: 20px; 
+  width: fit-content;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column; 
+  align-items: center ; 
+  list-style-type: none;
+  height: 90%;
+  justify-content: center;
+  width: 100%;
+  padding: auto;
+  margin: auto;
+}
+
+.cards-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; 
+  width: 70%;
+}
+
+.cardli {
+  margin-bottom: 20px; 
+  width: calc(33.33% - 20px);
+  border-radius: 10%;
+  border-width: 3px;
+  border: #000;
+  border-style: solid;
+  display: flex;
+  align-items: center;
+  text-align: center;  
+  background-color: antiquewhite;
+}
+
+ul {
+  padding: 0%;
+}
+
+figure {
+  display: flex;
+  justify-content: center;
+}
 
 /* footer.css */
 
@@ -101,12 +148,6 @@ a, strong {
   color: yellow;
 
 }
-
-
-
-
-
-
 
 /* 
 .footer .footer-links {

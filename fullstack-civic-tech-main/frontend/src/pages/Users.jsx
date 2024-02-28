@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { getAllUsers } from "../adapters/user-adapter";
-import UserLink from "../components/UserLink";
 import UserCard from "../components/UserCard";
 
 export default function UsersPage() {
@@ -10,14 +9,16 @@ export default function UsersPage() {
     getAllUsers().then(setUsers);
   }, []);
 
-return <>
-    <h1>Users</h1>
-    <ul>
-    {users.map((user) => (
-          <li key={user.id}>
+  return (
+    <div className="card-container">
+      <h1>Users</h1>
+      <div className="cards-wrapper">
+        {users.map((user) => (
+          <div className="cardli" key={user.id}>
             <UserCard user={user} />
-          </li>
+          </div>
         ))}
-    </ul>
-  </>;
+      </div>
+    </div>
+  );
 }

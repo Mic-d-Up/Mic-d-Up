@@ -155,16 +155,17 @@ a, strong {
   justify-content: space-around
 }
 
-.footer .footer-links a {
+/* .footer .footer-links a {
   color: black; /* Link color */
-  text-decoration: none; /* Remove underline */
-  margin-left: 90px; /*Adjust spacing between links*/
-}
+  /* text-decoration: none; 
+ margin-left: 90px; 
+}  */
 
 .footer .footer-links a:hover {
   text-decoration: underline; /* Add underline on hover */
 }
+
 /* width: auto;
 padding: 10px;
 display: flex;
-justify-content: space-evenly */ */
+justify-content: space-evenly */ 

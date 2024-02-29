@@ -80,6 +80,6 @@ const EventCard = (props) => {
       </div>
     </div>
   </div>
-);
+  );
 };
 export default EventCard;

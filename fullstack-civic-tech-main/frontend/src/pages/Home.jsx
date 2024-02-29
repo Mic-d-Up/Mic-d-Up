@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate } from "react-router-dom";
 import EventCarousel from '../components/EventCarousel';

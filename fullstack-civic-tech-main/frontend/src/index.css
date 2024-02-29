@@ -29,14 +29,14 @@ body {
 } */
 
 
-header {
+/* header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem 1rem;
   background: #240046;
-}
-
+} */
+/* 
 #logo {
   font-size: 1.5rem;
   font-weight: bold;
@@ -58,7 +58,7 @@ nav a {
   color: white;
   text-decoration: none;
   border-radius: 5px; 
-}
+} */
 
 /* 
 img {
@@ -75,7 +75,7 @@ img {
   margin: 1rem auto;
 } */
 
-.active {
+/* .active {
   color: yellow;
   font-weight: bold;
   font-style: italic;
@@ -129,7 +129,7 @@ figure {
 
 /* footer.css */
 
-.footer {
+/* .footer {
   position: static;
   width: 100%;
   padding: 20px;
@@ -144,10 +144,9 @@ a, strong {
 .footer .content, a:hover {
   display: flex;
   justify-content: space-around; /* Align content at the ends */
-  align-items: center;
-  color: yellow;
-
-}
+  /* align-items: center;
+  color: yellow; */
+/* } */
 
 /* 
 .footer .footer-links {
@@ -157,14 +156,14 @@ a, strong {
 
 .footer .footer-links a {
   color: black; /* Link color */
-  text-decoration: none; /* Remove underline */
-  margin-left: 90px; /*Adjust spacing between links*/
-}
-
+  /* text-decoration: none; /* Remove underline */
+  /* margin-left: 90px; Adjust spacing between links */
+/* } */
+/* 
 .footer .footer-links a:hover {
   text-decoration: underline; /* Add underline on hover */
-}
+/* } */
 /* width: auto;
 padding: 10px;
 display: flex;
-justify-content: space-evenly */ */
+justify-content: space-evenly */

@@ -1,5 +1,3 @@
-/* eslint-disable max-len */
-/* eslint-disable no-unused-vars */
 import { useState, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { getAllEvents, fetchAllJoinedEvents } from "../adapters/event-adapter";

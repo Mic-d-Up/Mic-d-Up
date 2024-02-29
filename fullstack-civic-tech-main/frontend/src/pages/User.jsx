@@ -48,7 +48,7 @@ export default function UserPage() {
     <div className="container is-flex is-justify-content-center" style={{width: "100vw"}}>
       <div className="box">
         <figure className="image is-48x48">
-                <img src={profilePic} 
+                <img className="profilePic" src={profilePic} 
           alt="Profile picture"/>
         </figure>
         <h1 className="has-text-centered is-size-2">{profileName}</h1>

@@ -53,7 +53,11 @@ const EventCard = (props) => {
         <p>Date: {event.date}</p>
         <p>Time: {event.startTime} - {event.endTime}</p>
         <a href={event.ticketLink} target="_blank" rel="noopener noreferrer">Get Tickets</a>
-        { joinedEvents && joinedEvents[event.id] ? <button onClick={leaveEvent} className={joinedEvents[event.id] ? 'leave-event' : 'join-event'}>Leave Event</button> : <button className={joinedEvents[event.id] ? 'leave-event' : 'join-event'} onClick={joinEvent}>Join Event</button>}
+        { joinedEvents && joinedEvents[event.id] ? 
+          <button onClick={leaveEvent} className={joinedEvents[event.id] ? 
+          'leave-event' : 'join-event'}>Leave Event</button> : 
+          <button className={joinedEvents[event.id] ? 'leave-event' : 'join-event'} 
+          onClick={joinEvent}>Join Event</button>}
       </div>
       <footer className="card-footer">
         <div className="card-footer-item">

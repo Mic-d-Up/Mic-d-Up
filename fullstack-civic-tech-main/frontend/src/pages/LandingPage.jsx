@@ -15,10 +15,10 @@ export default function Landing() {
       <div className="container">
         <div className="imgContainer">
           <figure className="LeftSide">
-            <img
-              src="https://t4.ftcdn.net/jpg/01/33/55/89/360_F_133558973_IadAyRUHecUYFn7cTICrqb09XGyo7SjF.jpg"
-              className="landingImg"
+            <img className="landingImg"
               alt="Landing"
+              src="https://t4.ftcdn.net/jpg/01/33/55/89/360_F_133558973_IadAyRUHecUYFn7cTICrqb09XGyo7SjF.jpg"
+              
             />
           </figure>
         </div>

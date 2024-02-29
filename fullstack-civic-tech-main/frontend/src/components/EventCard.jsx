@@ -48,15 +48,14 @@ const EventCard = (props) => {
       <p className="text-sm font-semibold">Date: {event.date}</p>
       <p className="text-sm font-semibold">Time: {event.startTime} - {event.endTime}</p>
       <button href={event.ticketLink} target="_blank" rel="noopener noreferrer" className="inline-block mt-2 text-blue-500 hover:text-blue-600">Get Tickets</button>
-      {joinedEvents && joinedEvents[event.id] ? (
-        <button onClick={leaveEvent} className={`mt-4 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white ${joinedEvents[event.id] ? 'bg-red-600 hover:bg-red-700' : 'bg-blue-600 hover:bg-blue-700'}`}>
+      {joinedEvents && joinedEvents[event.id]
+        ? <button onClick={leaveEvent} className={`mt-4 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-black ${joinedEvents[event.id] ? 'leave-event' : 'join-event'}`}>
           Leave Event
         </button>
-      ) : (
-        <button onClick={joinEvent} className="mt-4 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700">
+        : <button onClick={joinEvent} className={`mt-4 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-black bg-blue-600 hover:bg-blue-700 `}>
           Join Event
         </button>
-      )}
+      }
     </div>
     <div className="px-4 py-3 bg-gray-50 text-right ">
       <form onSubmit={handleCommentSubmit} className="flex items-center gap-10">

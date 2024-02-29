@@ -8,11 +8,6 @@ input, label {
   display: block;
 }
 
-/* input {
-  margin-bottom:
-} */
-
-
 main {
   height: 100vh;
 }
@@ -69,8 +64,6 @@ form {
 }
 
 
-/* footer.css */
-
 .footer {
   position: static;
   width: 100%;
@@ -91,18 +84,6 @@ a, strong {
 
 }
 
-
-
-
-
-
-
-/* 
-.footer .footer-links {
-  display: flex;
-  justify-content: space-around
-}
-
 .footer .footer-links a {
   color: black; /* Link color */
   text-decoration: none; /* Remove underline */
@@ -112,7 +93,3 @@ a, strong {
 .footer .footer-links a:hover {
   text-decoration: underline; /* Add underline on hover */
 }
-/* width: auto;
-padding: 10px;
-display: flex;
-justify-content: space-evenly */ */

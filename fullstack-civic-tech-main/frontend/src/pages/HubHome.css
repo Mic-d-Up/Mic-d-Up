@@ -1,34 +1,34 @@
 .hub {
-    text-align: center;
-  }
-  
-  .event-container {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .event-card {
-    width: 30%;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    overflow: hidden;
-  }
-  
-  .event-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-  }
-  
-  .event-details {
-    padding: 10px;
-  }
-  
-  .event-details h3 {
-    margin-top: 0;
-  }
-  
-  .event-details p {
-    margin-bottom: 0;
-  }
+  text-align: center;
+}
+
+.event-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.event-card {
+  width: 30%;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.event-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.event-details {
+  padding: 10px;
+}
+
+.event-details h3 {
+  margin-top: 0;
+}
+
+.event-details p {
+  margin-bottom: 0;
+}

@@ -1,3 +1,4 @@
+/* eslint-disable func-style */
 // Footer.js
 import React from 'react';
 import '../index.css';

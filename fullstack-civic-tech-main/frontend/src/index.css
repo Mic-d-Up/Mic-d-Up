@@ -8,7 +8,7 @@ body {
   background-color: #AB82FF;
 }
 
-.input, .label {
+.input {
   display: block;
   color: white;
   background-color: transparent;
@@ -29,19 +29,39 @@ body {
   align-items: center;
 }
 
-.e-container {
+.eventFormModalBackdrop {
+  position: fixed; /* or 'absolute', depending on your layout */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent backdrop */
+  backdrop-filter: blur(10px); /* Apply blur effect to the backdrop */
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 85vw;
+  z-index: 1000; /* Ensure it sits above other content */
+}
+
+.e-container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
   background-color: #08090C;
-  border-radius: 1em;
-  padding: 20px;
+  z-index: 10000000000;
+  padding: 30px;
+  border-radius: 5px;
 }
 
 .new-event-btn {
   background-color: #AB92FF;
   color: #08090C;
   margin-bottom: 1rem;
+}
+
+
+::selection {
+  background-color: rgb(48, 29, 83); /* Blue background */
+  color: #ffffff; /* White text */
 }

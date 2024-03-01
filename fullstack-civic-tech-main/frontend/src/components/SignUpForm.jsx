@@ -4,6 +4,7 @@ import CurrentUserContext from "../contexts/current-user-context";
 import { createUser } from "../adapters/user-adapter";
 import { base } from '@uploadcare/upload-client';
 import '../pages/Landing.css';
+import './signUpForm.css';
 
 export default function SignUpForm() {
   const navigate = useNavigate();
@@ -62,9 +63,9 @@ export default function SignUpForm() {
 
   return (
     <>
-      <form onSubmit={handleSubmit} aria-labelledby="create-heading">
-        <label htmlFor="username">Username</label>
-        <input className="input"
+      <form className="signUpFormContainer" onSubmit={handleSubmit} aria-labelledby="create-heading">
+        <label htmlFor="username" className="signUpFormLabel">Username</label>
+        <input className="signUpFormInput"
           autoComplete="off"
           type="text"
           id="username"
@@ -73,8 +74,8 @@ export default function SignUpForm() {
           value={username}
         />
 
-        <label htmlFor="name">Name</label>
-        <input className="input"
+        <label htmlFor="name" className="signUpFormLabel">Name</label>
+        <input className="signUpFormInput"
           type="text"
           id="name"
           name="name"
@@ -82,8 +83,8 @@ export default function SignUpForm() {
           value={name}
         />
 
-        <label htmlFor="typeOfArtist">Type of Artist</label>
-        <div className="select">
+        <label htmlFor="typeOfArtist" className="signUpFormLabel">Type of Artist</label>
+        <div className="signUpSelect">
         <select id="typeOfArtist" name="typeOfArtist" onChange={handleChange} value={typeOfArtist}>
           <option value="">Select...</option>
           <option value="Listener">Listener</option>
@@ -98,8 +99,8 @@ export default function SignUpForm() {
         </select>
         </div>
 
-        <label htmlFor="password">Password</label>
-        <input className="input"
+        <label htmlFor="password" className="signUpFormLabel">Password</label>
+        <input className="signUpFormInput"
           autoComplete="off"
           type="password"
           id="password"
@@ -108,8 +109,8 @@ export default function SignUpForm() {
           value={password}
         />
 
-        <label htmlFor="confirmPassword">Confirm Password</label>
-        <input className="input"
+        <label htmlFor="confirmPassword" className="signUpFormLabel">Confirm Password</label>
+        <input className="signUpFormInput"
           autoComplete="off"
           type="password"
           id="confirmPassword"
@@ -118,8 +119,8 @@ export default function SignUpForm() {
           value={confirmPassword}
         />
 
-        <label htmlFor="profilePhoto">Profile Photo</label>
-        <input className="input"
+        <label htmlFor="profilePhoto" className="signUpFormLabel">Profile Photo</label>
+        <input className="signUpFormInput"
           type="file"
           id="profilePhoto"
           name="profilePhoto"
@@ -127,10 +128,10 @@ export default function SignUpForm() {
           onChange={handleProfilePhotoChange}
         />
 
-        <button className="registerInForm" type="submit" >Register</button>
+        <button className="signUpFormButton" type="submit" >Register</button>
         {errorText && <p className='alreadyTaken'>{errorText}</p>}
+        <p className="signUpFormSwapLabel">Have an account with us? </p>
       </form>
-      <p className="registerOutForm">Have an account with us? </p>
     </>
   );
 }

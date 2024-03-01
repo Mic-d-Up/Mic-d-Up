@@ -1,0 +1,59 @@
+.userProfileCard {
+    background-color: white;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 30px;
+    border-radius: 20px;
+    min-width: 320px;
+    width: 450px;
+    text-align: center;
+    height: 430px;
+}
+.userProfilePicture {
+    margin: 0 auto;
+    width: 70px;
+    border-radius: 100%;
+    margin-top: 20px;
+    border: 2px solid rgb(79, 30, 79);
+}
+.userProfileName {
+    font-size: 40px;
+    font-weight: 700;
+}
+.userProfileUsername {
+    font-size: 15px;
+    color: #aaa;
+    font-weight: 400;
+}
+.userProfileArtistType {
+    font-size: 20px;
+    color: #444;
+    font-weight: 400;
+}
+.userProfileButtonContainers {
+
+}
+.userProfileButton {
+    background-color: blue;
+}
+.userLogoutButton {
+    padding: 5px 10px;
+    border-radius: 10px;
+    color: #fff;
+    background-color: rgb(79, 30, 79);
+}
+.userDeleteAccountButton {
+    margin-left: 50px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    color: #fff;
+    background-color: rgb(137, 49, 25);
+}
+
+.userLogoutButton:hover {
+    filter: saturate(20%);
+}
+.userDeleteAccountButton:hover {
+    filter: saturate(120%);
+}

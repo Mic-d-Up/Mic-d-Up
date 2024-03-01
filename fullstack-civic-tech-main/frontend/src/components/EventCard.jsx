@@ -91,26 +91,28 @@ const EventCard = (props) => {
   
     return formattedTime;
   }
-  
-  
-  
+
   return (
     <div className="">
       <div className="theHubCard">
         <p className="theHubEventTitle">{event.name}</p>
         <p className="theHubEventLocation">{event.location}</p>
-        <p>{formatDate(event.date)}</p>
-        <p>{formatTime(event.startTime)} - {formatTime(event.endTime)}</p>
-        <a href={event.ticket_link} target="_blank" rel="noopener noreferrer">Get Tickets</a>
-        { joinedEvents && joinedEvents[event.id] ? <button onClick={leaveEvent} className={joinedEvents[event.id] ? 'leave-event' : 'join-event'}>Leave Event</button> : <button className={joinedEvents[event.id] ? 'leave-event' : 'join-event'} onClick={joinEvent}>Join Event</button>}
-      </div>
+        <div className="theHubEventDetails">
+          <p className="theHubEventDate">{formatDate(event.date)}</p>
+          <p className="theHubEventTime">{formatTime(event.startTime)} - {formatTime(event.endTime)}</p>
+        </div>
+        <div className="theHubEventButtons">
+          <a href={event.ticket_link} target="_blank" rel="noopener noreferrer" className="getTicketsButton">Get Tickets</a>
+          { joinedEvents && joinedEvents[event.id] ? <button onClick={leaveEvent} id={joinedEvents[event.id] ? 'leave-event' : 'join-event'} className='leaveEventButton'>Leave Event</button> : <button id={joinedEvents[event.id] ? 'leave-event' : 'join-event'} className='joinEventButton' onClick={joinEvent}>Join Event</button>}
+        </div>
+        </div>
       <footer className="">
-        <div className="m">
+        <div className="commentsContainer">
           <form onSubmit={handleCommentSubmit}>
             <div className="">
               <div className="">
                 <input
-                  className=""
+                  className="commentInput"
                   type="text"
                   placeholder="Add a comment..."
                   value={userInput}
@@ -118,14 +120,14 @@ const EventCard = (props) => {
                 />
               </div>
               <div className="">
-                <button type="submit" className="">Comment</button>
+                <button type="submit" className="commentsButton">Comment</button>
               </div>
             </div>
           </form>
         </div>
       </footer>
       <div className="card-content">
-        <div className="content">
+        <div className="userComment">
           {comments.map((comment, index) => (
             <p key={index}>{comment}</p>
           ))}

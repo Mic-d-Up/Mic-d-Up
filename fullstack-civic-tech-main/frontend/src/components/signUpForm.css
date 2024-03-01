@@ -1,0 +1,46 @@
+.signUpFormContainer {
+    width: 400px;
+    height: 500px;
+    border: 2px solid rgb(48, 29, 83);
+    background-color: #A26AD0;
+    border: 2px solid #fff;
+    border-radius: 15px;
+    display: block;
+    padding-left: 20px;
+    padding-top: 30px;
+    margin-bottom: 30px;
+}
+.signUpFormInput {
+    color: #000;
+    border-radius: 5px !important;
+    padding: 5px;
+}
+.signUpFormInput:focus {
+    outline: none !important;
+}
+.signUpSelect {
+    color: #000;
+}
+.signUpSelect:active {
+    outline: none !important;
+}
+.signUpFormButton {
+    margin-top: 10px;
+    background-color:rgb(48, 29, 83) !important;
+    padding: 5px;
+    color: #fff;
+    width: 90%;
+    border-radius: 20px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.signUpFormLabel {
+    display: block;
+    padding-top: 5px;
+}
+
+.signUpFormSwapLabel {
+    margin-top: 10px;
+}

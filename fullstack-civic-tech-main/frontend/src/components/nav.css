@@ -1,0 +1,44 @@
+.hubNav {
+    background-color:#3C096C;
+    padding: 10px;
+    position: relative;
+}
+
+.hubMainLogo {
+    width: 50px;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+
+.hubMainLogo:hover {
+    transform: scale(1.05);
+    filter: saturate(60%);
+    border: 1px solid rgb(69, 13, 69);
+}
+
+.hubNavList {
+    display: flex;
+    position: absolute;
+    right: 0px;
+    top: 15px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+    padding-right: 30px;
+}
+
+.hubNavListItem {
+    margin: 0px 10px;
+    padding: 10px;
+}
+
+.hubNavListItem:hover {
+    transform:scale(1.05);
+    color: rgb(198, 154, 198);
+}
+
+@media only screen and (min-width: 320px) and (max-width: 660px) {
+    .hubNavList {
+        font-size: 12px;
+    }
+}

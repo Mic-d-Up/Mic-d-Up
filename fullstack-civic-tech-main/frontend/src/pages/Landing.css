@@ -1,128 +1,73 @@
 .landingMain {
-  display: flex;
-  justify-content: center; /* Horizontally center content */
-  align-items: center; /* Vertically center content */
-  height: 100vh; /* Use full height of viewport */
 }
 
 .landingContainer {
-  display: flex;
-  justify-content: center; /* Horizontally center children */
-  align-items: center; /*Vertically center children */
-  width: 94%;
+  position: relative;
+  min-width: 600px;
+  width: 60%;
+  left: 50%;
+  margin-top: 20px;
+  transform: translateX(-50%);
   border: white solid 20px;
-  /* background-color: yellow; */
   border-radius: 100px;
-  height: 80%;
-}
-
-
-.MiddleSection {
-  width: 500px;
-  font-size: large;
-  color: aliceblue;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background-color: #A26AD0;;
 }
 
 .landingTitle {
   color:aliceblue;
   font-size: xxx-large;
+  margin-top: 10px;
+  text-align: center;
 }
 
-.RightSide {
-  background-color: #222222;
-  margin: 3em;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  padding: 2em;
-  background-color: #C77DFF;
-}
-
-input[type="text"],
-input[type="password"],
-button {
-  margin-bottom: 15px;
-  border-radius: 10px;
-}
-
-.formSwapButton {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.landingImg {
+  min-width: 560px;
+  width: 100%;
 }
 
 .landingMission {
   color: aliceblue;
+  font-size: 15px;
+  text-align: center;
+  z-index: 100;
+  transform: translateY(-20px);
+  padding: 0px 50px;
+}
+.landingFormsContainer {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 20px;
+}
+.landingFormSwapButton {
+  position: absolute;
+  bottom: 48px !important;
+  right: 135px;
+  color: rgb(48, 29, 83) !important;
+  text-decoration: underline;
 }
 
-
-.landingImg {
-  background-color: black;
-  height:70%;
-
-}
-
-button {
-  margin: 0px 200px;
-  color: #222222; 
-}
-
-.formSwapButton {
-  margin: 0px 93px;
-  color: #222222;
-}
-
-.landingLoginQuestion {
-  padding: 10px 10px;
-  color: black;
-}
-
-.registerOutForm {
-  padding: 10px 23px;
-}
-
-form {
-  border-radius: 20px;
-}
-
-.registerInForm {
-  margin: 15px 50px;
-  color: #222222; 
-}
-
-form {
-  padding: 1rem;
-  border: 1px solid #CCC;
-  width: 15rem;
-  margin: 1rem auto;
-}
-
-.footer {
-  position: static;
-  width: 100%;
-  padding: 20px;
-  background-color: #3C096C;
-
-}
-
-.footerA, strong {
-  color: aliceblue;
-}
-
-.footer .content, .footerA:hover {
-  display: flex;
-  justify-content: space-around; /* Align content at the ends */
-  align-items: center;
-  color: yellow;
-}
-
-.footer .footerA:hover {
-  text-decoration: none; 
-}
-
-span{
-  color:  #240046;
+@media only screen and (min-width: 320px) and (max-width: 660px) {
+  .landingContainer {
+    margin-top: 20px !important;
+    min-width: 320px;
+    width: 95%;
+    margin: 0 auto;
+    border: white solid 15px;
+  }
+  .landingImg {
+    min-width: 280px;
+    width: 85%;
+    margin: 0 auto;
+  }
+  .landingTitle {
+    margin-top: 10px;
+    font-size: 25px;
+  }
+  .landingMission {
+    width: 80%;
+    margin: 0 auto;
+    font-size: 12px;
+    padding: 0px 10px;
+  }
 }

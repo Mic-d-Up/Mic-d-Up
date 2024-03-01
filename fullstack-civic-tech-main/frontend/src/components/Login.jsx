@@ -21,16 +21,18 @@ export default function LoginForm() {
   if (currentUser) return <Navigate to="/" />;
 
   return <>
+    <div className="loginFormContainer">
     <form onSubmit={handleSubmit} aria-labelledby="login-heading">
-      <label htmlFor="username">Username</label>
-      <input className="input" type="text" autoComplete="username" id="username" name="username" />
+      <label className="loginFormLabel" htmlFor="username">Username</label>
+      <input className="loginFormInput" type="text" autoComplete="username" id="username" name="username" />
 
-      <label htmlFor="password">Password</label>
-      <input className="input" type="password" autoComplete="current-password" id="password" name="password" />
+      <label className="loginFormLabel" htmlFor="password">Password</label>
+      <input className="loginFormInput" type="password" autoComplete="current-password" id="password" name="password" />
 
-      <button>Log in</button>
+      <button className="loginFormButton">Log in</button>
     </form>
     <p className="landingLoginQuestion">Don't have an account with us? </p>
+    </div>
     { !!errorText && <p>{errorText}</p> }
   </>;
 }

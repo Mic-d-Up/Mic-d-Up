@@ -1,0 +1,48 @@
+.loginFormContainer {
+    width: 280px;
+    height: 270px;
+    border: 2px solid rgb(48, 29, 83);
+    background-color: #A26AD0;
+    border: 2px solid #fff;
+    border-radius: 15px;
+    display: block;
+    padding-left: 20px;
+    padding-top: 20px;
+    margin-bottom: 30px;
+}
+.loginFormLabel {
+    display: block;
+    padding-top: 5px;
+}
+.loginFormInput {
+    color: #000;
+    border-radius: 5px !important;
+    padding: 5px;
+}
+.loginFormButton {
+    margin-top: 15px;
+    background-color:rgb(48, 29, 83) !important;
+    padding: 5px;
+    color: #fff;
+    width: 90%;
+    border-radius: 20px;
+    position: relative;
+    left: 45%;
+    transform: translateX(-50%);
+}
+
+.loginFormInput {
+    color: #000;
+    border-radius: 5px !important;
+    padding: 5px;
+}
+.loginFormInput:focus {
+    outline: none !important;
+}
+.loginSelect {
+    color: #000;
+}
+
+.landingLoginQuestion {
+    margin-top: 10px;
+}

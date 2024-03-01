@@ -2,6 +2,7 @@
 import { createEvent, getAllEvents } from "../adapters/event-adapter";
 import { useContext, useState } from "react";
 import CurrentUserContext from "../contexts/current-user-context";
+import './createModal.css';
 
 export default function CreateModal(props) {
   const { onClose, getEveryEvent } = props
@@ -29,61 +30,63 @@ export default function CreateModal(props) {
   };
 
   return <>
+  <div className="eventFormModalBackdrop">
     <form className="e-container" onSubmit={handleSubmit} style={{
       "color": "white"
     }}>
-      <h1 className="is-size-4">What's going on?</h1>
+      <h1 className="modalTitle">What's going on?</h1>
       <p>Tell us about the event</p>
-      <div className="field">
-        <label className="label">Name of Event</label>
+      <div className="modalField">
+        <label className="modalLabel">Name of Event</label>
         <div className="control">
-          <input className="input" type="text" placeholder="Event Title" name="name" onChange={e => setName(e.target.value)} />
+          <input className="modalInput" type="text" placeholder="Event Title" name="name" onChange={e => setName(e.target.value)} />
         </div>
       </div>
 
-      <div className="field">
-        <label className="label">Date</label>
+      <div className="modalField">
+        <label className="modalLabel">Date</label>
         <div className="control">
-          <input className="input" type="date" placeholder="Date" name="date" onChange={e => setDate(e.target.value)} />
+          <input className="modalInput" type="date" placeholder="Date" name="date" onChange={e => setDate(e.target.value)} />
         </div>
       </div>
 
-      <div className="field">
-        <label className="label">Start Time</label>
+      <div className="modalField">
+        <label className="modalLabel">Start Time</label>
         <div className="control">
-          <input className="input" type="time" placeholder="start time input" name="start_time" onChange={e => setStartTime(e.target.value)} />
+          <input className="modalInput" type="time" placeholder="start time input" name="start_time" onChange={e => setStartTime(e.target.value)} />
         </div>
       </div>
 
-      <div className="field">
-        <label className="label">End Time</label>
+      <div className="modalField">
+        <label className="modalLabel">End Time</label>
         <div className="control">
-          <input className="input" type="time" placeholder="end time input" name="end_time" onChange={e => setEndTime(e.target.value)} />
+          <input className="modalInput" type="time" placeholder="end time input" name="end_time" onChange={e => setEndTime(e.target.value)} />
         </div>
       </div>
 
-      <div className="field">
-        <label className="label">Location</label>
+      <div className="modalField">
+        <label className="modalLabel">Location</label>
         <div className="control">
-          <input className="input" placeholder="Location" name="location" onChange={e => setLocation(e.target.value)} ></input>
+          <input className="modalInput" placeholder="Location" name="location" onChange={e => setLocation(e.target.value)} ></input>
         </div>
       </div>
 
-      <div className="field">
-        <label className="label">Tickets</label>
+      <div className="modalField">
+        <label className="modalLabel">Tickets</label>
         <div className="control">
-          <input className="input" type="text" placeholder="Paste your ticket URL here" name="ticket_link" onChange={e => setTicketLink(e.target.value)} />
+          <input className="modalInput" type="text" placeholder="Paste your ticket URL here" name="ticket_link" onChange={e => setTicketLink(e.target.value)} />
         </div>
       </div>
 
-      <div className="field is-grouped">
+      <div className="modalField is-grouped">
         <div className="control">
-          <button className="button" style={{"background-color": "#AB92FF", "color": "#08090C"}}>Submit</button>
+          <button className="modalButton submitModal" style={{"background-color": "#AB92FF", "color": "#08090C"}}>Submit</button>
         </div>
         <div className="control">
-          <button className="button" type="button" style={{"background-color": "#AB92FF", "color": "#08090C"}} onClick={handleCancel}>Cancel</button>
+          <button className="modalButton cancelModal" type="button" style={{"background-color": "#AB92FF", "color": "#08090C"}} onClick={handleCancel}>Cancel</button>
         </div>
       </div>
     </form>
+    </div>
   </>;
 }

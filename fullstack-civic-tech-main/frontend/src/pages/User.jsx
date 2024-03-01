@@ -5,7 +5,8 @@ import { getUser } from "../adapters/user-adapter";
 import { logUserOut } from "../adapters/auth-adapter";
 import { deleteUser } from "../adapters/user-adapter"
 import UpdateUsernameForm from "../components/UpdateUsernameForm";
-import "./UsersPage.css" 
+import "./UsersPage.css";
+import './user.css';
 
 export default function UserPage() {
   const navigate = useNavigate();
@@ -46,26 +47,26 @@ export default function UserPage() {
   const profilePic = isCurrentUserProfile ? currentUser.profile_pic : userProfile.profile_pic;
 
   return (
-    <div className="container is-flex is-justify-content-center" style={{width: "100vw"}}>
-      <div className="box">
-        <figure className="image is-48x48">
-                <img className="profilePic" src={profilePic} 
-          alt="Profile picture"/>
+    <div className="" style={{width: "100vw"}}>
+      <div className="userProfileCard">
+        <figure className="">
+                <img className="userProfilePicture" src={profilePic} 
+          alt="Profile Picture"/>
         </figure>
-        <h1 className="has-text-centered is-size-2">{profileName}</h1>
-        <h2 className="has-text-centered is-size-4">@{profileUsername}</h2>
-        <h2 className="has-text-centered is-size-5">{profileArtistType}</h2>
+        <h1 className="userProfileName">{profileName}</h1>
+        <h2 className="userProfileUsername">@{profileUsername}</h2>
+        <h2 className="userProfileArtistType">{profileArtistType}</h2>
         <br />
         {isCurrentUserProfile && (
-          <div className="buttons is-centered">
+          <div className="userProfileButtonContainers">
             <button
-              className="button"
+              className="userProfileButton userLogoutButton"
               onClick={handleLogout}
             >
               Log Out
             </button>
             <button
-              className="button"
+              className="userProfileButton userDeleteAccountButton"
               onClick={deleteAccount}
             >
               Delete Account

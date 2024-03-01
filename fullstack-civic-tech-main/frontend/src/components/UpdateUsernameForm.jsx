@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { updateUsername } from "../adapters/user-adapter";
+import './updateUsernameForm.css';
 
 export default function UpdateUsernameForm({ currentUser, setCurrentUser }) {
   const navigate = useNavigate();
@@ -16,12 +17,12 @@ export default function UpdateUsernameForm({ currentUser, setCurrentUser }) {
     event.target.reset();
   };
 
-  return <form onSubmit={handleSubmit} aria-labelledby="update-heading">
-    <h2 id="update-heading">Update Username</h2>
-    <label htmlFor='username'>Choose a new username</label>
-    <input type='text' id='username' name='username'/>
-    <input type="hidden" name="id" value={currentUser.id} />
+  return <form className="updateUsernameForm" onSubmit={handleSubmit} aria-labelledby="update-heading">
+    <h2 id="update-heading" className="updateUsernameTitle">Update Username</h2>
+    <label htmlFor='username' className="updateUsernameLabel">Choose a new username</label>
+    <input className="updateUsernameInput" type='text' id='username' name='username'/>
+    <input className="updateUsernameInput" type="hidden" name="id" value={currentUser.id} />
 
-    <button>Update Username</button>
+    <button className="updateUsernameButton">Update Username</button>
   </form>;
 }

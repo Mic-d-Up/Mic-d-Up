@@ -49,14 +49,19 @@ export default function HomePage() {
 
 
   return <>
-    <div className="home">
-      <h1 className="hub-heading">The Hub</h1>
-      <p className="hub-p">Check out events from our community!</p>
+    <div className="">
+      <div className="theHubHeader">
+      <h1 className="theHubTitle">The Hub</h1>
+      <p className="theHubSubtitle">Check out events from our community!</p>
+      </div>
+      <div className="newEventButtonContainer">
       {
         !currentUser
-          ? <button type="button" className="button new-event-btn" onClick={() => navigate('/login')}>New Event</button>
-          : <button type="button" className="button new-event-btn" onClick={() => setShowModal(!showModal)}>New Event</button>
+          ? <button type="button" className="newEventButton" onClick={() => navigate('/login')}>+</button>
+          : <button type="button" className="newEventButton" onClick={() => setShowModal(!showModal)}>+</button>
       }
+      </div>
+
       <ul className="eventCardList">
       {events.map((event) => (<li className="eventCardListItem" key={event.id}>
         <EventCard event={event} loadJoinEvents={loadJoinEvents} joinedEvents={joinedEvents} />

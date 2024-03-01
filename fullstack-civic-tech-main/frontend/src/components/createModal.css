@@ -1,0 +1,45 @@
+.modalTitle {
+    font-weight: 700;
+    font-size: 26px;
+}
+.modalField {
+    margin-top: 15px;
+    /* background-color: green; */
+}
+.modalLabel {
+}
+.modalInput {
+  display: block;
+  color: white;
+  background-color: transparent;
+  border-color: hsl(266, 64%, 28%);
+  border-width: 2px;
+  border-radius: 5px;
+  color-scheme: dark;
+  width: 300px;
+}
+.modalButton {
+    width: 100%;
+    margin-top: 10px;
+}
+.submitModal {
+    background-color: white !important;
+    padding: 5px 5px;
+    border-radius: 5px;
+}
+.submitModal:hover {
+    background-color: hsl(266, 64%, 28%) !important;
+    color: #fff !important;
+}
+.cancelModal {
+    border: 2px solid #fff;
+    padding: 5px 5px;
+    border-radius: 5px;
+    color: #fff !important;
+    background-color: transparent !important;
+}
+
+.cancelModal:hover {
+    background-color: #fff;
+    color: #000;
+}

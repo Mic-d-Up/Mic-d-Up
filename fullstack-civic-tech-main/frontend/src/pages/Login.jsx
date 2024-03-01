@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { useNavigate, Navigate } from "react-router-dom";
 import { logUserIn } from "../adapters/auth-adapter";
 import CurrentUserContext from "../contexts/current-user-context";
+import './login.css';
 
 export default function LoginPage() {
   const navigate = useNavigate();
@@ -25,10 +26,10 @@ export default function LoginPage() {
     <form onSubmit={handleSubmit} aria-labelledby="login-heading">
       <h2 id='login-heading'>Log back in!</h2>
       <label htmlFor="username">Username</label>
-      <input type="text" autoComplete="username" id="username" name="username" />
+      <input className="" type="text" autoComplete="username" id="username" name="username" />
 
       <label htmlFor="password">Password</label>
-      <input type="password" autoComplete="current-password" id="password" name="password" />
+      <input className="" type="password" autoComplete="current-password" id="password" name="password" />
 
       <button>Log in!</button>
     </form>

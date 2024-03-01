@@ -1,0 +1,46 @@
+img {
+  object-fit: contain;
+  width: 50%;
+  height: 40%;
+  border-radius: 50%;
+}
+.card {
+  margin-bottom: 20px;
+  width: fit-content;
+}
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center ;
+  list-style-type: none;
+  height: 90%;
+  justify-content: center;
+  width: 100%;
+  padding: auto;
+  margin: auto;
+}
+.cards-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 70%;
+}
+.cardli {
+  margin-bottom: 20px;
+  width: calc(33.33% - 20px);
+  border-radius: 10%;
+  border-width: 3px;
+  border: #000;
+  border-style: solid;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  background-color: antiquewhite;
+}
+ul {
+  padding: 0%;
+}
+figure {
+  display: flex;
+  justify-content: center;
+}

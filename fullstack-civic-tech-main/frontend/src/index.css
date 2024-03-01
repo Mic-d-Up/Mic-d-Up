@@ -19,151 +19,24 @@ body {
   color: white;
 }
 
-/* input {
-  margin-bottom:
-} */
-
-
-/* main {
-  height: 100vh;
-} */
-
-
-/* header {
+.home {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  padding: 0.5rem 1rem;
-  background: #240046;
-} */
-/* 
-#logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-decoration: none;
-  color: #FFF;
 }
 
-nav ul {
+.e-container {
   display: flex;
-  gap: 1rem;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-nav a {
-  padding: 0.5rem 1rem;
-  background-color: black;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px; 
-} */
-
-/* 
-img {
-  object-fit: contain;
-  width: 50%;
-  height: 40%;
-  border-radius: 50%;
-}
-
-/* form {
-  padding: 1rem;
-  border: 1px solid #CCC;
-  width: 15rem;
-  margin: 1rem auto;
-} */
-
-/* .active {
-  color: yellow;
-  font-weight: bold;
-  font-style: italic;
-}
-
-.card {
-  margin-bottom: 20px; 
-  width: fit-content;
-}
-
-.card-container {
-  display: flex;
-  flex-direction: column; 
-  align-items: center ; 
-  list-style-type: none;
-  height: 90%;
+  flex-direction: column;
   justify-content: center;
-  width: 100%;
-  padding: auto;
-  margin: auto;
-}
-
-.cards-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between; 
-  width: 70%;
-}
-
-.cardli {
-  margin-bottom: 20px; 
-  width: calc(33.33% - 20px);
-  border-radius: 10%;
-  border-width: 3px;
-  border: #000;
-  border-style: solid;
-  display: flex;
   align-items: center;
-  text-align: center;  
-  background-color: antiquewhite;
-}
-
-ul {
-  padding: 0%;
-}
-
-figure {
-  display: flex;
-  justify-content: center;
-}
-
-/* footer.css */
-
-/* .footer {
-  position: static;
-  width: 100%;
+  width: 85vw;
+  background-color: #08090C;
+  border-radius: 1em;
   padding: 20px;
-  background-color: #3C096C;
-
 }
 
-a, strong {
-  color: aliceblue;
+.new-event-btn {
+  background-color: #AB92FF;
+  color: #08090C;
 }
-
-.footer .content, a:hover {
-  display: flex;
-  justify-content: space-around; /* Align content at the ends */
-  /* align-items: center;
-  color: yellow; */
-/* } */
-
-/* 
-.footer .footer-links {
-  display: flex;
-  justify-content: space-around
-}
-
-.footer .footer-links a {
-  color: black; /* Link color */
-  /* text-decoration: none; /* Remove underline */
-  /* margin-left: 90px; Adjust spacing between links */
-/* } */
-/* 
-.footer .footer-links a:hover {
-  text-decoration: underline; /* Add underline on hover */
-/* } */
-/* width: auto;
-padding: 10px;
-display: flex;
-justify-content: space-evenly */

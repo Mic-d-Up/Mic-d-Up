@@ -24,7 +24,7 @@ export default function HomePage() {
     getEveryEvent();
   }, []);
 
- 
+
   const navigate = useNavigate();
 
   const loadJoinEvents = async () => {
@@ -50,16 +50,18 @@ export default function HomePage() {
   // }  
 
   return <>
-    <h1>The Hub</h1>
-    <p>Check out events from our community!</p>
-    {
-      !currentUser
-        ? <button type="button" onClick={() => navigate('/login')}>New Event</button>
-        : <button type="button" onClick={() => setShowModal(!showModal)}>New Event</button>
-    }
-    {showModal && <CreateModal getEveryEvent={getEveryEvent} setShowModal={setShowModal} onClose={() => setShowModal(false)} />}
-    {events.map((event) => (<li key={event.id}>
+    <div className="home">
+      <h1 className="hub-heading">The Hub</h1>
+      <p className="hub-p">Check out events from our community!</p>
+      {
+        !currentUser
+          ? <button type="button" className="new-event-btn" onClick={() => navigate('/login')}>New Event</button>
+          : <button type="button" className="new-event-btn" onClick={() => setShowModal(!showModal)}>New Event</button>
+      }
+      {showModal && <CreateModal getEveryEvent={getEveryEvent} setShowModal={setShowModal} onClose={() => setShowModal(false)} />}
+      {events.map((event) => (<li key={event.id}>
         <EventCard event={event} loadJoinEvents={loadJoinEvents} joinedEvents={joinedEvents} />
       </li>))}
+    </div>
   </>;
 }

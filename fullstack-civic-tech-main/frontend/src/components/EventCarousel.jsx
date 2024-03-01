@@ -1,7 +1,8 @@
+/* eslint-disable max-len */
 import React, { useState } from 'react';
 import EventCard from './EventCard'; // Adjust the path as necessary
 
-const EventCarousel = ({ events }) => {
+const EventCarousel = ({ events, loadJoinEvents, joinedEvents }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   // Calculate the total number of slides needed to show all events three at a time
@@ -9,11 +10,11 @@ const EventCarousel = ({ events }) => {
   const totalSlides = Math.ceil(events.length / visibleCards);
 
   const nextEvent = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % totalSlides);
+    setCurrentIndex((prevIndex) => (prevIndex + 2) % totalSlides);
   };
 
   const prevEvent = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + totalSlides) % totalSlides);
+    setCurrentIndex((prevIndex) => (prevIndex - 2 + totalSlides) % totalSlides);
   };
 
   return (
@@ -28,8 +29,8 @@ const EventCarousel = ({ events }) => {
       <div className="flex overflow-hidden p-2">
         <div className="flex transition-transform ease-in-out duration-300" style={{ transform: `translateX(-${currentIndex * (100 / totalSlides)}%)` }}>
           {events.map((event, index) => (
-            <div key={index} className="flex-none w-1/4 " > {/* Adjust spacing as needed */}
-              <EventCard event={event} />
+            <div key={index} className="flex-none w-1/6" > {/* Adjust spacing as needed */}
+              <EventCard key={event.id} event={event} loadJoinEvents={loadJoinEvents} joinedEvents={joinedEvents} />
             </div>
           ))}
         </div>

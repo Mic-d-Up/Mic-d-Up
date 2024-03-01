@@ -1,0 +1,33 @@
+.theHubHeading {
+    background-color: red;
+    font-size: 48px;
+}
+.theHubSubtitle {
+    background-color: green;
+}
+.newEventButton {
+    background-color: blue !important;
+    color: white; 
+    padding: 10px 20px;
+    border: none; 
+    border-radius: 5px;
+    cursor: pointer; 
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.2s;
+    z-index: 1000;
+}
+
+.newEventButton:hover, .newEventButton:focus {
+    background-color: darkblue; 
+    transform: scale(1.05);
+    outline: none;
+}
+.eventCardList {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.eventCardListItem {
+    list-style-type: none;
+}

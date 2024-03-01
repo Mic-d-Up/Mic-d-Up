@@ -1,7 +1,7 @@
 const knex = require('../knex');
 const { hashPassword, isValidPassword } = require('../../utils/auth-utils');
 
-console.log(process.env)
+console.log(process.env);
 
 class User {
   #passwordHash = null;
@@ -44,12 +44,12 @@ class User {
       VALUES (?, ?, ?, ?, ?) RETURNING *`;
     const args = [username, passwordHash, name, profile_pic, typeOfArtist];
     const { rows } = await knex.raw(query, args);
-    const user = rows[0]; 
-    return new User(user); 
+    const user = rows[0];
+    return new User(user);
   }
 
   static async delete(id) {
-    const query = `DELETE FROM users WHERE id = ?;`
+    const query = `DELETE FROM users WHERE id = ?;`;
     const args = [id];
     const { rows } = await knex.raw(query, args);
     const user = rows[0];

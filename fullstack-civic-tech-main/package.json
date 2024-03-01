@@ -1,7 +1,7 @@
 {
   "name": "react-express-auth-template",
   "version": "1.0.0",
-  "description": "",
+  "description": "At Mic’d Up, our mission is to revolutionize the artistic landscape by providing a unique platform dedicated to community building and exposure. Unlike traditional platforms, Mic’d Up focuses on the seamless attendance of events, fostering meaningful connections among artists, amplifying artistic voices, and shaping a world where every creative mind finds its stage. Elevate your music experience with our app, where creativity meets connectivity!",
   "main": "src/index.js",
   "scripts": {
     "kickstart": "cd frontend && npm i && cd .. && npm i && npm run migrate && npm run seed && npm run dev",

@@ -7,33 +7,33 @@ import CurrentUserContext from '../contexts/current-user-context';
 export default function Landing() {
   const [isLogin, setIsLogin] = React.useState(true);
   const { currentUser, setCurrentUser } = useContext(CurrentUserContext);
-  // const currentUser = useContext; // Replace null with actual currentUser logic
 
   return (
     <>
     <main className="landingMain">
-      <div className="container">
+      <div className="landingContainer">
         <div className="imgContainer">
+        <h1 className='landingTitle'>Welcome to <span>Mic'd Up!</span></h1>
           <figure className="LeftSide">
             <img className="landingImg"
-              alt="Landing"
-              src="https://t4.ftcdn.net/jpg/01/33/55/89/360_F_133558973_IadAyRUHecUYFn7cTICrqb09XGyo7SjF.jpg"
-              
+              alt="Image of female activist musicians"
+              src="https://www.udiscovermusic.com/wp-content/uploads/2021/06/LGBTQ-Women-in-Music-1000x600.jpg"
             />
           </figure>
         </div>
 
         <div className="MiddleSection">
-          <h1 className='landingTitle'>Welcome to Mic'd Up</h1>
           <br/>
-          <p className="landingMission">Mic’d Up focuses on the seamless attendance of events, fostering meaningful connections among artists, amplifying artistic voices, and shaping a world where every creative mind finds its stage. Elevate your music experience with our app, where creativity meets connectivity!</p>
-        </div>
+          <p className="landingMission">Where creativity meets connectivity...
+          <br/>
+          <br />
+          We focus on amplifying voices, fostering meaningful connections among artists, and shaping a world where every creative mind finds its stage. Elevate the way you experience your favorite artistic activists.</p>
+        {/* </div>
 
-          <div className="RightSide">
+          <div className="RightSide"> */}
             {!isLogin ? <LoginForm/> : <SignUpForm />}
             {!currentUser && <button className="formSwapButton" onClick={() => setIsLogin(prevIsSignUp => !prevIsSignUp)}>{isLogin ? 'Log in':'Register'}</button>}
           </div>
-          
       </div>
       </main>
     </>

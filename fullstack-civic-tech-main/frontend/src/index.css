@@ -22,29 +22,36 @@ header {
   align-items: center;
   padding: 0.5rem 1rem;
   background: #240046;
-}
-
-#logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-decoration: none;
-  color: #FFF;
+  width: 99%;
 }
 
 nav ul {
   display: flex;
-  gap: 1rem;
+  gap: 7rem;
   padding: 0;
-  margin: 0;
+  margin-right: 50px;
   list-style: none;
 }
 
 nav a {
-  padding: 0.5rem 1rem;
-  background-color: black;
-  color: white;
   text-decoration: none;
-  border-radius: 5px; 
+  font-size: large;
+}
+
+nav a:hover {
+  /* padding: 0.5rem 1rem; */
+  /* background-color: yellow; */
+  color: yellow;
+  text-decoration: underline;
+  /* border-radius: 5px;  */
+}
+
+.logoImg {
+  height: 30%; 
+  width: 25%;
+  border: solid white 1px;
+  border-radius: 10%;
+  margin: 5px 10px;
 }
 
 .card {
@@ -52,10 +59,7 @@ nav a {
 
 }
 form {
-  padding: 1rem;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
-  width: 15rem;
-  margin: 1rem auto;
 }
 
 .active {
@@ -67,46 +71,26 @@ form {
 
 .footer {
   position: static;
-  width: 100%;
-  padding: 20px;
-  background-color: #3C096C;
+  width: 96.9%;
+  padding: 33px;
+  background-color: #240046;
 
 }
 
 a, strong {
   color: aliceblue;
-  background-color: #3C096C;
+  /* background-color: #3C096C; */
 }
 
 a, strong {
   color: aliceblue;
 }
 
-.footer .content, a:hover {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  color: yellow;
-
+.footer .footerA {
+  text-decoration: none;
+  font-size: large;
 }
 
-/* 
-.footer .footer-links {
-  display: flex;
-  justify-content: space-around
+.footer .footerA:hover {
+  text-decoration: underline;
 }
-
-/* .footer .footer-links a {
-  color: black; /* Link color */
-  /* text-decoration: none; 
- margin-left: 90px; 
-}  */
-
-.footer .footer-links a:hover {
-  text-decoration: underline; /* Add underline on hover */
-}
-
-/* width: auto;
-padding: 10px;
-display: flex;
-justify-content: space-evenly */

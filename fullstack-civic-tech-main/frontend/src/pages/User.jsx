@@ -5,6 +5,7 @@ import { getUser } from "../adapters/user-adapter";
 import { logUserOut } from "../adapters/auth-adapter";
 import { deleteUser } from "../adapters/user-adapter"
 import UpdateUsernameForm from "../components/UpdateUsernameForm";
+import "./UsersPage.css" 
 
 export default function UserPage() {
   const navigate = useNavigate();
@@ -43,7 +44,7 @@ export default function UserPage() {
   const profileArtistType = isCurrentUserProfile ? currentUser.artist_type : userProfile.artist_type;
   const profileName = isCurrentUserProfile ? currentUser.name : userProfile.name;
   const profilePic = isCurrentUserProfile ? currentUser.profile_pic : userProfile.profile_pic;
-  console.log(profilePic);
+
   return (
     <div className="container is-flex is-justify-content-center" style={{width: "100vw"}}>
       <div className="box">

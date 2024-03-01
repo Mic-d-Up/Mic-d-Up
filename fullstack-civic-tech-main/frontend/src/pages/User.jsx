@@ -59,13 +59,13 @@ export default function UserPage() {
         {isCurrentUserProfile && (
           <div className="buttons is-centered">
             <button
-              className="button is-danger"
+              className="button"
               onClick={handleLogout}
             >
               Log Out
             </button>
             <button
-              className="button is-danger"
+              className="button"
               onClick={deleteAccount}
             >
               Delete Account

@@ -29,11 +29,8 @@ export default function CreateModal(props) {
   };
 
   return <>
-    <form className="container" onSubmit={handleSubmit} style={{
-      "background-color": "#08090C",
-      "border-radius": "1em",
-      "width": "85vw",
-      "color": "white",
+    <form className="e-container" onSubmit={handleSubmit} style={{
+      "color": "white"
     }}>
       <h1 className="is-size-4">What's going on?</h1>
       <p>Tell us about the event</p>
@@ -81,10 +78,10 @@ export default function CreateModal(props) {
 
       <div className="field is-grouped">
         <div className="control">
-          <button className="button is-link" style={{"background-color": "#AB92FF", "color": "#08090C"}}>Submit</button>
+          <button className="button" style={{"background-color": "#AB92FF", "color": "#08090C"}}>Submit</button>
         </div>
         <div className="control">
-          <button className="button is-link is-light" type="button" style={{"background-color": "#AB92FF", "color": "#08090C"}} onClick={handleCancel}>Cancel</button>
+          <button className="button" type="button" style={{"background-color": "#AB92FF", "color": "#08090C"}} onClick={handleCancel}>Cancel</button>
         </div>
       </div>
     </form>

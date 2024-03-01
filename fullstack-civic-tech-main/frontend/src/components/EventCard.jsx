@@ -101,7 +101,7 @@ const EventCard = (props) => {
         <p className="theHubEventLocation">{event.location}</p>
         <p>{formatDate(event.date)}</p>
         <p>{formatTime(event.startTime)} - {formatTime(event.endTime)}</p>
-        <a href={event.ticketLink} target="_blank" rel="noopener noreferrer">Get Tickets</a>
+        <a href={event.ticket_link} target="_blank" rel="noopener noreferrer">Get Tickets</a>
         { joinedEvents && joinedEvents[event.id] ? <button onClick={leaveEvent} className={joinedEvents[event.id] ? 'leave-event' : 'join-event'}>Leave Event</button> : <button className={joinedEvents[event.id] ? 'leave-event' : 'join-event'} onClick={joinEvent}>Join Event</button>}
       </div>
       <footer className="">

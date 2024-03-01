@@ -11,7 +11,7 @@ export default function UsersPage() {
 
   return (
     <div className="card-container">
-      <h1>Users</h1>
+      <h1 className="usersTitle">Users</h1>
       <div className="cards-wrapper">
         {users.map((user) => (
           <div className="cardli" key={user.id}>

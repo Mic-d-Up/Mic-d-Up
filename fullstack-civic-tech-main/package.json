@@ -1,7 +1,7 @@
 {
   "name": "react-express-auth-template",
   "version": "1.0.0",
-  "description": "",
+  "description": "At Mic’d Up, our mission is to revolutionize the artistic landscape by providing a unique platform dedicated to community building and exposure. Unlike traditional platforms, Mic’d Up focuses on the seamless attendance of events, fostering meaningful connections among artists, amplifying artistic voices, and shaping a world where every creative mind finds its stage. Elevate your music experience with our app, where creativity meets connectivity!",
   "main": "src/index.js",
   "scripts": {
     "kickstart": "cd frontend && npm i && cd .. && npm i && npm run migrate && npm run seed && npm run dev",
@@ -32,15 +32,19 @@
     "express": "^4.18.2",
     "express-session": "^1.17.3",
     "knex": "^2.4.2",
-    "pg": "^8.10.0"
+    "pg": "^8.10.0",
+    "swiper": "^11.0.7"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.17",
     "eslint": "^8.39.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.3.4",
-    "nodemon": "^3.0.3"
+    "nodemon": "^3.0.3",
+    "postcss": "^8.4.35",
+    "tailwindcss": "^3.4.1"
   }
 }

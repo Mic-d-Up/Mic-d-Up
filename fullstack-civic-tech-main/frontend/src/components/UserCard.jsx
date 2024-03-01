@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import DefaultImageUrl from "../img/default-profile-picture.png";
-// import "../"
+import "../pages/UsersPage.css"
 
 export default function UserCard({ user }) {
   return (

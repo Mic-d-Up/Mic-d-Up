@@ -1,39 +1,48 @@
+<<<<<<< HEAD
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
 // import React from 'react';
 // import './Landing.css';
+=======
+import React, { useState, useContext } from 'react';
+import './Landing.css';
+>>>>>>> adrian-experimental-css
 import SignUpForm from '../components/SignUpForm';
 import LoginForm from '../components/Login';
+import CurrentUserContext from '../contexts/current-user-context';
 
-export default function landing() {
-const [isLogin, setIsLogin] = React.useState(true);
+export default function Landing() {
+  const [isLogin, setIsLogin] = React.useState(true);
+  const { currentUser, setCurrentUser } = useContext(CurrentUserContext);
 
   return (
     <>
-    <div className="container">
-      <div className="imgContainer">
-        <figure className="LeftSide">
-          <img
-            src="https://t4.ftcdn.net/jpg/01/33/55/89/360_F_133558973_IadAyRUHecUYFn7cTICrqb09XGyo7SjF.jpg"
-            className="landingImg"
-            alt="Landing"
-          />
-        </figure>
-      </div>
-
-          <div className="MiddleSection">
-          <h1 className='landingTitle'>Welcome to Mic'd Up</h1>
-          <br/>
-        <p>At Mic’d Up, our mission is to revolutionize the artistic landscape by providing a unique platform dedicated to community building and exposure. Unlike traditional platforms, Mic’d Up focuses on the seamless attendance of events, fostering meaningful connections among artists, amplifying artistic voices, and shaping a world where every creative mind finds its stage. Elevate your music experience with our app, where creativity meets connectivity!</p>
-      </div>
-
-          <div className="RightSide">
-            {!isLogin ? <LoginForm/> : <SignUpForm />}
-            <button className="formSwapButton" onClick={() => setIsLogin(prevIsSignUp => !prevIsSignUp)}>{isLogin ? 'Log in':'Register'}</button>
-          </div>
+    <main className="landingMain">
+      <div className="landingContainer">
+        <div className="imgContainer">
+        <h1 className='landingTitle'>Welcome to <span>Mic'd Up!</span></h1>
+          <figure className="LeftSide">
+            <img className="landingImg"
+              alt="Image of female activist musicians"
+              src="https://www.udiscovermusic.com/wp-content/uploads/2021/06/LGBTQ-Women-in-Music-1000x600.jpg"
+            />
+          </figure>
         </div>
+
+        <div className="MiddleSection">
+          <br/>
+          <p className="landingMission">Where creativity meets connectivity...
+          <br/>
+          <br />
+          We focus on amplifying voices, fostering meaningful connections among artists, and shaping a world where every creative mind finds its stage. Elevate the way you experience your favorite artistic activists.</p>
+        {/* </div>
+
+          <div className="RightSide"> */}
+            {!isLogin ? <LoginForm/> : <SignUpForm />}
+            {!currentUser && <button className="formSwapButton" onClick={() => setIsLogin(prevIsSignUp => !prevIsSignUp)}>{isLogin ? 'Log in':'Register'}</button>}
+          </div>
+      </div>
+      </main>
     </>
-    
   );
-  
 }

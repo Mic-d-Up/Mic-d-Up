@@ -55,8 +55,8 @@ export default function HomePage() {
       <p className="hub-p">Check out events from our community!</p>
       {
         !currentUser
-          ? <button type="button" className="new-event-btn" onClick={() => navigate('/login')}>New Event</button>
-          : <button type="button" className="new-event-btn" onClick={() => setShowModal(!showModal)}>New Event</button>
+          ? <button type="button" className="button new-event-btn" onClick={() => navigate('/login')}>New Event</button>
+          : <button type="button" className="button new-event-btn" onClick={() => setShowModal(!showModal)}>New Event</button>
       }
       {showModal && <CreateModal getEveryEvent={getEveryEvent} setShowModal={setShowModal} onClose={() => setShowModal(false)} />}
       {events.map((event) => (<li key={event.id}>

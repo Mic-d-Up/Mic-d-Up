@@ -12,7 +12,7 @@ body {
   display: block;
 }
 
-/* main {
+main {
   height: 100vh;
 }
 
@@ -68,7 +68,6 @@ form {
   font-style: italic;
 }
 
-/* footer.css */
 
 .footer {
   position: static;
@@ -101,50 +100,14 @@ a, strong {
   justify-content: space-around
 }
 
-.footer .footer-links a {
-  color: black;
-  text-decoration: none;
-  margin-left: 90px;
-}
+/* .footer .footer-links a {
+  color: black; /* Link color */
+  /* text-decoration: none; 
+ margin-left: 90px; 
+}  */
 
 .footer .footer-links a:hover {
-  text-decoration: underline;
-}
-
-/* Slider Custom Styles */
-.slider-scrollbar::-webkit-scrollbar {
-  height: 8px;
-}
-
-.slider-scrollbar::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-.slider-scrollbar::-webkit-scrollbar-thumb {
-  background: #888;
-}
-
-.slider-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
-.scroll-smooth {
-  scroll-behavior: smooth;
-}
-
-@keyframes slideIn {
-  from {
-    transform: translateX(50px);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-.slide-animation {
-  animation: slideIn 0.5s ease-out forwards;
+  text-decoration: underline; /* Add underline on hover */
 }
 
 /* width: auto;

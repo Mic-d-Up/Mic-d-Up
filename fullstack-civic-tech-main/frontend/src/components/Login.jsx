@@ -23,14 +23,14 @@ export default function LoginForm() {
   return <>
     <form onSubmit={handleSubmit} aria-labelledby="login-heading">
       <label htmlFor="username">Username</label>
-      <input type="text" autoComplete="username" id="username" name="username" />
+      <input className="input" type="text" autoComplete="username" id="username" name="username" />
 
       <label htmlFor="password">Password</label>
-      <input type="password" autoComplete="current-password" id="password" name="password" />
+      <input className="input" type="password" autoComplete="current-password" id="password" name="password" />
 
       <button>Log in</button>
     </form>
-    <p className="question">Don't have an account with us? </p>
+    <p className="landingLoginQuestion">Don't have an account with us? </p>
     { !!errorText && <p>{errorText}</p> }
   </>;
 }

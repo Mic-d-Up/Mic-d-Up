@@ -1,4 +1,4 @@
-main {
+.landingMain {
   background-color: #C77DFF;
   display: flex;
   justify-content: center; /* Horizontally center content */
@@ -8,15 +8,12 @@ main {
 
 .container {
   display: flex;
-  /* flex-direction: column; Align children vertically */
   justify-content: center; /* Horizontally center children */
   align-items: center; /* Vertically center children */
   width: 0%;
   background-color: #222222;
   border-radius: 40px;
   height: 80%;
-  
-  /* padding: 20px; Add padding for spacing */
 }
 
 .LeftSide {
@@ -63,7 +60,7 @@ button {
   align-items: center;
 }
 
-p {
+.landingMission {
   color: aliceblue;
 }
 
@@ -100,34 +97,39 @@ form {
   color: #222222; 
 }
 
-/* .imgContainer {
-  display: flex;
-  height: 10em;
-} */
-
-/* .Rightside {
-  padding: 100px;
-} */
-
-/* .container {
-  display: flex;
+form {
+  padding: 1rem;
+  border: 1px solid #CCC;
+  width: 15rem;
+  margin: 1rem auto;
 }
 
-.left-side, .middle-section, .right-side {
-  flex: 1;
+.footer {
+  position: static;
+  width: 100%;
   padding: 20px;
+  background-color: #3C096C;
+
 }
 
-.left-side img {
-  max-width: 100%;
-  height: auto;
+a, strong {
+  color: aliceblue;
 }
 
-.right-side form {
+.footer .content, a:hover {
   display: flex;
-  flex-direction: column;
+  justify-content: space-around; /* Align content at the ends */
+  align-items: center;
+  color: yellow;
+
 }
 
-.right-side input, .right-side button {
-  margin-bottom: 10px;
-} */
+.footer .footer-links a {
+  color: black; /* Link color */
+  text-decoration: none; /* Remove underline */
+  margin-left: 90px; /*Adjust spacing between links*/
+}
+
+.footer .footer-links a:hover {
+  text-decoration: underline; /* Add underline on hover */
+}

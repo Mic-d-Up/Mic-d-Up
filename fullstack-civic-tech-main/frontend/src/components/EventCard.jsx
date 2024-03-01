@@ -14,14 +14,14 @@ const EventCard = (props) => {
   const [userInput, setUserInput] = useState('');
   const [comments, setComments] = useState([]);
   const { currentUser } = useContext(CurrentUserContext);
-  const user_id = currentUser.id;
   const event_id = event.id;
   const handleCommentChange = (e) => {
     setUserInput(e.target.value);
   };
-
+  
   const handleCommentSubmit = async (e) => {
     e.preventDefault();
+    const user_id = currentUser.id;
     if (userInput.trim() !== '') {
       setComments([...comments, userInput]);
       console.log(userInput)
@@ -31,7 +31,7 @@ const EventCard = (props) => {
       setUserInput('');
     }
   };
-
+  
   const joinEvent = async () => {
     const row = await userJoinEvent(currentUser.id, event.id)
     setTimeout(async () => {
@@ -52,7 +52,7 @@ const EventCard = (props) => {
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
     const eventDate = new Date(dateString);
     const formatter = new Intl.DateTimeFormat('en-US', options);
-  
+    
     const parts = formatter.formatToParts(eventDate);
     let day;
     for (const part of parts) {
@@ -61,7 +61,7 @@ const EventCard = (props) => {
         day = value + getDaySuffix(value);
       }
     }
-  
+    
     return `${parts.find(part => part.type === 'month').value} ${day}, ${parts.find(part => part.type === 'year').value}`;
   }
   
@@ -77,11 +77,11 @@ const EventCard = (props) => {
   const formatTime = (timeRangeString) => {
     const [startTime] = timeRangeString.split(' - ');
     const [hours, minutes] = startTime.split(':'); 
-  
-   
+    
+    
     const time = new Date();
     time.setHours(hours, minutes);
-  
+    
     
     const formattedTime = new Intl.DateTimeFormat('en-US', {
       hour: 'numeric',
@@ -91,9 +91,9 @@ const EventCard = (props) => {
   
     return formattedTime;
   }
-
   
-
+  
+  
   return (
     <div className="">
       <div className="theHubCard">

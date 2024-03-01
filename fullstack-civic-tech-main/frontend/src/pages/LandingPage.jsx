@@ -1,12 +1,6 @@
-<<<<<<< HEAD
-// eslint-disable-next-line no-unused-vars
-import React, { useState } from 'react';
-// import React from 'react';
-// import './Landing.css';
-=======
+
 import React, { useState, useContext } from 'react';
 import './Landing.css';
->>>>>>> adrian-experimental-css
 import SignUpForm from '../components/SignUpForm';
 import LoginForm from '../components/Login';
 import CurrentUserContext from '../contexts/current-user-context';

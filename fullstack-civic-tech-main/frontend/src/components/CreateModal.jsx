@@ -81,10 +81,10 @@ export default function CreateModal(props) {
 
       <div className="field is-grouped">
         <div className="control">
-          <button className="button is-link" style={{"background-color": "#AB92FF", "color": "#08090C"}}>Submit</button>
+          <button className="button is-link" style={{ "background-color": "#AB92FF", "color": "#08090C" }}>Submit</button>
         </div>
         <div className="control">
-          <button className="button is-link is-light" type="button" style={{"background-color": "#AB92FF", "color": "#08090C"}} onClick={handleCancel}>Cancel</button>
+          <button className="button is-link is-light" type="button" style={{ "background-color": "#AB92FF", "color": "#08090C" }} onClick={handleCancel}>Cancel</button>
         </div>
       </div>
     </form>

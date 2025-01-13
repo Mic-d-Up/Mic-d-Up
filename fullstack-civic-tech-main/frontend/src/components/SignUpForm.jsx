@@ -22,22 +22,22 @@ export default function SignUpForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     setErrorText('');
     if (!username || !password) return setErrorText('Missing username or password');
     if (password !== confirmPassword) return setErrorText('Passwords do not match');
-  
+
     let profile_pic_url = "../../public/img/default-profile-picture.png"
-  
+
     if (profile_pic) {
       const { file } = await base(profile_pic, {
         publicKey: '5fe7348726376d2e9e7d',
         store: 'auto',
       });
       profile_pic_url = `https://ucarecdn.com/${file}/`;
-    } 
+    }
     console.log(profile_pic_url)
-  
+
     const [user, error] = await createUser({ username, password, name, typeOfArtist, profile_pic: profile_pic_url });
     console.log(user);
     if (error) return setErrorText(error.message);
@@ -84,18 +84,18 @@ export default function SignUpForm() {
 
         <label htmlFor="typeOfArtist">Type of Artist</label>
         <div className="select">
-        <select id="typeOfArtist" name="typeOfArtist" onChange={handleChange} value={typeOfArtist}>
-          <option value="">Select...</option>
-          <option value="Listener">Listener</option>
-          <option value="Singer">Singer</option>
-          <option value="Songwriter">Songwriter</option>
-          <option value="Rapper">Rapper</option>
-          <option value="Producer">Producer</option>
-          <option value="Audio Engineer">Audio Engineer</option>
-          <option value="DJ">DJ</option>
-          <option value="Promoter">Promoter</option>
-          <option value="Other">Other</option>
-        </select>
+          <select id="typeOfArtist" name="typeOfArtist" onChange={handleChange} value={typeOfArtist}>
+            <option value="">Select...</option>
+            <option value="Listener">Listener</option>
+            <option value="Singer">Singer</option>
+            <option value="Songwriter">Songwriter</option>
+            <option value="Rapper">Rapper</option>
+            <option value="Producer">Producer</option>
+            <option value="Audio Engineer">Audio Engineer</option>
+            <option value="DJ">DJ</option>
+            <option value="Promoter">Promoter</option>
+            <option value="Other">Other</option>
+          </select>
         </div>
 
         <label htmlFor="password">Password</label>

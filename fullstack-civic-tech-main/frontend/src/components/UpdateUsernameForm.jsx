@@ -19,7 +19,7 @@ export default function UpdateUsernameForm({ currentUser, setCurrentUser }) {
   return <form onSubmit={handleSubmit} aria-labelledby="update-heading">
     <h2 id="update-heading">Update Username</h2>
     <label htmlFor='username'>Choose a new username</label>
-    <input type='text' id='username' name='username'/>
+    <input type='text' id='username' name='username' />
     <input type="hidden" name="id" value={currentUser.id} />
 
     <button>Update Username</button>

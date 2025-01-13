@@ -42,44 +42,44 @@ const EventCard = (props) => {
   };
   return (
     <div className="flex flex-col card shadow-md rounded-lg overflow-hidden max-w-xs mx-auto">
-    <div className="p-4 flex flex-col gap-3">
-      <p className="text-lg font-bold text-center">{event.name}</p>
-      <p className="text-sm  font-semibold">Location: {event.location}</p>
-      <p className="text-sm font-semibold">Date: {event.date}</p>
-      <p className="text-sm font-semibold">Time: {event.startTime} - {event.endTime}</p>
-      <button href={event.ticketLink} target="_blank" rel="noopener noreferrer" className="inline-block mt-2 text-blue-500 hover:text-blue-600">Get Tickets</button>
-      {joinedEvents && joinedEvents[event.id] ? (
-        <button onClick={leaveEvent} className={`mt-4 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white ${joinedEvents[event.id] ? 'bg-red-600 hover:bg-red-700' : 'bg-blue-600 hover:bg-blue-700'}`}>
-          Leave Event
-        </button>
-      ) : (
-        <button onClick={joinEvent} className="mt-4 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700">
-          Join Event
-        </button>
-      )}
-    </div>
-    <div className="px-4 py-3 bg-gray-50 text-right ">
-      <form onSubmit={handleCommentSubmit} className="flex items-center gap-10">
-        <input
-          className="flex-1 py-2 px-4 text-sm  text-gray-700 bg-white  rounded shadow focus:outline-none focus:shadow-outline"
-          type="text"
-          placeholder="Add a comment..."
-          value={userInput}
-          onChange={handleCommentChange}
-        />
-        <button type="submit" className="inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-green-600 hover:bg-green-700">
-          Comment
-        </button>
-      </form>
-    </div>
-    <div className="p-4">
-      <div className="space-y-2">
-        {comments.map((comment, index) => (
-          <p key={index} className="text-sm text-gray-600">{comment}</p>
-        ))}
+      <div className="p-4 flex flex-col gap-3">
+        <p className="text-lg font-bold text-center">{event.name}</p>
+        <p className="text-sm  font-semibold">Location: {event.location}</p>
+        <p className="text-sm font-semibold">Date: {event.date}</p>
+        <p className="text-sm font-semibold">Time: {event.startTime} - {event.endTime}</p>
+        <button href={event.ticketLink} target="_blank" rel="noopener noreferrer" className="inline-block mt-2 text-blue-500 hover:text-blue-600">Get Tickets</button>
+        {joinedEvents && joinedEvents[event.id] ? (
+          <button onClick={leaveEvent} className={`mt-4 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white ${joinedEvents[event.id] ? 'bg-red-600 hover:bg-red-700' : 'bg-blue-600 hover:bg-blue-700'}`}>
+            Leave Event
+          </button>
+        ) : (
+          <button onClick={joinEvent} className="mt-4 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700">
+            Join Event
+          </button>
+        )}
+      </div>
+      <div className="px-4 py-3 bg-gray-50 text-right ">
+        <form onSubmit={handleCommentSubmit} className="flex items-center gap-10">
+          <input
+            className="flex-1 py-2 px-4 text-sm  text-gray-700 bg-white  rounded shadow focus:outline-none focus:shadow-outline"
+            type="text"
+            placeholder="Add a comment..."
+            value={userInput}
+            onChange={handleCommentChange}
+          />
+          <button type="submit" className="inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-green-600 hover:bg-green-700">
+            Comment
+          </button>
+        </form>
+      </div>
+      <div className="p-4">
+        <div className="space-y-2">
+          {comments.map((comment, index) => (
+            <p key={index} className="text-sm text-gray-600">{comment}</p>
+          ))}
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
 };
 export default EventCard;

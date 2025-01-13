@@ -8,7 +8,7 @@ function Footer() {
   return (
     <footer className="footer is-fullwidth">
       <div className="content is-justify-content-space-around is-fullwidth">
-        <strong>2024 Mic'd Up</strong> 
+        <strong>2024 Mic'd Up</strong>
         <a href="/Home">Home</a>
         <a href="/Profile">Profile</a>
         <a href="/Users">Users</a>

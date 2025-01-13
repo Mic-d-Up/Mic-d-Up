@@ -12,9 +12,9 @@ const baseUrl = '/api/events';
 
 export const createEvent = async ({ name, user_id, location, date, start_time, end_time, ticket_link }) => fetchHandler(`api/users/${user_id}/events`, getPostOptions({ name, user_id, location, date, start_time, end_time, ticket_link }));
 
-export const userJoinEvent = async (user_id, event_id) => fetchHandler(`api/Event_Users`, getPostOptions({ user_id, event_id}));
+export const userJoinEvent = async (user_id, event_id) => fetchHandler(`api/Event_Users`, getPostOptions({ user_id, event_id }));
 
-export const userLeaveEvent = async (user_id, event_id) => fetchHandler(`api/Event_Users`, deleteOptions({ user_id, event_id}));
+export const userLeaveEvent = async (user_id, event_id) => fetchHandler(`api/Event_Users`, deleteOptions({ user_id, event_id }));
 
 export const getAllEvents = async () => {
   const [events] = await fetchHandler(baseUrl);

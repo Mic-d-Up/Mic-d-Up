@@ -8,7 +8,8 @@ body {
   background-color: #AB82FF;
 }
 
-.input, .label {
+.input,
+.label {
   display: block;
 }
 
@@ -45,17 +46,18 @@ nav a {
 }
 
 .card {
-  background-color:rgb(249 250 251);
+  background-color: rgb(249 250 251);
 
 }
+
 form {
   padding: 1rem;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
   width: 15rem;
   margin: 1rem auto;
-} */
+}
 
-.active {
+*/ .active {
   color: yellow;
   font-weight: bold;
   font-style: italic;
@@ -68,11 +70,13 @@ form {
   background-color: #3C096C;
 }
 
-a, strong {
+a,
+strong {
   color: aliceblue;
 }
 
-.footer .content, a:hover {
+.footer .content,
+a:hover {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -122,6 +126,7 @@ a, strong {
     transform: translateX(50px);
     opacity: 0;
   }
+
   to {
     transform: translateX(0);
     opacity: 1;

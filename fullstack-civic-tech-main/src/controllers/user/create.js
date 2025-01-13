@@ -8,7 +8,6 @@ const createUser = async (req, res) => {
     body: { username, password, name, profile_pic, typeOfArtist }, // this req.body property is put here by the client
   } = req;
 
-  // TODO: check if username is taken, what should you return?
   try {
     const user = await User.create(username, password, name, profile_pic, typeOfArtist);
     session.userId = user.id;

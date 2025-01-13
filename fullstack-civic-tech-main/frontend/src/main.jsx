@@ -5,9 +5,9 @@ import UserContextProvider from './contexts/CurrentUserContextProvider.jsx';
 import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-    <UserContextProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </UserContextProvider>,
+  <UserContextProvider>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </UserContextProvider>,
 );

@@ -1,7 +1,7 @@
 const listUsers = async (req, res) => {
-  const { 
+  const {
     db: { User }
-  } = req; 
+  } = req;
 
   const users = await User.list();
   res.send(users);

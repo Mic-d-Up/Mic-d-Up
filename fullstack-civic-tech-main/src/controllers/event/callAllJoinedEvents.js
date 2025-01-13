@@ -1,7 +1,7 @@
 const callAllJoinedEvents = async (req, res) => {
   const {
     db: { Event },
-    params: {user_id},
+    params: { user_id },
   } = req;
 
   const events = await Event.getAllJoinedEvents(user_id);

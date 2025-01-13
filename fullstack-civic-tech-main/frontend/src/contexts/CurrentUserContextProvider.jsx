@@ -6,7 +6,7 @@ export default function CurrentUserContextProvider({ children }) {
   const context = { currentUser, setCurrentUser };
 
   return (
-    <CurrentUserContext.Provider value={ context }>
+    <CurrentUserContext.Provider value={context}>
       {children}
     </CurrentUserContext.Provider>
   );

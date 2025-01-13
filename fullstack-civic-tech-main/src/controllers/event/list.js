@@ -1,7 +1,7 @@
 const listEvents = async (req, res) => {
-  const { 
+  const {
     db: { Event }
-  } = req; 
+  } = req;
 
   const events = await Event.list();
   res.send(events);

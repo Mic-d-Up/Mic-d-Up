@@ -22,7 +22,7 @@ export default function App() {
     <SiteHeadingAndNav />
     <main>
       <Routes>
-        <Route path='/'element={<LandingPage/>} />
+        <Route path='/' element={<LandingPage />} />
         <Route path='/home' element={<Home />} />
         <Route path='/login' element={<LandingPage />} />
         <Route path='/sign-up' element={<LandingPage />} />
@@ -32,6 +32,6 @@ export default function App() {
         <Route path='*' element={<NotFoundPage />} />
       </Routes>
     </main>
-  <Footer />
+    <Footer />
   </>;
 }

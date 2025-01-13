@@ -44,8 +44,8 @@ class User {
       VALUES (?, ?, ?, ?, ?) RETURNING *`;
     const args = [username, passwordHash, name, profile_pic, typeOfArtist];
     const { rows } = await knex.raw(query, args);
-    const user = rows[0]; 
-    return new User(user); 
+    const user = rows[0];
+    return new User(user);
   }
 
   static async delete(id) {

@@ -5,3 +5,8 @@ Mic'd Up is a platform where musicians can create profiles and post events such 
 
 
 Utilized: HTML, CSS, React, JavaScript, Bulma, SQL, Figma
+
+Watch the demo recorded by Project Manager, Scrum Master, and Lead Developer Erica Ponce!
+
+https://github.com/user-attachments/assets/6360919a-c5f4-4ab1-a3bc-04ceedb36e11
+
